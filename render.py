@@ -87,7 +87,6 @@ body{
 ::-webkit-scrollbar-track{background:var(--aisle-deep)}
 ::-webkit-scrollbar-thumb{background:var(--rail); border:2px solid var(--aisle-deep)}
 main{max-width:46rem; margin:0 auto; padding:0 .7rem 3.5rem}
-.cond{font-family:"Barlow Condensed",Barlow,sans-serif}
 
 /* ---------- masthead ---------- */
 .masthead{padding:1.7rem .2rem .9rem}
@@ -527,7 +526,15 @@ def page(payload: dict) -> str:
     rows = payload["rows"]
     offers = [o for r in rows for o in r["offers"].values()]
     specials = sum(1 for o in offers if o.get("onSpecial"))
-    failures = sum(1 for o in offers if o.get("error"))
+    # Red is reserved for work the reader has to do, so only a dead pin
+    # earns the red badge. A read that merely failed this run is reported
+    # in the same quiet voice as its grey card further down the page.
+    def _dead(offer: dict) -> bool:
+        error = offer.get("error") or ""
+        return "404" in error or "not found" in error.lower()
+
+    dead = sum(1 for o in offers if o.get("error") and _dead(o))
+    flaky = sum(1 for o in offers if o.get("error") and not _dead(o))
     wins = {c: sum(1 for r in rows if r.get("winner") == c) for c in CHAINS}
     comparable = sum(1 for r in rows if len(r["offers"]) == 2)
     board = payload.get("stockUp") or []
@@ -563,8 +570,14 @@ def page(payload: dict) -> str:
     parts.append('<p class="when">')
     parts.append(f'<span>Read <b>{e(payload["generatedLabel"])}</b></span>')
     parts.append(f'<span><b>{specials}</b> of {len(offers)} prices on special</span>')
-    if failures:
-        parts.append(f'<span class="stale">{failures} could not be read</span>')
+    if dead:
+        word = "pin" if dead == 1 else "pins"
+        parts.append(f'<span class="stale">{dead} dead {word}, repin</span>')
+    if flaky:
+        parts.append(
+            f"<span>{flaky} price{'' if flaky == 1 else 's'} would not load"
+            f"</span>"
+        )
     parts.append("</p></div>")
 
     if board:

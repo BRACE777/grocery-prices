@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T00:00:00Z",
+  "title": "Design System: Woolworths against Coles",
+  "extensions": {
+    "colorMeta": {
+      "aisle": { "role": "neutral", "displayName": "Aisle Grey-Green", "canonical": "#e4e8e6", "tonalRamp": ["#1c2120", "#2f3634", "#454e4b", "#5d6764", "#78827f", "#98a09d", "#c2c9c6", "#eef1f0"] },
+      "aisle-deep": { "role": "neutral", "displayName": "Aisle Shadow", "canonical": "#d3d9d6", "tonalRamp": ["#1a1f1d", "#2c3331", "#424a47", "#5a6360", "#75807c", "#95a09b", "#bfc7c4", "#ecefee"] },
+      "rail": { "role": "neutral", "displayName": "Rail Plastic", "canonical": "#a9b2ae", "tonalRamp": ["#181d1b", "#29302d", "#3e4643", "#56605c", "#717b77", "#919b97", "#bbc3bf", "#e8ecea"] },
+      "rail-lip": { "role": "neutral", "displayName": "Rail Lip", "canonical": "#8e9994", "tonalRamp": ["#161b19", "#262d2b", "#3a4340", "#525c59", "#6d7774", "#8d9794", "#b8c0bd", "#e6eae8"] },
+      "card": { "role": "neutral", "displayName": "Ticket Card White", "canonical": "#ffffff", "tonalRamp": ["#1a1a1a", "#2e2e2e", "#454545", "#5e5e5e", "#7a7a7a", "#9b9b9b", "#c6c6c6", "#ffffff"] },
+      "card-ink": { "role": "neutral", "displayName": "Price Ink", "canonical": "#111315", "tonalRamp": ["#111315", "#22262a", "#373d42", "#4e565c", "#697178", "#8a9299", "#b7bec3", "#e7eaec"] },
+      "card-soft": { "role": "neutral", "displayName": "Small Print Grey", "canonical": "#6b7572", "tonalRamp": ["#141918", "#232a28", "#37403d", "#4f5955", "#6b7572", "#8b9491", "#b6bebb", "#e5e9e8"] },
+      "card-hair": { "role": "neutral", "displayName": "Ticket Hairline", "canonical": "#e2e6e4", "tonalRamp": ["#1b201f", "#2d3433", "#434a49", "#5b6462", "#767f7d", "#969f9c", "#c0c7c5", "#eef1f0"] },
+      "ink": { "role": "neutral", "displayName": "Aisle Ink", "canonical": "#111315", "tonalRamp": ["#111315", "#22262a", "#373d42", "#4e565c", "#697178", "#8a9299", "#b7bec3", "#e7eaec"] },
+      "ink-soft": { "role": "neutral", "displayName": "Metadata Grey", "canonical": "#555d5a", "tonalRamp": ["#131716", "#212826", "#343c3a", "#4b5451", "#666f6c", "#868f8c", "#b2bab7", "#e3e7e6"] },
+      "sign": { "role": "neutral", "displayName": "Bay Sign Black", "canonical": "#111315", "tonalRamp": ["#111315", "#1d2124", "#2b3134", "#3b4245", "#4e565a", "#69747a", "#96a1a7", "#cfd6d9"] },
+      "sign-ink": { "role": "neutral", "displayName": "Reversed Sign Ink", "canonical": "#e9edea", "tonalRamp": ["#1c211f", "#2f3634", "#454e4b", "#5d6764", "#78827f", "#98a29e", "#c3cac7", "#f1f4f2"] },
+      "wool": { "role": "primary", "displayName": "Woolworths Green", "canonical": "#0f8a3f", "tonalRamp": ["#032010", "#05371b", "#074f27", "#0b6b33", "#0f8a3f", "#18ad52", "#4fd783", "#b6f2cd"] },
+      "wool-deep": { "role": "primary", "displayName": "Woolworths Green Deep", "canonical": "#0b6b33", "tonalRamp": ["#02190c", "#042c16", "#06401f", "#085428", "#0b6b33", "#0f8a3f", "#2ec063", "#9ee9bb"] },
+      "coles": { "role": "primary", "displayName": "Coles Red", "canonical": "#d8121f", "tonalRamp": ["#30060a", "#4d080e", "#6c0b13", "#8d0d18", "#ad0d18", "#d8121f", "#f0555e", "#ffc2c6"] },
+      "coles-deep": { "role": "primary", "displayName": "Coles Red Deep", "canonical": "#ad0d18", "tonalRamp": ["#270508", "#3e070c", "#570810", "#730a14", "#8f0c16", "#ad0d18", "#dc4048", "#ffb6bb"] },
+      "flash": { "role": "secondary", "displayName": "Signage Yellow", "canonical": "#ffd400", "tonalRamp": ["#2e2600", "#4b3e00", "#6b5800", "#8d7400", "#b09100", "#d4af00", "#ffd400", "#fff0a8"] },
+      "flash-ink": { "role": "secondary", "displayName": "Flash Ink", "canonical": "#141414", "tonalRamp": ["#141414", "#262626", "#3b3b3b", "#525252", "#6d6d6d", "#8e8e8e", "#bababa", "#e9e9e9"] },
+      "burst": { "role": "secondary", "displayName": "Half Price Burst", "canonical": "#c20d19", "tonalRamp": ["#2c0508", "#45070c", "#610910", "#800b15", "#a10c17", "#c20d19", "#e84a53", "#ffc0c4"] },
+      "stamp": { "role": "tertiary", "displayName": "Inspector's Violet", "canonical": "#4c1d95", "tonalRamp": ["#14062a", "#200a44", "#2e0f61", "#3d157c", "#4c1d95", "#6d33c4", "#9a72e0", "#d9c6f5"] },
+      "focus": { "role": "tertiary", "displayName": "Ticket Blue", "canonical": "#1b45c4", "tonalRamp": ["#060f30", "#0a1a4d", "#0f266d", "#14338f", "#1b45c4", "#4a70e4", "#7fa6ff", "#ccdcff"] },
+      "aisle-dark": { "role": "neutral", "displayName": "Aisle After Close", "canonical": "#16191a", "tonalRamp": ["#101213", "#16191a", "#22282a", "#333b3d", "#454e50", "#6b7679", "#98a3a6", "#cfd6d8"] },
+      "aisle-deep-dark": { "role": "neutral", "displayName": "Aisle After Close Shadow", "canonical": "#101213", "tonalRamp": ["#0a0c0c", "#101213", "#1c2122", "#2c3335", "#3e4648", "#636d70", "#90999c", "#c9d0d2"] },
+      "rail-dark": { "role": "neutral", "displayName": "Rail After Close", "canonical": "#333b3d", "tonalRamp": ["#0f1112", "#1a1e1f", "#252b2c", "#333b3d", "#454e50", "#6b7679", "#98a3a6", "#cfd6d8"] },
+      "rail-lip-dark": { "role": "neutral", "displayName": "Rail Lip After Close", "canonical": "#454e50", "tonalRamp": ["#101213", "#1c2122", "#2b3234", "#3a4244", "#454e50", "#6d787b", "#9aa5a8", "#d1d8da"] },
+      "ink-dark": { "role": "neutral", "displayName": "Aisle Ink Reversed", "canonical": "#e9edea", "tonalRamp": ["#1c211f", "#2f3634", "#454e4b", "#5d6764", "#78827f", "#98a29e", "#c3cac7", "#f1f4f2"] },
+      "ink-soft-dark": { "role": "neutral", "displayName": "Metadata Grey Reversed", "canonical": "#98a29e", "tonalRamp": ["#171b1a", "#272e2c", "#3b4340", "#535c59", "#6e7875", "#98a29e", "#bcc3c0", "#e8ebea"] },
+      "sign-dark": { "role": "neutral", "displayName": "Bay Sign After Close", "canonical": "#2b3133", "tonalRamp": ["#0d0f10", "#171a1b", "#212628", "#2b3133", "#3d4547", "#626c6f", "#8f9a9d", "#c8d0d2"] },
+      "focus-dark": { "role": "tertiary", "displayName": "Ticket Blue Reversed", "canonical": "#7fa6ff", "tonalRamp": ["#08132c", "#0e214b", "#15306c", "#1d418f", "#2f5cc0", "#5680e6", "#7fa6ff", "#d2e0ff"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Masthead", "purpose": "The page title only: two uppercase condensed lines, one chain name each." },
+      "price": { "displayName": "Pack Price", "purpose": "The pack price on a ticket. The largest type in any slot; never used for unit price." },
+      "price-flash-lead": { "displayName": "Flash Price", "purpose": "The price on the stock-up board's lead flash card." },
+      "headline": { "displayName": "Flash Headline", "purpose": "Product name on a yellow flash card." },
+      "sign": { "displayName": "Bay Sign", "purpose": "Overhead aisle signs and the board heading; wide-tracked uppercase condensed." },
+      "title": { "displayName": "Ticket Product Name", "purpose": "Product name and pack size on a ticket." },
+      "label": { "displayName": "Chain Label", "purpose": "Chain name on a ticket and special tags; the page's only identity type." },
+      "stamp": { "displayName": "Rarity Stamp", "purpose": "The app's own overprinted mark. Never a discount percentage." },
+      "body": { "displayName": "Body", "purpose": "Verdict, notes and footer prose, with document-wide tabular figures." },
+      "unit": { "displayName": "Unit Price Line", "purpose": "The legally mandated per-unit line, the tiebreaker beneath the pack price." },
+      "mono": { "displayName": "Inline Code", "purpose": "The add-a-product command in the footer only." }
+    },
+    "shadows": [
+      { "name": "ticket-seated", "value": "0 1px 2px rgba(0,0,0,.17)", "purpose": "A ticket at rest in the rail." },
+      { "name": "ticket-proud", "value": "0 8px 15px rgba(0,0,0,.22),0 2px 3px rgba(0,0,0,.15)", "purpose": "The cheaper ticket of a pair, standing out of the rail with translateY(-10px)." },
+      { "name": "ticket-pressed", "value": "0 0 0 rgba(0,0,0,0)", "purpose": "A pressed ticket seats flush into the rail with translateY(3px)." },
+      { "name": "flash-rest", "value": "0 2px 4px rgba(0,0,0,.2)", "purpose": "A stock-up board flash card at rest." },
+      { "name": "flash-hover", "value": "0 6px 12px rgba(0,0,0,.24)", "purpose": "A flash card lifted 3px under a real hover device." },
+      { "name": "flash-pressed", "value": "0 1px 2px rgba(0,0,0,.22)", "purpose": "A pressed flash card, seated 2px." },
+      { "name": "rail-lip", "value": "0 5px 0 -1px var(--rail-lip)", "purpose": "Structural: the plastic lip under a pair's 4px rail border." },
+      { "name": "sign-lip", "value": "0 2px 0 var(--rail-lip)", "purpose": "Structural: the shelf under a bay sign plate." },
+      { "name": "fault-keyline", "value": "inset 0 0 0 2px var(--coles)", "purpose": "Dead pin: the one state that is the reader's job. Rail grey instead of red for a transient read failure." },
+      { "name": "flash-lead-entry", "value": "0 18px 30px rgba(0,0,0,.28)", "purpose": "Transient only: the @starting-style shadow the lead flash card falls out of as it is stamped down." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "The single easing for every transition in the system." },
+      { "name": "step", "value": "38ms", "purpose": "Stagger unit, multiplied by a per-row index capped at 14." },
+      { "name": "seat", "value": "transform/rotate/box-shadow 420ms", "purpose": "A slot seats into the rail from translateX(-20px) rotate(-1.5deg)." },
+      { "name": "rise-proud", "value": "transform/box-shadow 520ms, delay +300ms", "purpose": "The cheaper ticket rises only after both are seated, so the comparison resolves visibly." },
+      { "name": "tag-turn", "value": "rotate 380ms / opacity 260ms, delay +420ms", "purpose": "The special flash turns over onto the ticket from rotate(-16deg) opacity 0." },
+      { "name": "stamp-strike", "value": "transform 260ms / opacity 200ms linear, delay +560ms", "purpose": "The rarity stamp is struck on from scale(1.5) opacity 0." },
+      { "name": "flash-lead-stamp", "value": "transform/box-shadow 520ms, delay 60ms", "purpose": "Focal moment: the board's lead card is stamped down from scale(1.07) translateY(-10px)." },
+      { "name": "flash-rest-settle", "value": "transform 400ms, delay 320ms + index*90ms", "purpose": "The board's two secondary cards settle from translateY(-14px)." },
+      { "name": "hover-lift", "value": "transform/box-shadow 140-150ms", "purpose": "Pointer states: ticket 14px (17px if proud), flash 3px." },
+      { "name": "sign-light", "value": "animation-timeline: view(); animation-range: entry 0% entry 70%", "purpose": "Bay signs light from rail grey to sign black as the aisle is walked, where scroll-linked animation is supported." }
+    ],
+    "breakpoints": [
+      { "name": "column-cap", "value": "46rem" },
+      { "name": "slot-cap", "value": "22rem" }
+    ],
+    "notes": [
+      "The build declares no width media queries. Responsive behaviour is entirely intrinsic: the slot caps at 22rem and the column at 46rem, so a wide viewport gains margin rather than ticket width.",
+      "Conditional rules in the build: @supports not (grid-template-rows:subgrid) falls back to flex with margin-top:auto on the price; @supports not (color-mix()) drops the stamp's tinted offset to a solid one; @supports (animation-timeline:view()) gates the bay-sign lighting.",
+      "There is no JavaScript on the page. Every state is server-rendered by render.py and every effect is CSS out of @starting-style inside prefers-reduced-motion: no-preference."
+    ]
+  },
+  "components": [
+    {
+      "name": "Ticket",
+      "kind": "card",
+      "refersTo": "ticket",
+      "description": "The printed shelf-edge slot: chain edge, product, pack price, unit price. The whole card is the link to the retailer's listing.",
+      "html": "<div class=\"ds-slots\"><a class=\"ds-ticket ds-ticket--wool ds-ticket--proud\" href=\"#\"><span class=\"ds-t-head\"><span class=\"ds-chain\">Woolworths</span><span class=\"ds-tag\">Special</span><span class=\"ds-name\">Woolworths Chicken Bulk Schnitzels <span class=\"ds-size\">1.5kg</span></span></span><span class=\"ds-t-mark\"><span class=\"ds-stamp\">Cheapest in 3 months</span></span><span class=\"ds-t-price\"><span class=\"ds-price\"><span class=\"ds-cur\">$</span><span class=\"ds-n\">14.00</span></span><span class=\"ds-was\">was <s>$18.00</s> · save $4.00</span></span><span class=\"ds-t-unit\">$9.33/kg · <b>cheaper</b></span></a><a class=\"ds-ticket ds-ticket--coles\" href=\"#\"><span class=\"ds-t-head\"><span class=\"ds-chain\">Coles</span><span class=\"ds-name\">Coles Simply RSPCA Approved Chicken Schnitzel <span class=\"ds-size\">1.2kg</span></span></span><span class=\"ds-t-mark\"></span><span class=\"ds-t-price\"><span class=\"ds-price\"><span class=\"ds-cur\">$</span><span class=\"ds-n\">11.20</span></span></span><span class=\"ds-t-unit\">$9.33/kg</span></a></div>",
+      "css": ".ds-slots{display:grid;gap:.45rem;grid-template-columns:repeat(2,minmax(0,22rem));justify-content:center;grid-template-rows:auto auto auto auto;align-items:stretch;padding-bottom:.45rem;border-bottom:4px solid #a9b2ae;box-shadow:0 5px 0 -1px #8e9994;font-family:Barlow,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-ticket{grid-row:span 4;display:grid;grid-template-rows:subgrid;min-height:10.6rem;background:#fff;color:#111315;text-decoration:none;border-top:5px solid var(--ds-chain);box-shadow:0 1px 2px rgba(0,0,0,.17);transition:transform 150ms cubic-bezier(.16,1,.3,1),box-shadow 150ms cubic-bezier(.16,1,.3,1)}.ds-ticket--wool{--ds-chain:#0f8a3f;--ds-chain-deep:#0b6b33}.ds-ticket--coles{--ds-chain:#d8121f;--ds-chain-deep:#ad0d18}.ds-t-head{align-self:start;display:grid;grid-template-columns:1fr auto;align-items:start;column-gap:.4rem}.ds-t-mark,.ds-t-price,.ds-t-unit{align-self:end}.ds-chain{font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ds-chain-deep);padding:.3rem .55rem 0}.ds-name{grid-column:1/-1;font-family:\"Barlow Condensed\",sans-serif;font-weight:500;font-size:.88rem;line-height:1.08;text-transform:uppercase;padding:.1rem .55rem .3rem}.ds-size{color:#6b7572;font-weight:400}.ds-tag{grid-column:2;align-self:start;margin-top:-5px;background:#ffd400;color:#141414;font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding:.12rem .38rem;white-space:nowrap}.ds-price{padding:0 .55rem;display:flex;align-items:baseline;gap:.08rem}.ds-cur{font-family:\"Barlow Condensed\",sans-serif;font-weight:600;font-size:1.1rem;align-self:flex-start;margin-top:.16rem}.ds-n{font-family:\"Barlow Condensed\",sans-serif;font-weight:800;font-size:2.9rem;line-height:.86;letter-spacing:-.025em}.ds-was{display:block;padding:.05rem .55rem 0;font-size:.8rem;color:#6b7572}.ds-t-unit{padding:.2rem .55rem .5rem;font-size:.82rem;font-weight:600;color:#6b7572;border-top:1px solid #e2e6e4;margin-top:.3rem}.ds-ticket--proud .ds-t-unit{color:var(--ds-chain-deep)}.ds-stamp{display:inline-block;justify-self:start;margin:0 .55rem .45rem;font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:.68rem;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;color:#4c1d95;padding:.1rem .34rem;border:2px solid #4c1d95;mix-blend-mode:multiply;transform:rotate(-1.4deg);transform-origin:left center}.ds-ticket--proud{transform:translateY(-10px);box-shadow:0 8px 15px rgba(0,0,0,.22),0 2px 3px rgba(0,0,0,.15)}.ds-ticket:hover{transform:translateY(-14px)}.ds-ticket--proud:hover{transform:translateY(-17px)}.ds-ticket:focus-visible{outline:3px solid #1b45c4;outline-offset:3px}.ds-ticket:active{transform:translateY(3px);box-shadow:0 0 0 rgba(0,0,0,0)}.ds-ticket--proud:active{transform:translateY(-4px)}"
+    },
+    {
+      "name": "Flash Card (lead)",
+      "kind": "card",
+      "refersTo": "flash-lead",
+      "description": "The chains' own yellow special card, used for the stock-up board's headline drop. Half price is a red burst on yellow; the card never turns red.",
+      "html": "<a class=\"ds-flash ds-flash--lead ds-flash--coles\" href=\"#\"><span class=\"ds-flash-chain\">Coles</span><span class=\"ds-flash-what\">Coca-Cola Zero Sugar Bottle 1.25L</span><span class=\"ds-flash-row\"><span class=\"ds-flash-now\">$2.25</span><span class=\"ds-flash-was\">$4.50</span><span class=\"ds-burst\">Half price</span></span><span class=\"ds-flash-stamp\">Cheapest in 3 months</span></a>",
+      "css": ".ds-flash{display:block;text-decoration:none;background:#ffd400;color:#141414;padding:.95rem 1rem 1rem;position:relative;border-top:5px solid var(--ds-chain);box-shadow:0 2px 4px rgba(0,0,0,.2);font-family:Barlow,system-ui,sans-serif;font-variant-numeric:tabular-nums;transition:transform 140ms cubic-bezier(.16,1,.3,1),box-shadow 140ms cubic-bezier(.16,1,.3,1)}.ds-flash--coles{--ds-chain:#d8121f}.ds-flash--wool{--ds-chain:#0f8a3f}.ds-flash-chain{font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;display:block}.ds-flash-what{font-family:\"Barlow Condensed\",sans-serif;font-weight:600;line-height:1.05;text-transform:uppercase;display:block;margin:.15rem 0 .3rem;font-size:1.5rem}.ds-flash-row{display:flex;align-items:baseline;gap:.45rem;flex-wrap:wrap}.ds-flash-now{font-family:\"Barlow Condensed\",sans-serif;font-weight:800;line-height:.85;font-size:3.1rem;letter-spacing:-.02em}.ds-flash-was{font-weight:600;text-decoration:line-through;text-decoration-thickness:1px;opacity:.88}.ds-burst{display:inline-block;background:#c20d19;color:#fff;font-family:\"Barlow Condensed\",sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.82rem;padding:.08rem .4rem;transform:rotate(-2deg)}.ds-flash-stamp{display:inline-block;margin:.45rem 0 0;font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#4c1d95;padding:.1rem .34rem;border:2px solid #4c1d95;mix-blend-mode:multiply;transform:rotate(-1deg)}.ds-flash:hover{transform:translateY(-3px);box-shadow:0 6px 12px rgba(0,0,0,.24)}.ds-flash:focus-visible{outline:3px solid #1b45c4;outline-offset:3px}.ds-flash:active{transform:translateY(2px);box-shadow:0 1px 2px rgba(0,0,0,.22)}"
+    },
+    {
+      "name": "Rarity Stamp",
+      "kind": "chip",
+      "refersTo": "stamp",
+      "description": "The app's own voice: an overprinted violet inspector's strike saying the price is unusual. Neither chain's colour, and not the focus ring's blue. Never carries a discount percentage.",
+      "html": "<span class=\"ds-stamp-solo\">Cheapest in 3 months</span>",
+      "css": ".ds-stamp-solo{display:inline-block;font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#4c1d95;padding:.1rem .34rem;border:2px solid #4c1d95;box-shadow:1.5px 1.5px 0 -0.5px color-mix(in srgb,#4c1d95 35%,transparent);mix-blend-mode:multiply;transform:rotate(-1.4deg);transform-origin:left center}"
+    },
+    {
+      "name": "Bay Sign",
+      "kind": "nav",
+      "refersTo": "bay-sign",
+      "description": "The overhead aisle sign that heads each category bay, with the bay's specials count on the right. Lights from rail grey to sign black as it is scrolled into view.",
+      "html": "<div class=\"ds-bay\"><h2>Chips &amp; savoury snacks</h2><span class=\"ds-count\">4 on special</span></div>",
+      "css": ".ds-bay{display:flex;align-items:baseline;justify-content:space-between;gap:1em;padding:.3rem .55rem;background:#111315;color:#e9edea;box-shadow:0 2px 0 #8e9994}.ds-bay h2{font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:1.02rem;text-transform:uppercase;letter-spacing:.16em;margin:0}.ds-count{font-family:\"Barlow Condensed\",sans-serif;font-weight:500;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85;white-space:nowrap}"
+    },
+    {
+      "name": "Not Stocked Slot",
+      "kind": "card",
+      "refersTo": "ticket-empty",
+      "description": "A chain that does not carry the line: hatched aisle under the chain's own rule. Grey means missing, never broken.",
+      "html": "<div class=\"ds-empty ds-empty--wool\">Woolworths does not stock it</div>",
+      "css": ".ds-empty{min-height:10.6rem;display:grid;align-content:end;padding:.55rem;border-top:5px solid var(--ds-chain);background-image:repeating-linear-gradient(45deg,#a9b2ae 0 1px,transparent 1px 6px);font-family:\"Barlow Condensed\",sans-serif;font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;color:#111315;opacity:.85}.ds-empty--wool{--ds-chain:#0f8a3f}.ds-empty--coles{--ds-chain:#d8121f}"
+    },
+    {
+      "name": "Fault Card",
+      "kind": "card",
+      "refersTo": "ticket-fault",
+      "description": "A dead pin: the one state that is the reader's job to fix, and the only non-Coles use of red. The quieter grey variant is a read that failed this run.",
+      "html": "<div class=\"ds-fault\">Coles pin is dead<span>this product no longer exists, repin it</span></div><div class=\"ds-fault ds-fault--soft\">Coles would not answer<span>read failed twice this run, it should return next week</span></div>",
+      "css": ".ds-fault{min-height:10.6rem;display:grid;align-content:end;gap:.2rem;padding:.55rem;background:#fff;border-top:5px solid #d8121f;box-shadow:inset 0 0 0 2px #d8121f;font-family:\"Barlow Condensed\",sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:#ad0d18}.ds-fault span{font-family:Barlow,system-ui,sans-serif;font-weight:400;text-transform:none;letter-spacing:0;color:#6b7572}.ds-fault--soft{border-top-color:#a9b2ae;box-shadow:inset 0 0 0 2px #a9b2ae;color:#111315}"
+    },
+    {
+      "name": "Verdict",
+      "kind": "custom",
+      "refersTo": "verdict",
+      "description": "The first-viewport answer: one sentence on a 3px left edge in the winning chain's colour, capped at 42ch.",
+      "html": "<p class=\"ds-verdict ds-verdict--wool\"><b>Woolworths</b> is cheaper on <b>9</b> of the 15 lines you can compare, Coles on 3.</p>",
+      "css": ".ds-verdict{margin:.55rem 0 .1rem;font-family:Barlow,system-ui,sans-serif;font-size:1rem;line-height:1.35;max-width:42ch;color:#111315;border-left:3px solid var(--ds-chain);padding-left:.6rem;font-variant-numeric:tabular-nums}.ds-verdict--wool{--ds-chain:#0f8a3f}.ds-verdict--coles{--ds-chain:#d8121f}.ds-verdict b{font-weight:700}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "The page title and the read metadata line, including the stale badge when a read failed.",
+      "html": "<div class=\"ds-masthead\"><h1>Woolworths<br>against Coles</h1><p class=\"ds-when\"><span>Read <b>13 September 2026, 03:07AM</b></span><span><b>13</b> of 38 prices on special</span></p></div>",
+      "css": ".ds-masthead{padding:1.7rem .2rem .9rem;color:#111315;font-family:Barlow,system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-masthead h1{font-family:\"Barlow Condensed\",sans-serif;font-weight:800;font-size:2.1rem;line-height:1;letter-spacing:-.005em;text-transform:uppercase;margin:0}.ds-when{margin:.5rem 0 0;display:flex;flex-wrap:wrap;gap:.1rem .9rem;font-weight:500;text-transform:uppercase;letter-spacing:.07em;font-size:.82rem;color:#555d5a}.ds-when b{color:#111315;font-weight:700}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Aisle Set Before Opening",
+    "overview": "This is one surface pretending to be furniture. The page is a grey supermarket aisle; each tracked product is a pair of white die-cut price tickets seated side by side in a grey plastic rail, one ticket per chain, and each bay of the list is introduced by a black overhead bay sign. Everything is printed: square corners everywhere, no rounded UI, no gradients, no imagery, and no icons of any kind. Density is high and unapologetic, because the whole week's decision has to survive one phone screen in one hand.\n\nThe only element that is not shop signage is the rarity stamp: a violet double-ruled strike saying whether this price is genuinely unusual. It is the app's own voice, inked in a hue that belongs to neither chain and is not the focus ring's blue, and it is the reason the page exists rather than a shelf photo.\n\nChain identity is colour, never a logo: Woolworths green and Coles red arrive as a 5px printed top edge on every slot. Because red is a chain's name here, red can never also mean \"discount\" — the special vocabulary is built from the chains' own yellow flash instead. The page carries no JavaScript; every state and every motion is CSS, and the finished, readable state is the element's real state.",
+    "keyCharacteristics": [
+      "Printed-ticket material: white card on grey aisle, square corners, hairline rules",
+      "Heavy condensed grotesque throughout, pack price at ticket scale",
+      "Chain colour as the only identity mark, no logos",
+      "Yellow flash for specials, violet stamp for rarity, red only for Coles or a dead pin",
+      "Motion is stagger-and-seat only, out of @starting-style, never required to read the page"
+    ],
+    "rules": [
+      { "name": "The Reserved Red Rule", "body": "Red means Coles, or a dead pin. It never encodes discount depth, saving size, or urgency. A half-price Woolworths line is a red burst on yellow card, never a red card, because a red Woolworths ticket would arrive wearing its rival's colour.", "section": "colors" },
+      { "name": "The Printed Card Rule", "body": "Dark mode darkens the aisle, the rail, the bay sign and the body ink only. The ticket stays white with its own near-black ink, because printed card does not change colour under different light.", "section": "colors" },
+      { "name": "The Two Inks Rule", "body": "The stamp's violet and the focus ring's blue are separate inks and stay separate. The stamp is content; the ring is the browser talking.", "section": "colors" },
+      { "name": "The No Logo Rule", "body": "Chain identity is carried by colour alone. No retailer logo, wordmark or brand asset appears on any surface.", "section": "colors" },
+      { "name": "The Pack Price Leads Rule", "body": "On every ticket the pack price is the largest type in the slot and the unit price sits beneath it, small, as the tiebreaker. Price per unit is never promoted to the headline; it is the number that decides but not the number that is recognised.", "section": "typography" },
+      { "name": "The Condensed Scan Rule", "body": "Anything scanned (chain, product, price, sign, tag, stamp) is uppercase Barlow Condensed. Anything read as prose is upright Barlow, mixed case. There is no third voice.", "section": "typography" },
+      { "name": "The One Figure Style Rule", "body": "font-variant-numeric: tabular-nums is set on the document, so two prices in a pair align digit for digit.", "section": "typography" },
+      { "name": "The Shared Rows Rule", "body": "A pair's two slots inherit the same four subgrid rows. Never give one slot of a pair its own internal row structure; the compared prices must sit on a shared baseline.", "section": "layout" },
+      { "name": "The Capped Slot Rule", "body": "Widening the viewport adds margin, never ticket width. A ticket's maximum is 22rem.", "section": "layout" },
+      { "name": "The Proud Means Cheaper Rule", "body": "Vertical lift inside a pair is reserved for the cheaper unit price. Nothing else in the rail may stand proud, so height stays readable as a verdict.", "section": "elevation" },
+      { "name": "The Print Depth Rule", "body": "Shadows are short, dark and downward — card on rail. No glow, no coloured shadow, no blur above 15px.", "section": "elevation" },
+      { "name": "The Missing Is Not Broken Rule", "body": "A chain that does not stock a line is a grey hatched slot. A pin that no longer resolves is a red fault card. A read that failed this run is a grey fault card. Only the middle one is the reader's job, and only the middle one may be red.", "section": "components" },
+      { "name": "The Layered Motion Rule", "body": "All seven effects are CSS transitions out of @starting-style, inside prefers-reduced-motion: no-preference, timed on one stagger step (38ms, multiplied by a per-row index capped at 14) and one easing (cubic-bezier(.16,1,.3,1)). The seated state is the element's real state, so a browser that runs none of it shows the finished shop.", "section": "components" }
+    ],
+    "dos": [
+      "Do lead every price slot with the pack price at display scale (800, 2.9rem) and set the unit price small beneath it as the tiebreaker.",
+      "Do identify a chain with colour and colour only, as the 5px top edge of the slot.",
+      "Do express a special in the chains' yellow flash vocabulary: yellow card, yellow tag, burst red for half price only.",
+      "Do keep the ticket white in dark mode and darken only aisle, rail, sign and body ink.",
+      "Do give both slots of a pair the same four subgrid rows and the same 10.6rem minimum, so the two prices share a baseline.",
+      "Do reserve vertical lift inside a pair for the cheaper unit price.",
+      "Do ship any new effect as a transition out of @starting-style under prefers-reduced-motion: no-preference, on the existing 38ms step and easing.",
+      "Do self-host any new face through docs/fonts/faces.css."
+    ],
+    "donts": [
+      "Don't use red to mean discount, saving, or urgency. Red is Coles, or a dead pin.",
+      "Don't place a retailer logo, wordmark or brand asset anywhere.",
+      "Don't paint a transient read failure red; it is grey, because red means the reader has work to do.",
+      "Don't round a corner. Nothing in this system carries a radius.",
+      "Don't add JavaScript to the page, or make any content reachable only after a transition runs.",
+      "Don't stretch a ticket past 22rem on a wide screen; add margin instead.",
+      "Don't introduce a third type voice or a fourth accent ink. Violet is the stamp, blue is the focus ring, yellow is the special.",
+      "Don't promote price per unit to the headline, and don't fall back to a comparison-dashboard card grid."
+    ]
+  }
+}
