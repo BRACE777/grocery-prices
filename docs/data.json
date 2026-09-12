@@ -34,9 +34,9 @@
      "is_low": true,
      "spells": 1
     },
+    "notable": true,
     "rarityPhrase": "cheapest in 3 months",
-    "notability": 0.616391,
-    "notable": true
+    "notability": 0.616391
    },
    "notability": 0.616391,
    "phrase": "cheapest in 3 months"
@@ -73,55 +73,55 @@
      "is_low": true,
      "spells": 2
     },
+    "notable": true,
     "rarityPhrase": "cheapest in 3 months",
-    "notability": 0.54675,
-    "notable": true
+    "notability": 0.54675
    },
    "notability": 0.54675,
    "phrase": "cheapest in 3 months"
   },
   {
-   "title": "Little Moons Golden Blond Chocolate Mochi Bites, 6 pack",
-   "category": "frozen",
-   "chain": "coles",
+   "title": "Beef Mince Extra Lean 500g",
+   "category": "mince",
+   "chain": "woolworths",
    "offer": {
-    "chain": "coles",
-    "productId": "8400487",
-    "name": "Little Moons Golden Blond Chocolate Mochi Bites 6 Pack",
-    "size": "192g",
-    "price": 7.7,
-    "wasPrice": 11.0,
-    "unitPrice": 4.01,
-    "unitMeasure": "100g",
+    "chain": "woolworths",
+    "productId": "577860",
+    "name": "Woolworths Heart Smart Extra Lean Beef Mince",
+    "size": "500g",
+    "price": 10.0,
+    "wasPrice": 10.5,
+    "unitPrice": 20.0,
+    "unitMeasure": "1KG",
     "onSpecial": true,
-    "specialLabel": "save $3.30",
+    "specialLabel": "Special",
     "available": true,
-    "url": "https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
-    "slug": "little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
+    "url": "https://www.woolworths.com.au/shop/productdetails/577860/woolworths-heart-smart-extra-lean-beef-mince",
+    "slug": "",
     "error": "",
-    "saving": 3.3,
-    "savingPercent": 30,
-    "comparablePrice": 1.28,
-    "comparableLabel": " each",
+    "saving": 0.5,
+    "savingPercent": 5,
+    "comparablePrice": 20.0,
+    "comparableLabel": "/kg",
     "rarity": {
-     "days_at_or_below": 20,
+     "days_at_or_below": 11,
      "window_days": 90,
-     "share": 0.2222,
-     "base": 11.0,
-     "depth": 0.3,
+     "share": 0.1222,
+     "base": 12.0,
+     "depth": 0.1667,
      "is_low": true,
-     "spells": 4
+     "spells": 1
     },
+    "notable": true,
     "rarityPhrase": "cheapest in 3 months",
-    "notability": 0.245014,
-    "notable": true
+    "notability": 0.173405
    },
-   "notability": 0.245014,
+   "notability": 0.173405,
    "phrase": "cheapest in 3 months"
   }
  ],
- "generatedAt": "2026-09-13T02:35+10:00",
- "generatedLabel": "13 September 2026, 02:35am",
+ "generatedAt": "2026-09-13T02:53+10:00",
+ "generatedLabel": "13 September 2026, 02:53am",
  "categories": [
   {
    "id": "snacks",
@@ -187,9 +187,9 @@
       "is_low": false,
       "spells": 7
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.043562,
-     "notable": false
+     "notability": 0.043562
     },
     "coles": {
      "chain": "coles",
@@ -219,9 +219,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": "woolworths"
@@ -260,9 +260,9 @@
       "is_low": false,
       "spells": 5
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.042351,
-     "notable": false
+     "notability": 0.042351
     }
    },
    "winner": null
@@ -301,9 +301,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
@@ -333,9 +333,9 @@
       "is_low": false,
       "spells": 6
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.072239,
-     "notable": false
+     "notability": 0.072239
     }
    },
    "winner": "coles"
@@ -374,9 +374,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": null
@@ -415,9 +415,9 @@
       "is_low": false,
       "spells": 4
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.059756,
-     "notable": false
+     "notability": 0.059756
     },
     "coles": {
      "chain": "coles",
@@ -447,9 +447,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": "woolworths"
@@ -488,9 +488,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
@@ -520,9 +520,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.616391,
-     "notable": true
+     "notability": 0.616391
     }
    },
    "winner": "coles"
@@ -561,9 +561,9 @@
       "is_low": false,
       "spells": 7
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.113764,
-     "notable": false
+     "notability": 0.113764
     },
     "coles": {
      "chain": "coles",
@@ -593,9 +593,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": "woolworths"
@@ -634,9 +634,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.0027,
-     "notable": true
+     "notability": 0.0027
     },
     "coles": {
      "chain": "coles",
@@ -658,9 +658,9 @@
      "comparablePrice": 1.07,
      "comparableLabel": " a can",
      "rarity": null,
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": null
@@ -699,9 +699,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
@@ -731,9 +731,9 @@
       "is_low": false,
       "spells": 2
      },
+     "notable": true,
      "rarityPhrase": "16 days this cheap in 2 months",
-     "notability": 0.119651,
-     "notable": true
+     "notability": 0.119651
     }
    },
    "winner": null
@@ -772,9 +772,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
@@ -804,9 +804,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": null
@@ -845,9 +845,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in a month",
-     "notability": 0.074985,
-     "notable": true
+     "notability": 0.074985
     }
    },
    "winner": null
@@ -886,9 +886,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.092534,
-     "notable": true
+     "notability": 0.092534
     },
     "coles": {
      "chain": "coles",
@@ -918,9 +918,9 @@
       "is_low": true,
       "spells": 2
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.013888,
-     "notable": true
+     "notability": 0.013888
     }
    },
    "winner": "woolworths"
@@ -959,9 +959,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in a month",
-     "notability": 0.083067,
-     "notable": true
+     "notability": 0.083067
     },
     "coles": {
      "chain": "coles",
@@ -991,9 +991,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.023088,
-     "notable": false
+     "notability": 0.023088
     }
    },
    "winner": "woolworths"
@@ -1032,9 +1032,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.173405,
-     "notable": true
+     "notability": 0.173405
     },
     "coles": {
      "chain": "coles",
@@ -1064,9 +1064,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.088015,
-     "notable": true
+     "notability": 0.088015
     }
    },
    "winner": "woolworths"
@@ -1105,9 +1105,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
@@ -1137,9 +1137,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": "woolworths"
@@ -1178,9 +1178,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.17074,
-     "notable": true
+     "notability": 0.17074
     }
    },
    "winner": null
@@ -1219,9 +1219,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.083635,
-     "notable": true
+     "notability": 0.083635
     }
    },
    "winner": null
@@ -1260,9 +1260,9 @@
       "is_low": false,
       "spells": 5
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.064535,
-     "notable": false
+     "notability": 0.064535
     },
     "coles": {
      "chain": "coles",
@@ -1292,9 +1292,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": "woolworths"
@@ -1333,9 +1333,9 @@
       "is_low": true,
       "spells": 3
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 2 months",
-     "notability": 0.11761,
-     "notable": true
+     "notability": 0.11761
     },
     "coles": {
      "chain": "coles",
@@ -1365,9 +1365,9 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": "woolworths"
@@ -1398,9 +1398,9 @@
      "comparablePrice": 2.84,
      "comparableLabel": "/100g",
      "rarity": null,
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": null
@@ -1439,9 +1439,9 @@
       "is_low": true,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     }
    },
    "winner": null
@@ -1480,9 +1480,9 @@
       "is_low": true,
       "spells": 2
      },
+     "notable": true,
      "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.54675,
-     "notable": true
+     "notability": 0.54675
     }
    },
    "winner": null
@@ -1521,45 +1521,39 @@
       "is_low": false,
       "spells": 1
      },
+     "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0,
-     "notable": false
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
      "productId": "8400487",
-     "name": "Little Moons Golden Blond Chocolate Mochi Bites 6 Pack",
-     "size": "192g",
-     "price": 7.7,
-     "wasPrice": 11.0,
-     "unitPrice": 4.01,
-     "unitMeasure": "100g",
-     "onSpecial": true,
-     "specialLabel": "save $3.30",
+     "name": "",
+     "size": "",
+     "price": null,
+     "wasPrice": null,
+     "unitPrice": null,
+     "unitMeasure": "",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
-     "url": "https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
-     "slug": "little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
-     "error": "",
-     "saving": 3.3,
-     "savingPercent": 30,
-     "comparablePrice": 1.28,
-     "comparableLabel": " each",
-     "rarity": {
-      "days_at_or_below": 20,
-      "window_days": 90,
-      "share": 0.2222,
-      "base": 11.0,
-      "depth": 0.3,
-      "is_low": true,
-      "spells": 4
-     },
-     "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.245014,
-     "notable": true
+     "url": "",
+     "slug": "",
+     "error": "response was not JSON (likely a bot challenge)",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": null,
+     "comparableLabel": "",
+     "rarity": null,
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
     }
    },
-   "winner": "coles"
+   "winner": null
   }
  ],
- "failures": []
+ "failures": [
+  "Little Moons Golden Blond Chocolate Mochi Bites, 6 pack at coles: response was not JSON (likely a bot challenge)"
+ ]
 }
