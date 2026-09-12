@@ -194,16 +194,25 @@ def notability(measure: dict | None) -> float:
     return round(score, 6)
 
 
+# A mark has to mean something. Both tests must pass: the price is a real cut
+# below the standing price, and the product has seldom been this cheap.
+NOTABLE_DEPTH = 0.15
+NOTABLE_SHARE = 0.25
+
+
 def is_notable(measure: dict | None) -> bool:
     """Does this price deserve a mark on the ticket?
 
-    A deep discount that happens most weeks is not news, so depth alone does
-    not qualify. Either this is the cheapest the window saw, or the price has
-    been this low for only a small slice of it.
+    Being the window's lowest price is not enough on its own. Some products sit
+    at their "low" almost permanently and spike occasionally, which makes the
+    standing price the outlier rather than the discount; a 30-pack of Coke that
+    has been at or below today's price on nine days in ten is not news however
+    the arithmetic labels it. So a notable price has to be both a real cut and
+    a rare one.
     """
-    if not measure or measure["depth"] <= 0:
+    if not measure or measure["depth"] < NOTABLE_DEPTH:
         return False
-    return bool(measure["is_low"]) or measure["share"] <= 0.25
+    return measure["share"] <= NOTABLE_SHARE
 
 
 def phrase(measure: dict | None) -> str:
@@ -212,12 +221,19 @@ def phrase(measure: dict | None) -> str:
         return ""
     months = max(round(measure["window_days"] / 30), 1)
     span = "a month" if months == 1 else f"{months} months"
-    if measure["is_low"]:
-        return f"cheapest in {span}"
+    # Adjectival form, for "its 3-month low" rather than "its 3 months low".
+    span_adj = "one-month" if months == 1 else f"{months}-month"
     days = measure["days_at_or_below"]
-    if days == 0:
-        return f"not been this cheap in {span}"
     day_word = "day" if days == 1 else "days"
+
+    # Graded, so two stamped tickets rarely say the same thing. A brand new low
+    # is not the same claim as a return to a low the product has touched before.
+    if days == 0:
+        return f"first time this cheap in {span}"
+    if measure["is_low"]:
+        if days <= 10:
+            return f"cheapest in {span}"
+        return f"back to its {span_adj} low"
     if measure["share"] <= 0.08:
         return f"only {days} {day_word} this cheap in {span}"
     if measure["share"] <= 0.25:
