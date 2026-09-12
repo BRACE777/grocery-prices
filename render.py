@@ -266,6 +266,12 @@ main{max-width:46rem; margin:0 auto; padding:0 .7rem 3.5rem}
 }
 .fault span{font-family:Barlow,sans-serif; font-weight:400; text-transform:none;
             letter-spacing:0; color:var(--card-soft)}
+/* A read that failed this run, rather than a pin that needs fixing. Red is
+   reserved for work the reader has to do. */
+.fault.soft{
+  border-top-color:var(--rail); box-shadow:inset 0 0 0 2px var(--rail);
+  color:var(--ink);
+}
 
 /* ---------- tally and footer ---------- */
 .tally{
@@ -371,9 +377,19 @@ def _ticket(row: dict, chain: str, index: int) -> str:
             f"does not stock it</div>"
         )
     if offer["error"]:
+        # Only a 404 means the pin itself is dead. Everything else is the shop
+        # refusing this run, which is not something to go and fix.
+        dead = "404" in offer["error"] or "not found" in offer["error"].lower()
+        headline = f"{label} pin is dead" if dead else f"{label} would not answer"
+        detail = (
+            "this product no longer exists, repin it"
+            if dead
+            else "read failed twice this run, it should return next week"
+        )
+        klass = "fault" if dead else "fault soft"
         return (
-            f'<div class="fault" style="--i:{index}">{label} could not be read'
-            f'<span>{e(offer["error"])} — repin this product</span></div>'
+            f'<div class="{klass}" style="--i:{index}">{headline}'
+            f"<span>{detail}</span></div>"
         )
 
     classes = ["ticket"]

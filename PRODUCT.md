@@ -53,6 +53,11 @@ because it does not know which 23 things matter.
 - Requests go out through curl. Imperva, which fronts Coles, serves the real
   site to curl and a bot challenge to Python's own HTTP client from the same
   address with identical headers. Verified by direct comparison.
+- Coles challenges any request sent with `Accept-Language: en-AU` and serves
+  the real site to `en-US`. Measured by bisecting the header set one header at
+  a time, with a control. Woolworths is unaffected.
+- A challenged cookie jar stays challenged, so a failed read is retried with a
+  new jar rather than the old one.
 
 ## Capabilities and Constraints
 

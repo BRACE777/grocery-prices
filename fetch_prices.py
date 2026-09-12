@@ -1,7 +1,7 @@
 """Fetch current Woolworths and Coles prices for the pinned shopping list.
 
 Runs on this machine, not in the cloud: Woolworths refuses requests from data
-centre addresses. Writes site/data.json and regenerates site/index.html.
+centre addresses. Writes docs/data.json and regenerates docs/index.html.
 
     python fetch_prices.py            # fetch and rebuild the page
     python fetch_prices.py --render   # rebuild the page from the last fetch
@@ -17,6 +17,7 @@ import datetime as dt
 import json
 import pathlib
 import sys
+import time
 import zoneinfo
 
 import history
@@ -52,7 +53,9 @@ def load_state() -> dict:
 
 
 def save_state(state: dict) -> None:
-    STATE.write_text(json.dumps(state, indent=1), encoding="utf-8")
+    STATE.write_text(
+        json.dumps(state, indent=1), encoding="utf-8", newline="\n"
+    )
 
 
 def build_offer(
@@ -142,12 +145,27 @@ def fetch_all(config: dict, build_id_hint: str = "") -> dict:
             if offer is None:
                 continue
             row["offers"][chain] = offer
-            if offer["error"]:
-                failures.append(f"{item['title']} at {chain}: {offer['error']}")
         row["winner"] = decide_winner(row)
+        row["_item"] = item
         rows.append(row)
         print(f"  [{index:>2}/{total}] {item['title'][:52]:<52} "
               f"{_progress_note(row)}", flush=True)
+
+    # A single bot challenge should not leave a red cell for the week. Anything
+    # that failed for a reason other than "no such product" gets one more go
+    # after a pause, which clears nearly all of them.
+    retried = retry_failures(clients, rows, past)
+    failures = [
+        f"{row['title']} at {chain}: {offer['error']}"
+        for row in rows
+        for chain, offer in row["offers"].items()
+        if offer["error"]
+    ]
+    if retried:
+        print(f"  retried {retried} that failed first time; "
+              f"{len(failures)} still failing", flush=True)
+    for row in rows:
+        row.pop("_item", None)
 
     now = dt.datetime.now(MELBOURNE)
     return {
@@ -162,6 +180,41 @@ def fetch_all(config: dict, build_id_hint: str = "") -> dict:
         "rows": rows,
         "failures": failures,
     }
+
+
+def retry_failures(clients: dict, rows: list[dict], past: dict) -> int:
+    """Re-attempt offers that failed transiently. Returns how many were retried.
+
+    A 404 means the pinned product is genuinely gone and retrying cannot help,
+    so those are left alone.
+    """
+    pending = [
+        (row, chain)
+        for row in rows
+        for chain, offer in row["offers"].items()
+        if offer["error"] and "404" not in offer["error"]
+    ]
+    if not pending:
+        return 0
+    print(f"  {len(pending)} failed on the first pass; waiting a minute "
+          f"before retrying with fresh connections", flush=True)
+    time.sleep(60)
+    # New clients, and therefore new cookie jars: a challenged jar stays
+    # challenged, so reusing these clients would repeat the same failure.
+    clients = {
+        "woolworths": retailers.Woolworths(),
+        "coles": retailers.Coles(
+            build_id_hint=clients["coles"]._build_id or ""
+        ),
+    }
+    for row, chain in pending:
+        offer = build_offer(
+            clients[chain], row["_item"], chain, past.get(chain)
+        )
+        if offer and not offer["error"]:
+            row["offers"][chain] = offer
+            row["winner"] = decide_winner(row)
+    return len(pending)
 
 
 def stock_up(rows: list[dict], limit: int = 3) -> list[dict]:
@@ -227,14 +280,16 @@ def main() -> int:
         hint = args.coles_build_id or state.get("colesBuildId", "")
         print(f"Fetching {len(config['items'])} items from both chains...")
         payload = fetch_all(config, build_id_hint=hint)
-        DATA.write_text(json.dumps(payload, indent=1), encoding="utf-8")
+        DATA.write_text(
+            json.dumps(payload, indent=1), encoding="utf-8", newline="\n"
+        )
         if payload.get("colesBuildId"):
             state["colesBuildId"] = payload["colesBuildId"]
             state["lastRun"] = payload["generatedAt"]
             save_state(state)
 
     html = render.page(payload)
-    (SITE / "index.html").write_text(html, encoding="utf-8")
+    (SITE / "index.html").write_text(html, encoding="utf-8", newline="\n")
 
     specials = sum(
         1 for row in payload["rows"]

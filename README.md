@@ -15,8 +15,15 @@ connection returns 200. Coles serves the real site to curl and a bot challenge
 to Python's own HTTP client from the same address with identical headers, which
 is why every request here goes out through curl.
 
-Neither of those is a stable contract. Both are undocumented internal
-endpoints and either chain can change them without notice.
+One more, found the hard way and worth knowing before touching
+`retailers.py`: Coles serves a bot challenge to every request carrying
+`Accept-Language: en-AU,en;q=0.9`, and the real site to the same request
+carrying `en-US,en;q=0.9`. No other header changes the outcome, and it
+reproduces on demand. Woolworths is unaffected and keeps `en-AU`.
+
+None of those is a stable contract. All are undocumented internal endpoints
+and either chain can change them without notice. When a run starts failing,
+that file's comments record what was true and how it was measured.
 
 ## Running it
 

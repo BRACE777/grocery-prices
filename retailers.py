@@ -49,7 +49,24 @@ BROWSER_HEADERS = {
     "sec-fetch-user": "?1",
 }
 
-POLITE_DELAY = 1.2  # seconds between requests to a single retailer
+# A JSON data route is fetched by a script, never navigated to. Sending the
+# navigation set above while asking for JSON is a combination no real browser
+# produces, and it is enough on its own to be served a challenge. These
+# headers replace it for every data-route read.
+JSON_HEADERS = {
+    "Accept": "application/json",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "Upgrade-Insecure-Requests": None,
+    "sec-fetch-user": None,
+}
+
+# Seconds between requests to one retailer. Coles gets a much wider gap:
+# Imperva starts serving challenges after roughly twenty quick reads, and a
+# weekly run can easily afford to take a couple of minutes over it.
+POLITE_DELAY = 1.2
+COLES_DELAY = 2.0
 CHALLENGE_BACKOFF = 2.5  # seconds, multiplied by the attempt number
 CHALLENGE_RETRIES = 4
 
@@ -130,7 +147,20 @@ class _Session:
     challenge that hands back a cookie is presented on the retry.
     """
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        delay: float = POLITE_DELAY,
+        fresh_jar_on_retry: bool = False,
+        overrides: dict | None = None,
+    ) -> None:
+        self.delay = delay
+        # Per-retailer header overrides, applied under any per-call headers.
+        self.overrides = overrides or {}
+        # Imperva's challenge hands back a cookie that keeps the client
+        # blocked: once a jar has been challenged, every later request in that
+        # jar fails while a brand new jar succeeds immediately. So for Coles
+        # the jar is thrown away rather than presented again.
+        self.fresh_jar_on_retry = fresh_jar_on_retry
         self._curl = shutil.which("curl")
         if not self._curl:
             raise FetchError(
@@ -141,6 +171,14 @@ class _Session:
         handle, self._jar = tempfile.mkstemp(prefix="pricejar-", suffix=".txt")
         os.close(handle)
         self._last_request = 0.0
+
+    def new_jar(self) -> None:
+        """Start again with no cookies at all."""
+        try:
+            with open(self._jar, "w", encoding="utf-8"):
+                pass
+        except OSError:
+            pass
 
     def __del__(self) -> None:
         try:
@@ -165,6 +203,8 @@ class _Session:
         last: FetchError | None = None
         for attempt in range(retries + 1):
             if attempt:
+                if self.fresh_jar_on_retry:
+                    self.new_jar()
                 time.sleep(CHALLENGE_BACKOFF * attempt)
             try:
                 return self._get_once(url, headers, timeout, data)
@@ -177,7 +217,7 @@ class _Session:
     def _get_once(
         self, url: str, headers: dict | None, timeout: int, data: str | None = None
     ) -> bytes:
-        wait = POLITE_DELAY - (time.monotonic() - self._last_request)
+        wait = self.delay - (time.monotonic() - self._last_request)
         if wait > 0:
             time.sleep(wait)
 
@@ -195,7 +235,10 @@ class _Session:
             "--output", body_path,
             "--write-out", "%{http_code}",
         ]
-        for name, value in {**BROWSER_HEADERS, **(headers or {})}.items():
+        merged = {**BROWSER_HEADERS, **self.overrides, **(headers or {})}
+        for name, value in merged.items():
+            if value is None:
+                continue
             command += ["--header", f"{name}: {value}"]
         if data is not None:
             command += ["--data-binary", data]
@@ -231,7 +274,7 @@ class _Session:
         raw = self.get(
             url,
             headers={
-                "Accept": "application/json",
+                **JSON_HEADERS,
                 "Content-Type": "application/json",
                 **(headers or {}),
             },
@@ -245,7 +288,7 @@ class _Session:
 
     def get_json(self, url: str, headers: dict | None = None, retries: int = 0) -> dict:
         raw = self.get(
-            url, headers={"Accept": "application/json", **(headers or {})}, retries=retries
+            url, headers={**JSON_HEADERS, **(headers or {})}, retries=retries
         )
         try:
             return json.loads(raw)
@@ -357,8 +400,16 @@ class Coles:
     # Any product works for checking whether a cached build id still resolves.
     PROBE_ID = "2993706"
 
+    # Measured, not guessed: "Accept-Language: en-AU,en;q=0.9" is served a bot
+    # challenge on every request, while "en-US,en;q=0.9" is served the real
+    # site. No other header makes any difference, and the effect reproduces on
+    # demand. Woolworths is unaffected and keeps en-AU.
+    OVERRIDES = {"Accept-Language": "en-US,en;q=0.9"}
+
     def __init__(self, build_id_hint: str = "") -> None:
-        self.session = _Session()
+        self.session = _Session(
+            delay=COLES_DELAY, fresh_jar_on_retry=True, overrides=self.OVERRIDES
+        )
         self._build_id: str | None = None
         self._hint = build_id_hint
 
