@@ -1,0 +1,152 @@
+<!doctype html><html lang=en-AU><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Personal Shopping · Timetable</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{
+  --bed:#d8b552; --bed-lit:#f0d98a; --glass:#48525c; --carbon:#17181a;
+  --ivory:#f4efe2; --ivory-dim:#e4dcc8;
+  --wool:#14543a; --coles:#c23a17;
+  --size:14px; --rake:11deg; --lift:.85rem;
+  --ease:cubic-bezier(0.16,1,0.3,1); --step:30ms;
+  color-scheme:light dark;
+}
+/* The light table switched off. The stock keeps its tint; only the bed dims. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --bed:#2a2b26; --bed-lit:#4a4634; --glass:#9aa6b0; --carbon:#f4efe2;
+    --ivory:#22242a; --ivory-dim:#1b1d22;
+    --wool:#5fcf92; --coles:#ff9270;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; color:var(--carbon);
+  background:
+    radial-gradient(120% 60% at 50% -10%,var(--bed-lit) 0%,transparent 60%),
+    var(--bed);
+  background-attachment:fixed;
+  font-family:"Archivo Narrow",system-ui,sans-serif;
+  font-size:var(--size); line-height:1.45; font-variant-numeric:tabular-nums;
+  -webkit-text-size-adjust:100%;
+}
+::selection{background:var(--carbon); color:var(--ivory)}
+:focus-visible{outline:2px solid var(--carbon); outline-offset:2px}
+
+.bed{max-width:40rem; margin:0 auto; padding:1.4rem .8rem 3rem;
+     display:grid; grid-template-columns:var(--lift) 1fr; column-gap:.5rem}
+
+/* Tick rail: one tick per category, its height the extent of that block. */
+.rail{position:relative; border-right:1px solid var(--glass)}
+.rail ol{list-style:none; margin:0; padding:0; height:100%;
+         display:flex; flex-direction:column; gap:2px}
+.rail li{
+  background:var(--glass); opacity:.34; position:relative;
+  flex-grow:var(--extent,1); min-height:1.1rem;
+  clip-path:polygon(0 0,100% var(--skew),100% 100%,0 calc(100% - var(--skew)));
+  --skew:4px;
+}
+.rail li.hot{opacity:.8}
+.rail b{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%)}
+
+.rack{min-width:0}
+h1{
+  font-size:inherit; font-weight:700; text-transform:uppercase;
+  letter-spacing:.24em; margin:0 0 .15rem;
+}
+.stamp{display:flex; flex-wrap:wrap; gap:.15rem 1.1rem; margin:0 0 .9rem;
+       text-transform:uppercase; letter-spacing:.08em; font-weight:500}
+.stamp span{color:var(--carbon); opacity:.72}
+
+/* One element per screen goes to an opaque reversed plate. */
+.plate{
+  background:var(--carbon); color:var(--ivory); padding:.6rem .75rem .65rem;
+  margin:0 0 1rem;
+  clip-path:polygon(0 0,100% 10px,100% 100%,0 calc(100% - 10px));
+}
+.plate p{margin:0; text-transform:uppercase; letter-spacing:.06em}
+.plate .lede{font-weight:700; letter-spacing:.2em}
+.plate .figs{display:flex; gap:1.1em; flex-wrap:wrap; font-weight:500}
+.plate s{opacity:.6}
+
+/* A slide: raked container, flat baselines, opaque ivory prose pane. */
+.slide{
+  background:var(--ivory); margin:0 0 .55rem; padding:.55rem .75rem .6rem;
+  clip-path:polygon(0 0,100% 9px,100% 100%,0 calc(100% - 9px));
+}
+/* The light travelling the bed: each slide is lit as it passes. It dims the
+   stock rather than hiding it, so the rack is legible with no motion at all. */
+@keyframes light{
+  from{background-color:var(--ivory-dim); filter:brightness(.88) saturate(.72);
+       transform:translateY(6px)}
+  to{background-color:var(--ivory); filter:none; transform:none}
+}
+@keyframes strike{from{transform:scaleX(0)} to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:no-preference){
+  .slide{animation:light 520ms var(--ease) both;
+         animation-delay:calc(var(--i,0)*var(--step))}
+  a.dep.struck .ut::after{
+    transform:scaleX(0);
+    animation:strike 240ms var(--ease) both;
+    animation-delay:calc(var(--i,0)*var(--step) + 420ms);
+  }
+}
+.slide > h2{
+  font-size:inherit; font-weight:700; text-transform:uppercase;
+  letter-spacing:.18em; margin:0 0 .4rem; padding-bottom:.3rem;
+  border-bottom:1px solid var(--glass);
+  display:flex; justify-content:space-between; gap:1em;
+}
+.slide > h2 em{font-style:normal; font-weight:400; letter-spacing:.04em;
+               text-transform:none; opacity:.7}
+
+.run{margin:0 0 .5rem}
+.run:last-child{margin-bottom:0}
+.run > p.what{margin:0; font-weight:700; text-transform:uppercase;
+              letter-spacing:.02em}
+.run > p.note{margin:.1rem 0 0; padding-left:1.4em; opacity:.7}
+
+/* One departure. State is the mark in the fixed first cell. */
+a.dep{
+  display:grid; grid-template-columns:1.4em 4.6em 1fr auto; align-items:baseline;
+  column-gap:.5em; text-decoration:none; color:inherit;
+}
+a.dep .mk{font-weight:700}
+a.dep .co{text-transform:uppercase; letter-spacing:.1em; font-weight:500}
+a.dep .pk{opacity:.7}
+a.dep .ut{font-weight:700; text-align:right; position:relative;
+          white-space:nowrap}
+a.dep[data-chain=woolworths]{--c:var(--wool)}
+a.dep[data-chain=coles]{--c:var(--coles)}
+a.dep.holds .mk,a.dep.holds .co,a.dep.holds .ut{color:var(--c)}
+a.dep:hover .co{text-decoration:underline; text-underline-offset:3px}
+a.dep:active{background:var(--carbon); color:var(--ivory)}
+a.dep:active .mk,a.dep:active .co,a.dep:active .ut,a.dep:active .pk{color:inherit}
+
+/* Vermilion strikes the rate it cancels, drawn after the light has passed. */
+a.dep.struck .ut{opacity:.62}
+a.dep.struck .ut::after{
+  content:""; position:absolute; left:-.15em; right:-.15em; top:52%;
+  border-top:1px solid var(--coles); transform-origin:right;
+}
+
+.hold{font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+      color:var(--c)}
+/* Not stocked: the cell is hollow and dithers to half density. */
+.void{
+  display:grid; grid-template-columns:1.4em 1fr; column-gap:.5em;
+  position:relative; isolation:isolate;
+}
+.void::before{
+  content:""; position:absolute; inset:0; z-index:-1; opacity:.45;
+  background-image:repeating-linear-gradient(var(--rake),
+    var(--glass) 0 1px,transparent 1px 5px);
+}
+.void > *{opacity:.72}
+.void .co{text-transform:uppercase; letter-spacing:.1em}
+.fault{color:var(--coles); font-weight:700; text-transform:uppercase;
+       letter-spacing:.06em; box-shadow:inset 0 0 0 1px var(--coles);
+       padding:0 .35em}
+
+footer{margin-top:1.4rem; background:var(--ivory); padding:.6rem .75rem .7rem;
+       clip-path:polygon(0 0,100% 9px,100% 100%,0 calc(100% - 9px))}
+footer p{margin:.25rem 0; opacity:.78}
+footer code{font-family:ui-monospace,monospace; opacity:1; font-weight:600}
+
+</style></head><body><main class="bed"><div class="rail"><ol><li class=hot style="--extent:5"><b>Chips</b></li><li style="--extent:3"><b>Drinks</b></li><li style="--extent:3"><b>Pantry</b></li><li style="--extent:4"><b>Mince</b></li><li style="--extent:3"><b>Chicken</b></li><li style="--extent:2"><b>Noodles</b></li><li style="--extent:3"><b>Frozen</b></li></ol></div><div class="rack"><h1>Woolworths / Coles</h1><p class="stamp"><span>12 September 2026, 09:46pm</span><span>23 runs</span><span>13 held down</span></p><div class="plate"><p class="lede">Deepest cut this week</p><p>Coca-Cola Zero Sugar Bottle 1.25L</p><p class="figs"><span>Coles $2.25</span><s>$4.50</s><span>50% off</span></p></div><section class="slide" style="--i:1"><h2>Chips &amp; savoury snacks<em>4 held down</em></h2><div class="run"><p class="what">Harvest Snaps Pea Crisps Salt &amp; Vinegar 120g</p><a class="dep holds" data-chain="woolworths" style="--i:1" href="https://www.woolworths.com.au/shop/productdetails/262796/harvest-snaps-baked-pea-crisps-salt-vinegar" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">4.00 <span class="hold">Special</span></span><span class="ut">3.33/100g</span></a><a class="dep struck" data-chain="coles" style="--i:1" href="https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-120g-5994080" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">5.00</span><span class="ut">4.17/100g</span></a></div><div class="run"><p class="what">Harvest Snaps Pea Crisps Salt &amp; Vinegar 230g</p><div class="void" data-chain="woolworths"><span aria-hidden="true">○</span><span><span class="co">WOOLIES</span> no service</span></div><a class="dep holds" data-chain="coles" style="--i:1" href="https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-230g-5996303" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">6.00 <span class="hold">save $1.00</span></span><span class="ut">2.61/100g</span></a><p class="note">Woolworths stocks the 230g bag in Original Salted only</p></div><div class="run"><p class="what">Red Rock Deli Sea Salt &amp; Balsamic Vinegar Chips 165g</p><a class="dep struck" data-chain="woolworths" style="--i:1" href="https://www.woolworths.com.au/shop/productdetails/781402/red-rock-deli-potato-chips-sea-salt-balsamic-vinegar" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">WOOLIES</span><span class="pk">6.00</span><span class="ut">3.64/100g</span></a><a class="dep holds" data-chain="coles" style="--i:1" href="https://www.coles.com.au/product/red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">4.75 <span class="hold">save $1.25</span></span><span class="ut">2.88/100g</span></a></div><div class="run"><p class="what">Arnott&#x27;s Cracker Chips Balsamic Vinegar &amp; Sea Salt 150g</p><div class="void" data-chain="woolworths"><span aria-hidden="true">○</span><span><span class="co">WOOLIES</span> no service</span></div><a class="dep holds" data-chain="coles" style="--i:1" href="https://www.coles.com.au/product/arnott&#x27;s-cracker-chips-balsamic-vinegar-and-sea-salt-150g-3449401" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">4.50 <span class="hold">Any 2 $6</span></span><span class="ut">3.00/100g</span></a><p class="note">Woolworths carries Cracker Chips in Honey Soy only</p></div><div class="run"><p class="what">Kettle Ridge Cut Potato Chips Salt &amp; Vinegar 165g</p><a class="dep holds" data-chain="woolworths" style="--i:1" href="https://www.woolworths.com.au/shop/productdetails/6032521/kettle-ridge-cut-potato-chips-salt-vinegar" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">4.50</span><span class="ut">2.73/100g</span></a><a class="dep struck" data-chain="coles" style="--i:1" href="https://www.coles.com.au/product/kettle-ridge-cut-potato-chips-salt-and-vinegar-165g-1135050" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">6.00</span><span class="ut">3.64/100g</span></a></div></section><section class="slide" style="--i:2"><h2>Drinks<em>2 held down</em></h2><div class="run"><p class="what">Coca-Cola Zero Sugar Bottle 1.25L</p><a class="dep struck" data-chain="woolworths" style="--i:2" href="https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">WOOLIES</span><span class="pk">4.50</span><span class="ut">0.36/100mL</span></a><a class="dep holds" data-chain="coles" style="--i:2" href="https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">2.25 <span class="hold">1/2 Price</span></span><span class="ut">0.18/100mL</span></a></div><div class="run"><p class="what">Coca-Cola Classic Cans 375ml, 24 pack</p><a class="dep holds" data-chain="woolworths" style="--i:2" href="https://www.woolworths.com.au/shop/productdetails/42605/coca-cola-classic-soft-drink-cans" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">27.00 <span class="hold">Special</span></span><span class="ut">1.12 a can</span></a><a class="dep struck" data-chain="coles" style="--i:2" href="https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">45.00</span><span class="ut">1.88 a can</span></a></div><div class="run"><p class="what">Coca-Cola Classic Cans 375ml, 30 pack</p><a class="dep" data-chain="woolworths" style="--i:2" href="https://www.woolworths.com.au/shop/productdetails/84552/coca-cola-classic-soft-drink-cans" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">WOOLIES</span><span class="pk">32.00</span><span class="ut">1.07 a can</span></a><a class="dep" data-chain="coles" style="--i:2" href="https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-30-pack-8464796" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">32.00</span><span class="ut">1.07 a can</span></a></div></section><section class="slide" style="--i:3"><h2>Pantry &amp; sauces<em>2 held down</em></h2><div class="run"><p class="what">Leggo&#x27;s Bolognese Pasta Sauce</p><a class="dep" data-chain="woolworths" style="--i:3" href="https://www.woolworths.com.au/shop/productdetails/450687/leggo-s-bolognese-chunky-tomato-garlic-herbs-pasta-sauce" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">WOOLIES</span><span class="pk">3.30</span><span class="ut">0.66/100g</span></a><a class="dep" data-chain="coles" style="--i:3" href="https://www.coles.com.au/product/leggos-bolognese-pasta-sauce-jar-550g-1824984" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">3.65 <span class="hold">save $0.95</span></span><span class="ut">0.66/100g</span></a><p class="note">Woolworths pack is 500g, Coles jar is 550g. Compare on price per 100g.</p></div><div class="run"><p class="what">Old El Paso Fiery Spice Mix 35g</p><a class="dep" data-chain="woolworths" style="--i:3" href="https://www.woolworths.com.au/shop/productdetails/311381/old-el-paso-taco-spice-mix-fiery-hot" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">WOOLIES</span><span class="pk">3.00</span><span class="ut">8.57/100g</span></a><a class="dep" data-chain="coles" style="--i:3" href="https://www.coles.com.au/product/old-el-paso-fiery-spice-mix-35g-6341660" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">3.00</span><span class="ut">8.57/100g</span></a></div><div class="run"><p class="what">Herdez Habanero Hot Sauce 142g</p><div class="void" data-chain="woolworths"><span aria-hidden="true">○</span><span><span class="co">WOOLIES</span> no service</span></div><a class="dep holds" data-chain="coles" style="--i:3" href="https://www.coles.com.au/product/herdez-habanero-hot-sauce-142g-1325758" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">2.75 <span class="hold">1/2 Price</span></span><span class="ut">1.94/100g</span></a><p class="note">Not stocked by Woolworths</p></div></section><section class="slide" style="--i:4"><h2>Mince<em>1 held down</em></h2><div class="run"><p class="what">Pork &amp; Beef Mince 500g</p><a class="dep holds" data-chain="woolworths" style="--i:4" href="https://www.woolworths.com.au/shop/productdetails/239598/woolworths-pork-beef-mince" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">6.25</span><span class="ut">12.50/kg</span></a><a class="dep struck" data-chain="coles" style="--i:4" href="https://www.coles.com.au/product/coles-pork-and-beef-3-star-regular-mince-bolognese-500g-8782237" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">6.50</span><span class="ut">13.00/kg</span></a></div><div class="run"><p class="what">Beef Mince Regular 500g</p><a class="dep holds" data-chain="woolworths" style="--i:4" href="https://www.woolworths.com.au/shop/productdetails/577863/woolworths-beef-mince" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">8.00</span><span class="ut">16.00/kg</span></a><a class="dep struck" data-chain="coles" style="--i:4" href="https://www.coles.com.au/product/coles-no-added-hormone-beef-regular-mince-500g-9012814" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">8.50</span><span class="ut">17.00/kg</span></a></div><div class="run"><p class="what">Beef Mince Extra Lean 500g</p><a class="dep holds" data-chain="woolworths" style="--i:4" href="https://www.woolworths.com.au/shop/productdetails/577860/woolworths-heart-smart-extra-lean-beef-mince" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">10.00 <span class="hold">Special</span></span><span class="ut">20.00/kg</span></a><a class="dep struck" data-chain="coles" style="--i:4" href="https://www.coles.com.au/product/coles-no-added-hormone-beef-extra-lean-mince-500g-8112799" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">10.50</span><span class="ut">21.00/kg</span></a></div><div class="run"><p class="what">Lean Pork Mince 500g</p><a class="dep holds" data-chain="woolworths" style="--i:4" href="https://www.woolworths.com.au/shop/productdetails/582608/woolworths-lean-pork-mince" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">7.50</span><span class="ut">15.00/kg</span></a><a class="dep struck" data-chain="coles" style="--i:4" href="https://www.coles.com.au/product/coles-5-star-extra-lean-pork-mince-500g-8781132" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">8.00</span><span class="ut">16.00/kg</span></a><p class="note">Coles equivalent is their 5 Star Extra Lean</p></div></section><section class="slide" style="--i:5"><h2>Chicken<em>1 held down</em></h2><div class="run"><p class="what">Chicken Bulk Schnitzels 1.2kg</p><div class="void" data-chain="woolworths"><span aria-hidden="true">○</span><span><span class="co">WOOLIES</span> no service</span></div><a class="dep holds" data-chain="coles" style="--i:5" href="https://www.coles.com.au/product/coles-simply-rspca-approved-chicken-schnitzel-plain-crumb-1.2kg-2904193" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">11.20</span><span class="ut">9.33/kg</span></a><p class="note">Woolworths sells the bulk pack at 1.5kg only</p></div><div class="run"><p class="what">Chicken Bulk Schnitzels 1.5kg</p><a class="dep holds" data-chain="woolworths" style="--i:5" href="https://www.woolworths.com.au/shop/productdetails/134036/woolworths-chicken-bulk-schnitzels" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">14.00</span><span class="ut">9.33/kg</span></a><div class="void" data-chain="coles"><span aria-hidden="true">○</span><span><span class="co">COLES</span> no service</span></div><p class="note">Coles sells the bulk pack at 1.2kg only</p></div><div class="run"><p class="what">Tegel Takeouts Korean Style Chicken 400g</p><a class="dep holds" data-chain="woolworths" style="--i:5" href="https://www.woolworths.com.au/shop/productdetails/6043948/tegel-take-outs-korean-style-chicken" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">10.00 <span class="hold">Special</span></span><span class="ut">2.50/100g</span></a><a class="dep struck" data-chain="coles" style="--i:5" href="https://www.coles.com.au/product/tegel-takeouts-korean-style-frozen-chicken-chunks-ruffle-with-sauce-400g-8954070" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">12.00</span><span class="ut">3.00/100g</span></a></div></section><section class="slide" style="--i:6"><h2>Noodles<em>1 held down</em></h2><div class="run"><p class="what">Jin Ramen Spicy, 5 pack</p><a class="dep holds" data-chain="woolworths" style="--i:6" href="https://www.woolworths.com.au/shop/productdetails/122658/otoki-jin-ramen-spicy-instant-noodles" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">6.00 <span class="hold">Special</span></span><span class="ut">1.20 a pack</span></a><a class="dep struck" data-chain="coles" style="--i:6" href="https://www.coles.com.au/product/otoki-jin-ramen-spicy-instant-noodles-5x120g-600g-4677412" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">COLES</span><span class="pk">7.00</span><span class="ut">1.40 a pack</span></a></div><div class="run"><p class="what">Samyang Buldak Spicy Fried Rice Carbonara 440g</p><div class="void" data-chain="woolworths"><span aria-hidden="true">○</span><span><span class="co">WOOLIES</span> no service</span></div><a class="dep holds" data-chain="coles" style="--i:6" href="https://www.coles.com.au/product/samyang-buldak-spicy-fried-rice-carbonara-440g-1309831" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">12.50</span><span class="ut">2.84/100g</span></a><p class="note">Not stocked by Woolworths</p></div></section><section class="slide" style="--i:7"><h2>Frozen &amp; dessert<em>2 held down</em></h2><div class="run"><p class="what">Frozen Mango 1kg</p><a class="dep holds" data-chain="woolworths" style="--i:7" href="https://www.woolworths.com.au/shop/productdetails/820796/woolworths-frozen-mango" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">9.80</span><span class="ut">9.80/kg</span></a><div class="void" data-chain="coles"><span aria-hidden="true">○</span><span><span class="co">COLES</span> no service</span></div><p class="note">Coles own brand tops out at 500g</p></div><div class="run"><p class="what">Oreo Cookie Top Ice Cream Cones 400mL</p><a class="dep holds" data-chain="woolworths" style="--i:7" href="https://www.woolworths.com.au/shop/productdetails/918708/oreo-cookie-top-ice-cream-cones" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">WOOLIES</span><span class="pk">6.25 <span class="hold">Half price</span></span><span class="ut">1.56/100mL</span></a><div class="void" data-chain="coles"><span aria-hidden="true">○</span><span><span class="co">COLES</span> no service</span></div><p class="note">Coles carries Oreo Ice Cream Cones 475mL, a different product</p></div><div class="run"><p class="what">Little Moons Golden Blond Chocolate Mochi Bites, 6 pack</p><a class="dep struck" data-chain="woolworths" style="--i:7" href="https://www.woolworths.com.au/shop/productdetails/257574/little-moons-mochi-bites-golden-blond-chocolate" rel="noreferrer"><span class="mk" aria-hidden="true">○</span><span class="co">WOOLIES</span><span class="pk">11.00</span><span class="ut">1.83 each</span></a><a class="dep holds" data-chain="coles" style="--i:7" href="https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487" rel="noreferrer"><span class="mk" aria-hidden="true">●</span><span class="co">COLES</span><span class="pk">7.70 <span class="hold">save $3.30</span></span><span class="ut">1.28 each</span></a></div></section><footer><p>A filled mark holds the lower rate, or the only rate there is. Vermilion strikes the rate it cancels. Woolworths holds 9 runs, Coles 3.</p><p>Standard shelf prices, no member pricing, in-store may differ.</p><p>Add a run with <code>python add_item.py</code> and a product address.</p></footer></div></main></body></html>

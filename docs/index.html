@@ -1,0 +1,325 @@
+<!doctype html><html lang=en-AU><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><title>Woolworths against Coles</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{
+  --aisle:#e4e8e6; --aisle-deep:#d3d9d6; --rail:#a9b2ae; --rail-lip:#8e9994;
+  --card:#fff; --card-ink:#111315; --card-soft:#6b7572; --card-hair:#e2e6e4;
+  --ink:#111315; --ink-soft:#555d5a;
+  --wool:#0f8a3f; --wool-deep:#0b6b33;
+  --coles:#d8121f; --coles-deep:#ad0d18;
+  --flash:#ffd400; --flash-ink:#141414; --half:#c20d19;
+  --stamp:#1b45c4; --focus:#1b45c4;
+  --ease:cubic-bezier(.16,1,.3,1); --step:38ms;
+  color-scheme:light dark;
+}
+/* The aisle after close. Printed card does not change colour under different
+   light, so the tickets stay white and only the aisle around them darkens. */
+@media (prefers-color-scheme:dark){
+  :root{
+    --aisle:#16191a; --aisle-deep:#101213; --rail:#333b3d; --rail-lip:#454e50;
+    --ink:#e9edea; --ink-soft:#98a29e;
+    --focus:#7fa6ff;
+  }
+}
+*{box-sizing:border-box}
+html{background:var(--aisle)}
+body{
+  margin:0; background:var(--aisle); color:var(--ink);
+  font-family:Barlow,system-ui,-apple-system,sans-serif;
+  font-size:15px; line-height:1.4; font-variant-numeric:tabular-nums;
+  -webkit-text-size-adjust:100%; overflow-x:hidden;
+}
+::selection{background:var(--flash); color:var(--flash-ink)}
+:focus-visible{outline:3px solid var(--focus); outline-offset:3px}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--aisle-deep)}
+::-webkit-scrollbar-thumb{background:var(--rail); border:2px solid var(--aisle-deep)}
+main{max-width:46rem; margin:0 auto; padding:0 .7rem 3.5rem}
+.cond{font-family:"Barlow Condensed",Barlow,sans-serif}
+
+/* ---------- masthead ---------- */
+.masthead{padding:1.7rem .2rem .9rem}
+.masthead h1{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:2.1rem;
+  line-height:1; letter-spacing:-.005em; text-transform:uppercase; margin:0;
+}
+.masthead .when{
+  margin:.5rem 0 0; display:flex; flex-wrap:wrap; gap:.1rem .9rem;
+  font-weight:500; text-transform:uppercase; letter-spacing:.07em;
+  font-size:.82rem; color:var(--ink-soft);
+}
+.masthead .when b{color:var(--ink); font-weight:700}
+.stale{color:#fff; background:var(--coles); padding:.05rem .4rem; font-weight:700}
+
+/* ---------- the stock-up board ---------- */
+.board{margin:.2rem 0 1.5rem}
+.board > h2{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:1rem;
+  text-transform:uppercase; letter-spacing:.18em; margin:0 0 .45rem;
+  color:var(--ink);
+}
+.board > h2 + p{margin:-.35rem 0 .6rem; color:var(--ink-soft);
+                font-size:.85rem; max-width:52ch}
+.board .rest{display:grid; grid-template-columns:1fr 1fr; gap:.5rem;
+             margin-top:.5rem}
+
+/* A flash ticket: the yellow card the chains actually hang on a special. */
+.flash{
+  display:block; text-decoration:none; background:var(--flash);
+  color:var(--flash-ink); padding:.75rem .85rem .8rem; position:relative;
+  box-shadow:0 2px 4px rgba(0,0,0,.2);
+  transition:transform 140ms var(--ease),box-shadow 140ms var(--ease);
+}
+.flash.lead{padding:.95rem 1rem 1rem}
+.flash.half{background:var(--half); color:#fff}
+.flash .chain{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:.76rem;
+  letter-spacing:.16em; text-transform:uppercase; display:block;
+}
+.flash .what{
+  font-family:"Barlow Condensed",sans-serif; font-weight:600; line-height:1.05;
+  text-transform:uppercase; display:block; margin:.15rem 0 .3rem;
+  font-size:1.05rem;
+}
+.flash.lead .what{font-size:1.5rem}
+.flash .row{display:flex; align-items:baseline; gap:.45rem; flex-wrap:wrap}
+.flash .now{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; line-height:.85;
+  font-size:2.1rem; letter-spacing:-.02em;
+}
+.flash.lead .now{font-size:3.1rem}
+.flash .was{font-weight:600; text-decoration:line-through;
+            text-decoration-thickness:1px; opacity:.88}
+.flash .cut{font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+            font-size:.82rem}
+.flash .rare{
+  display:block; margin:.35rem 0 0; font-weight:700; font-size:.84rem;
+  text-transform:uppercase; letter-spacing:.05em;
+}
+.flash:active{transform:translateY(2px); box-shadow:0 1px 2px rgba(0,0,0,.22)}
+
+/* ---------- bay sign ---------- */
+.bay{
+  display:flex; align-items:baseline; justify-content:space-between; gap:1em;
+  margin:1.9rem 0 .6rem; padding:.3rem .55rem;
+  background:var(--ink); color:var(--aisle);
+  box-shadow:0 2px 0 var(--rail-lip);
+}
+.bay h2{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:1.02rem;
+  text-transform:uppercase; letter-spacing:.16em; margin:0;
+}
+.bay .count{
+  font-family:"Barlow Condensed",sans-serif; font-weight:500; font-size:.82rem;
+  letter-spacing:.08em; text-transform:uppercase; opacity:.85;
+  white-space:nowrap;
+}
+
+/* ---------- the rail ---------- */
+.bayrows{display:flex; flex-direction:column; gap:1rem}
+.pair{margin:0}
+.slots{
+  display:grid; grid-template-columns:1fr 1fr; gap:.45rem;
+  align-items:stretch;
+  padding-bottom:.45rem;
+  border-bottom:4px solid var(--rail);
+  box-shadow:0 5px 0 -1px var(--rail-lip);
+}
+.pair .note{
+  margin:.5rem .1rem 0; font-size:.84rem; color:var(--ink-soft);
+  padding-left:.7rem; border-left:1px solid var(--rail);
+}
+
+/* ---------- a ticket ---------- */
+.ticket{
+  display:flex; flex-direction:column; min-height:10.6rem; position:relative;
+  background:var(--card); color:var(--card-ink); text-decoration:none;
+  border-top:5px solid var(--chain);
+  box-shadow:0 1px 2px rgba(0,0,0,.17);
+  transition:transform 150ms var(--ease),box-shadow 150ms var(--ease);
+}
+.ticket[data-chain=woolworths]{--chain:var(--wool); --chain-deep:var(--wool-deep)}
+.ticket[data-chain=coles]{--chain:var(--coles); --chain-deep:var(--coles-deep)}
+.ticket .chain{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:.74rem;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--chain-deep);
+  padding:.3rem .55rem 0;
+}
+.ticket .name{
+  font-family:"Barlow Condensed",sans-serif; font-weight:500; font-size:.88rem;
+  line-height:1.08; text-transform:uppercase; padding:.1rem .55rem .3rem;
+}
+.ticket .size{color:var(--card-soft); font-weight:400}
+
+/* The pack price leads. It is the number the shopper already knows. */
+.ticket .price{
+  margin-top:auto; padding:0 .55rem; display:flex; align-items:baseline;
+  gap:.08rem;
+}
+.ticket .price .cur{
+  font-family:"Barlow Condensed",sans-serif; font-weight:600; font-size:1.1rem;
+  align-self:flex-start; margin-top:.16rem;
+}
+.ticket .price .n{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:2.9rem;
+  line-height:.86; letter-spacing:-.025em;
+}
+.ticket .was{
+  padding:.05rem .55rem 0; font-size:.8rem; color:var(--card-soft);
+}
+.ticket .was s{text-decoration-thickness:1px}
+/* The legally mandated unit line, small, and the tiebreaker. */
+.ticket .unit{
+  padding:.2rem .55rem .5rem; font-size:.82rem; font-weight:600;
+  color:var(--card-soft); border-top:1px solid var(--card-hair);
+  margin-top:.3rem;
+}
+.ticket.best .unit{color:var(--chain-deep)}
+.ticket .unit b{font-weight:700}
+
+/* The special flash, a second card laid over the ticket's corner. */
+.ticket .tag{
+  position:absolute; top:-5px; right:0; background:var(--flash);
+  color:var(--flash-ink); font-family:"Barlow Condensed",sans-serif;
+  font-weight:700; font-size:.74rem; letter-spacing:.08em;
+  text-transform:uppercase; padding:.12rem .38rem;
+  transform-origin:top right;
+}
+.ticket .tag.half{background:var(--half); color:#fff}
+
+/* The app's own mark, struck on the ticket rather than printed by the shop. */
+.ticket .stamp{
+  margin:0 .55rem .5rem; align-self:flex-start;
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:.72rem;
+  letter-spacing:.09em; text-transform:uppercase;
+  color:var(--stamp); box-shadow:inset 0 0 0 1.5px var(--stamp);
+  padding:.08rem .3rem; transform:rotate(-1.4deg); transform-origin:left center;
+}
+
+/* The cheaper ticket stands proud of its neighbour in the rail. */
+.ticket.proud{
+  transform:translateY(-10px);
+  box-shadow:0 8px 15px rgba(0,0,0,.22),0 2px 3px rgba(0,0,0,.15);
+}
+@media (hover:hover){
+  .ticket:hover{transform:translateY(-14px)}
+  .ticket.proud:hover{transform:translateY(-17px)}
+  .flash:hover{transform:translateY(-3px); box-shadow:0 6px 12px rgba(0,0,0,.24)}
+}
+/* Pressed tickets seat into the rail. */
+.ticket:active{transform:translateY(3px); box-shadow:0 0 0 rgba(0,0,0,0)}
+.ticket.proud:active{transform:translateY(-4px)}
+
+/* An empty slot: this chain does not stock the line. */
+.empty{
+  min-height:10.6rem; display:flex; align-items:flex-end; padding:.55rem;
+  border-top:5px solid var(--rail);
+  background-image:repeating-linear-gradient(45deg,
+    var(--rail) 0 1px,transparent 1px 6px);
+  font-family:"Barlow Condensed",sans-serif; font-weight:600; font-size:.82rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--ink);
+  opacity:.85;
+}
+/* A broken pin: the one state that is the reader's job to fix. */
+.fault{
+  min-height:10.6rem; display:flex; flex-direction:column;
+  justify-content:flex-end; gap:.2rem; padding:.55rem;
+  background:var(--card); border-top:5px solid var(--coles);
+  box-shadow:inset 0 0 0 2px var(--coles);
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:.82rem;
+  text-transform:uppercase; letter-spacing:.07em; color:var(--coles-deep);
+}
+.fault span{font-family:Barlow,sans-serif; font-weight:400; text-transform:none;
+            letter-spacing:0; color:var(--card-soft)}
+
+/* ---------- tally and footer ---------- */
+.tally{
+  margin:2.2rem 0 0; display:grid; grid-template-columns:1fr 1fr; gap:.45rem;
+}
+.tally div{
+  background:var(--card); color:var(--card-ink); padding:.5rem .6rem .6rem;
+  border-top:5px solid var(--chain);
+}
+.tally div[data-chain=woolworths]{--chain:var(--wool)}
+.tally div[data-chain=coles]{--chain:var(--coles)}
+.tally b{
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:2rem;
+  line-height:1; display:block;
+}
+.tally span{font-size:.82rem; color:var(--card-soft);
+            text-transform:uppercase; letter-spacing:.06em; font-weight:600}
+footer{
+  margin-top:1.4rem; padding-top:1rem; border-top:1px solid var(--rail);
+  color:var(--ink-soft); font-size:.84rem;
+}
+footer p{margin:.4rem 0; max-width:60ch}
+footer code{
+  font-family:ui-monospace,"Cascadia Mono",monospace; font-size:.8rem;
+  color:var(--ink); background:var(--aisle-deep); padding:.05rem .25rem;
+}
+
+/* ---------- motion: the aisle being set before opening ----------
+   Every effect below is layered onto the finished page above. The transitions
+   run out of @starting-style, so the seated, readable state is the element's
+   real state and a browser that runs none of this still shows the shop. */
+@media (prefers-reduced-motion:no-preference){
+  .ticket,.empty,.fault{
+    transition:
+      transform 420ms var(--ease) calc(var(--i,0)*var(--step)),
+      rotate 420ms var(--ease) calc(var(--i,0)*var(--step)),
+      box-shadow 420ms var(--ease) calc(var(--i,0)*var(--step));
+  }
+  /* Tickets are pushed into the rail channel, tilting as they seat. */
+  @starting-style{
+    .ticket,.empty,.fault{transform:translateX(-20px); rotate:-1.5deg}
+    .ticket.proud{transform:translateX(-20px) translateY(0)}
+  }
+  /* The cheaper ticket rises only after both are seated, so the reader sees
+     the comparison resolve rather than arriving already decided. */
+  .ticket.proud{
+    transition:
+      transform 520ms var(--ease) calc(var(--i,0)*var(--step) + 300ms),
+      rotate 420ms var(--ease) calc(var(--i,0)*var(--step)),
+      box-shadow 520ms var(--ease) calc(var(--i,0)*var(--step) + 300ms);
+  }
+  /* The flash turns over onto the ticket, as a second card laid on top. */
+  .ticket .tag{
+    transition:rotate 380ms var(--ease) calc(var(--i,0)*var(--step) + 420ms),
+               opacity 260ms var(--ease) calc(var(--i,0)*var(--step) + 420ms);
+  }
+  @starting-style{.ticket .tag{rotate:-16deg; opacity:0}}
+  /* The stamp is struck on afterwards. */
+  .ticket .stamp{
+    transition:transform 260ms var(--ease) calc(var(--i,0)*var(--step) + 560ms),
+               opacity 200ms linear calc(var(--i,0)*var(--step) + 560ms);
+  }
+  @starting-style{
+    .ticket .stamp{transform:rotate(-1.4deg) scale(1.5); opacity:0}
+  }
+  /* Focal moment: the lead flash ticket is stamped down on the board. */
+  .flash.lead{
+    transition:transform 520ms var(--ease) 60ms,
+               box-shadow 520ms var(--ease) 60ms;
+  }
+  @starting-style{
+    .flash.lead{transform:scale(1.07) translateY(-10px);
+                box-shadow:0 18px 30px rgba(0,0,0,.28)}
+  }
+  .board .rest .flash{
+    transition:transform 400ms var(--ease) calc(320ms + var(--j,0)*90ms);
+  }
+  @starting-style{.board .rest .flash{transform:translateY(-14px)}}
+  /* Bay signs light as the aisle is walked. Scroll-linked where supported,
+     and simply lit where not. */
+  @supports (animation-timeline:view()){
+    .bay{
+      animation:sign linear both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 70%;
+    }
+    @keyframes sign{
+      from{background:var(--rail); color:var(--ink); box-shadow:none}
+      to{background:var(--ink); color:var(--aisle);
+         box-shadow:0 2px 0 var(--rail-lip)}
+    }
+  }
+}
+</style></head><body><main><div class="masthead"><h1>Woolworths<br>against Coles</h1><p class="when"><span>Read <b>13 September 2026, 02:35am</b></span><span><b>13</b> of 38 prices on special</span></p></div><section class="board"><h2>Worth stocking up on</h2><p>Ranked by how unusual the price is over the last three months, not by the size of the discount.</p><a class="flash lead half" style="--j:0" href="https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706" rel="noreferrer"><span class="chain">Coles</span><span class="what">Coca-Cola Zero Sugar Bottle 1.25L</span><span class="row"><span class="now">$2.25</span><span class="was">$4.50</span><span class="cut">50% off</span></span><span class="rare">cheapest in 3 months</span></a><div class="rest"><a class="flash half" style="--j:1" href="https://www.woolworths.com.au/shop/productdetails/918708/oreo-cookie-top-ice-cream-cones" rel="noreferrer"><span class="chain">Woolworths</span><span class="what">Oreo Cookie Top Ice Cream Cones 400mL</span><span class="row"><span class="now">$6.25</span><span class="was">$12.50</span><span class="cut">50% off</span></span><span class="rare">cheapest in 3 months</span></a><a class="flash" style="--j:2" href="https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487" rel="noreferrer"><span class="chain">Coles</span><span class="what">Little Moons Golden Blond Chocolate Mochi Bites, 6 pack</span><span class="row"><span class="now">$7.70</span><span class="was">$11.00</span><span class="cut">30% off</span></span><span class="rare">cheapest in 3 months</span></a></div></section><div class="bay"><h2>Chips &amp; savoury snacks</h2><span class="count">4 on special</span></div><div class="bayrows"><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:1" href="https://www.woolworths.com.au/shop/productdetails/262796/harvest-snaps-baked-pea-crisps-salt-vinegar" rel="noreferrer"><span class="tag">Special</span><span class="chain">Woolworths</span><span class="name">Harvest Snaps Baked Pea Crisps Salt &amp; Vinegar <span class="size">120g</span></span><span class="price"><span class="cur">$</span><span class="n">4.00</span></span><span class="was">was <s>$5.00</s> · save $1.00</span><span class="unit">$3.33/100g · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:1" href="https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-120g-5994080" rel="noreferrer"><span class="chain">Coles</span><span class="name">Harvest Snaps Pea Salt &amp; Vinegar <span class="size">120g</span></span><span class="price"><span class="cur">$</span><span class="n">5.00</span></span><span class="unit">$4.17/100g</span></a></div></div><div class="pair"><div class="slots"><div class="empty" style="--i:2">Woolworths does not stock it</div><a class="ticket" data-chain="coles" style="--i:2" href="https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-230g-5996303" rel="noreferrer"><span class="tag">save $1.00</span><span class="chain">Coles</span><span class="name">Harvest Snaps Pea Salt &amp; Vinegar <span class="size">230g</span></span><span class="price"><span class="cur">$</span><span class="n">6.00</span></span><span class="was">was <s>$7.00</s> · save $1.00</span><span class="unit">$2.61/100g</span></a></div><p class="note">Woolworths stocks the 230g bag in Original Salted only</p></div><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:3" href="https://www.woolworths.com.au/shop/productdetails/781402/red-rock-deli-potato-chips-sea-salt-balsamic-vinegar" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Red Rock Deli Potato Chips Sea Salt &amp; Balsamic Vinegar <span class="size">165g</span></span><span class="price"><span class="cur">$</span><span class="n">6.00</span></span><span class="unit">$3.64/100g</span></a><a class="ticket proud best" data-chain="coles" style="--i:3" href="https://www.coles.com.au/product/red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171" rel="noreferrer"><span class="tag">save $1.25</span><span class="chain">Coles</span><span class="name">Red Rock Deli Sea Salt &amp; Bal Vinegar Potato Chips <span class="size">165g</span></span><span class="price"><span class="cur">$</span><span class="n">4.75</span></span><span class="was">was <s>$6.00</s> · save $1.25</span><span class="unit">$2.88/100g · <b>cheaper</b></span></a></div></div><div class="pair"><div class="slots"><div class="empty" style="--i:4">Woolworths does not stock it</div><a class="ticket" data-chain="coles" style="--i:4" href="https://www.coles.com.au/product/arnott&#x27;s-cracker-chips-balsamic-vinegar-and-sea-salt-150g-3449401" rel="noreferrer"><span class="tag">Any 2 $6</span><span class="chain">Coles</span><span class="name">Arnott&#x27;s Cracker Chips Balsamic Vinegar &amp; Sea Salt <span class="size">150g</span></span><span class="price"><span class="cur">$</span><span class="n">4.50</span></span><span class="unit">$3.00/100g</span></a></div><p class="note">Woolworths carries Cracker Chips in Honey Soy only</p></div><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:5" href="https://www.woolworths.com.au/shop/productdetails/6032521/kettle-ridge-cut-potato-chips-salt-vinegar" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Kettle Ridge Cut Potato Chips Salt &amp; Vinegar <span class="size">165g</span></span><span class="price"><span class="cur">$</span><span class="n">4.50</span></span><span class="unit">$2.73/100g · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:5" href="https://www.coles.com.au/product/kettle-ridge-cut-potato-chips-salt-and-vinegar-165g-1135050" rel="noreferrer"><span class="chain">Coles</span><span class="name">Kettle Ridge Cut Potato Chips Salt &amp; Vinegar <span class="size">165g</span></span><span class="price"><span class="cur">$</span><span class="n">6.00</span></span><span class="unit">$3.64/100g</span></a></div></div></div><div class="bay"><h2>Drinks</h2><span class="count">2 on special</span></div><div class="bayrows"><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:6" href="https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Coca-Cola Zero Sugar Soft Drink Bottle <span class="size">1.25L</span></span><span class="price"><span class="cur">$</span><span class="n">4.50</span></span><span class="unit">$0.36/100mL</span></a><a class="ticket proud best" data-chain="coles" style="--i:6" href="https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706" rel="noreferrer"><span class="tag half">1/2 Price</span><span class="chain">Coles</span><span class="name">Coca-Cola Zero Sugar Soft Drink Bottle <span class="size">1.25L</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">2.25</span></span><span class="was">was <s>$4.50</s> · save $2.25</span><span class="unit">$0.18/100mL · <b>cheaper</b></span></a></div></div><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:7" href="https://www.woolworths.com.au/shop/productdetails/42605/coca-cola-classic-soft-drink-cans" rel="noreferrer"><span class="tag">Special</span><span class="chain">Woolworths</span><span class="name">Coca-Cola Classic Soft Drink Cans <span class="size">375mL x 24 pack</span></span><span class="price"><span class="cur">$</span><span class="n">27.00</span></span><span class="was">was <s>$45.00</s> · save $18.00</span><span class="unit">$1.12 a can · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:7" href="https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777" rel="noreferrer"><span class="chain">Coles</span><span class="name">Coca-Cola Classic Soft Drink Multipack Cans 375ml <span class="size">24 Pack</span></span><span class="price"><span class="cur">$</span><span class="n">45.00</span></span><span class="unit">$1.88 a can</span></a></div></div><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:8" href="https://www.woolworths.com.au/shop/productdetails/84552/coca-cola-classic-soft-drink-cans" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Coca-Cola Classic Soft Drink Cans <span class="size">375mL x 30 pack</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">32.00</span></span><span class="unit">$1.07 a can</span></a><a class="ticket" data-chain="coles" style="--i:8" href="https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-30-pack-8464796" rel="noreferrer"><span class="chain">Coles</span><span class="name">Coca-Cola Classic Soft Drink Multipack Cans 375ml <span class="size">30 Pack</span></span><span class="price"><span class="cur">$</span><span class="n">32.00</span></span><span class="unit">$1.07 a can</span></a></div></div></div><div class="bay"><h2>Pantry &amp; sauces</h2><span class="count">2 on special</span></div><div class="bayrows"><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:9" href="https://www.woolworths.com.au/shop/productdetails/450687/leggo-s-bolognese-chunky-tomato-garlic-herbs-pasta-sauce" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Leggo&#x27;s Bolognese Chunky Tomato Garlic &amp; Herbs Pasta Sauce <span class="size">500g</span></span><span class="price"><span class="cur">$</span><span class="n">3.30</span></span><span class="unit">$0.66/100g</span></a><a class="ticket" data-chain="coles" style="--i:9" href="https://www.coles.com.au/product/leggos-bolognese-pasta-sauce-jar-550g-1824984" rel="noreferrer"><span class="tag">save $0.95</span><span class="chain">Coles</span><span class="name">Leggos Bolognese Pasta Sauce Jar <span class="size">550g</span></span><span class="stamp">16 days this cheap in 2 months</span><span class="price"><span class="cur">$</span><span class="n">3.65</span></span><span class="was">was <s>$4.60</s> · save $0.95</span><span class="unit">$0.66/100g</span></a></div><p class="note">Woolworths pack is 500g, Coles jar is 550g. Compare on price per 100g.</p></div><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:10" href="https://www.woolworths.com.au/shop/productdetails/311381/old-el-paso-taco-spice-mix-fiery-hot" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Old El Paso Taco Spice Mix Fiery Hot <span class="size">35g</span></span><span class="price"><span class="cur">$</span><span class="n">3.00</span></span><span class="unit">$8.57/100g</span></a><a class="ticket" data-chain="coles" style="--i:10" href="https://www.coles.com.au/product/old-el-paso-fiery-spice-mix-35g-6341660" rel="noreferrer"><span class="chain">Coles</span><span class="name">Old El Paso Fiery Spice Mix <span class="size">35g</span></span><span class="price"><span class="cur">$</span><span class="n">3.00</span></span><span class="unit">$8.57/100g</span></a></div></div><div class="pair"><div class="slots"><div class="empty" style="--i:11">Woolworths does not stock it</div><a class="ticket" data-chain="coles" style="--i:11" href="https://www.coles.com.au/product/herdez-habanero-hot-sauce-142g-1325758" rel="noreferrer"><span class="tag half">1/2 Price</span><span class="chain">Coles</span><span class="name">Herdez Habanero Hot Sauce <span class="size">142g</span></span><span class="stamp">cheapest in a month</span><span class="price"><span class="cur">$</span><span class="n">2.75</span></span><span class="was">was <s>$5.50</s> · save $2.75</span><span class="unit">$1.94/100g</span></a></div><p class="note">Not stocked by Woolworths</p></div></div><div class="bay"><h2>Mince</h2><span class="count">1 on special</span></div><div class="bayrows"><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:12" href="https://www.woolworths.com.au/shop/productdetails/239598/woolworths-pork-beef-mince" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Woolworths Pork &amp; Beef Mince <span class="size">500g</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">6.25</span></span><span class="unit">$12.50/kg · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:12" href="https://www.coles.com.au/product/coles-pork-and-beef-3-star-regular-mince-bolognese-500g-8782237" rel="noreferrer"><span class="chain">Coles</span><span class="name">Coles Pork &amp; Beef 3 Star Regular Mince Bolognese <span class="size">500g</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">6.50</span></span><span class="unit">$13.00/kg</span></a></div></div><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:13" href="https://www.woolworths.com.au/shop/productdetails/577863/woolworths-beef-mince" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Woolworths Beef Mince <span class="size">500g</span></span><span class="stamp">cheapest in a month</span><span class="price"><span class="cur">$</span><span class="n">8.00</span></span><span class="unit">$16.00/kg · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:13" href="https://www.coles.com.au/product/coles-no-added-hormone-beef-regular-mince-500g-9012814" rel="noreferrer"><span class="chain">Coles</span><span class="name">Coles No Added Hormone Beef Regular Mince <span class="size">500g</span></span><span class="price"><span class="cur">$</span><span class="n">8.50</span></span><span class="unit">$17.00/kg</span></a></div></div><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/577860/woolworths-heart-smart-extra-lean-beef-mince" rel="noreferrer"><span class="tag">Special</span><span class="chain">Woolworths</span><span class="name">Woolworths Heart Smart Extra Lean Beef Mince <span class="size">500g</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">10.00</span></span><span class="was">was <s>$10.50</s> · save $0.50</span><span class="unit">$20.00/kg · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:14" href="https://www.coles.com.au/product/coles-no-added-hormone-beef-extra-lean-mince-500g-8112799" rel="noreferrer"><span class="chain">Coles</span><span class="name">Coles No Added Hormone Beef Extra Lean Mince <span class="size">500g</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">10.50</span></span><span class="unit">$21.00/kg</span></a></div></div><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/582608/woolworths-lean-pork-mince" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Woolworths Lean Pork Mince <span class="size">500g</span></span><span class="price"><span class="cur">$</span><span class="n">7.50</span></span><span class="unit">$15.00/kg · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:14" href="https://www.coles.com.au/product/coles-5-star-extra-lean-pork-mince-500g-8781132" rel="noreferrer"><span class="chain">Coles</span><span class="name">Coles 5 Star Extra Lean Pork Mince <span class="size">500g</span></span><span class="price"><span class="cur">$</span><span class="n">8.00</span></span><span class="unit">$16.00/kg</span></a></div><p class="note">Coles equivalent is their 5 Star Extra Lean</p></div></div><div class="bay"><h2>Chicken</h2><span class="count">1 on special</span></div><div class="bayrows"><div class="pair"><div class="slots"><div class="empty" style="--i:14">Woolworths does not stock it</div><a class="ticket" data-chain="coles" style="--i:14" href="https://www.coles.com.au/product/coles-simply-rspca-approved-chicken-schnitzel-plain-crumb-1.2kg-2904193" rel="noreferrer"><span class="chain">Coles</span><span class="name">Coles Simply RSPCA Approved Chicken Schnitzel Plain Crumb <span class="size">1.2Kg</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">11.20</span></span><span class="unit">$9.33/kg</span></a></div><p class="note">Woolworths sells the bulk pack at 1.5kg only</p></div><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/134036/woolworths-chicken-bulk-schnitzels" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Woolworths Chicken Bulk Schnitzels <span class="size">1.5kg</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">14.00</span></span><span class="unit">$9.33/kg</span></a><div class="empty" style="--i:14">Coles does not stock it</div></div><p class="note">Coles sells the bulk pack at 1.2kg only</p></div><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/6043948/tegel-take-outs-korean-style-chicken" rel="noreferrer"><span class="tag">Special</span><span class="chain">Woolworths</span><span class="name">Tegel Take Outs Korean Style Chicken <span class="size">400g</span></span><span class="price"><span class="cur">$</span><span class="n">10.00</span></span><span class="was">was <s>$12.00</s> · save $2.00</span><span class="unit">$2.50/100g · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:14" href="https://www.coles.com.au/product/tegel-takeouts-korean-style-frozen-chicken-chunks-ruffle-with-sauce-400g-8954070" rel="noreferrer"><span class="chain">Coles</span><span class="name">Tegel Takeouts Korean Style Frozen Chicken Chunks Ruffle With Sauce <span class="size">400g</span></span><span class="price"><span class="cur">$</span><span class="n">12.00</span></span><span class="unit">$3.00/100g</span></a></div></div></div><div class="bay"><h2>Noodles</h2><span class="count">1 on special</span></div><div class="bayrows"><div class="pair"><div class="slots"><a class="ticket proud best" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/122658/otoki-jin-ramen-spicy-instant-noodles" rel="noreferrer"><span class="tag">Special</span><span class="chain">Woolworths</span><span class="name">Otoki Jin Ramen Spicy Instant Noodles <span class="size">120g x 5 pack</span></span><span class="stamp">cheapest in 2 months</span><span class="price"><span class="cur">$</span><span class="n">6.00</span></span><span class="was">was <s>$7.00</s> · save $1.00</span><span class="unit">$1.20 a pack · <b>cheaper</b></span></a><a class="ticket" data-chain="coles" style="--i:14" href="https://www.coles.com.au/product/otoki-jin-ramen-spicy-instant-noodles-5x120g-600g-4677412" rel="noreferrer"><span class="chain">Coles</span><span class="name">Otoki Jin Ramen Spicy Instant Noodles 5x120g <span class="size">600g</span></span><span class="price"><span class="cur">$</span><span class="n">7.00</span></span><span class="unit">$1.40 a pack</span></a></div></div><div class="pair"><div class="slots"><div class="empty" style="--i:14">Woolworths does not stock it</div><a class="ticket" data-chain="coles" style="--i:14" href="https://www.coles.com.au/product/samyang-buldak-spicy-fried-rice-carbonara-440g-1309831" rel="noreferrer"><span class="chain">Coles</span><span class="name">Samyang Buldak Spicy Fried Rice Carbonara <span class="size">440g</span></span><span class="price"><span class="cur">$</span><span class="n">12.50</span></span><span class="unit">$2.84/100g</span></a></div><p class="note">Not stocked by Woolworths</p></div></div><div class="bay"><h2>Frozen &amp; dessert</h2><span class="count">2 on special</span></div><div class="bayrows"><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/820796/woolworths-frozen-mango" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Woolworths Frozen Mango <span class="size">1kg</span></span><span class="price"><span class="cur">$</span><span class="n">9.80</span></span><span class="unit">$9.80/kg</span></a><div class="empty" style="--i:14">Coles does not stock it</div></div><p class="note">Coles own brand tops out at 500g</p></div><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/918708/oreo-cookie-top-ice-cream-cones" rel="noreferrer"><span class="tag half">Half price</span><span class="chain">Woolworths</span><span class="name">Oreo Cookie Top Ice Cream Cones <span class="size">400mL</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">6.25</span></span><span class="was">was <s>$12.50</s> · save $6.25</span><span class="unit">$1.56/100mL</span></a><div class="empty" style="--i:14">Coles does not stock it</div></div><p class="note">Coles carries Oreo Ice Cream Cones 475mL, a different product</p></div><div class="pair"><div class="slots"><a class="ticket" data-chain="woolworths" style="--i:14" href="https://www.woolworths.com.au/shop/productdetails/257574/little-moons-mochi-bites-golden-blond-chocolate" rel="noreferrer"><span class="chain">Woolworths</span><span class="name">Little Moons Mochi Bites Golden Blond Chocolate <span class="size">6 pack</span></span><span class="price"><span class="cur">$</span><span class="n">11.00</span></span><span class="unit">$1.83 each</span></a><a class="ticket proud best" data-chain="coles" style="--i:14" href="https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487" rel="noreferrer"><span class="tag">save $3.30</span><span class="chain">Coles</span><span class="name">Little Moons Golden Blond Chocolate Mochi Bites 6 Pack <span class="size">192g</span></span><span class="stamp">cheapest in 3 months</span><span class="price"><span class="cur">$</span><span class="n">7.70</span></span><span class="was">was <s>$11.00</s> · save $3.30</span><span class="unit">$1.28 each · <b>cheaper</b></span></a></div></div></div><div class="tally"><div data-chain="woolworths"><b>9</b><span>lines cheaper at Woolworths</span></div><div data-chain="coles"><b>3</b><span>lines cheaper at Coles</span></div></div><footer><p>23 tracked products. Standard shelf prices read from each chain's own listing. No Everyday Rewards or Flybuys member pricing, which neither chain publishes without signing in, and in-store prices may differ from online.</p><p>Cheaper is decided on price per unit, not the pack price, so a bigger pack can win while costing more.</p><p>Add a product with <code>python add_item.py</code> and the web address of that product at either shop.</p></footer></main></body></html>

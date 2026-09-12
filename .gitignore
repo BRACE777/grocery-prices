@@ -1,0 +1,18 @@
+# Downloaded price history, about 4MB, rebuilt on demand.
+cache/
+
+# Per-machine run state: cached Coles build id and last run time.
+state.json
+
+# Logs from the scheduled weekly run.
+logs/
+
+# Local agent tooling, not part of this project.
+.agents/
+.claude/
+.codex/
+.impeccable/mocks/
+
+__pycache__/
+*.pyc
+.impeccable/questions/
