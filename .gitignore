@@ -7,6 +7,9 @@ state.json
 # Logs from the scheduled weekly run.
 logs/
 
+# Review captures: 2.5MB of PNGs, regenerated on demand.
+.impeccable/review/
+
 # Local agent tooling, not part of this project.
 .agents/
 .claude/

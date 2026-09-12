@@ -84,7 +84,23 @@ tickets, including on prices the shop has not badged at all.
 | `add_item.py` | Add a product by pasting its address |
 | `docs/index.html` | The published page |
 | `docs/data.json` | The last fetch, as data |
+| `capture.mjs` | Screenshots the page at a real phone viewport |
+| `make_review_captures.py` | Builds the capture set, fixtures included |
 | `samples/` | Two visual directions that were not chosen |
+
+## Screenshotting the page
+
+    python make_review_captures.py
+
+Writes a set of captures to `.impeccable/review/`, including states the live
+data does not currently contain, such as a dead pin, which are rendered from
+fixtures derived from the real fetch and labelled as such.
+
+This goes through the DevTools protocol rather than Chrome's `--screenshot`
+flag, because `--window-size` clamps to a 500px minimum: asking for a 390px
+phone gives a 500px layout cropped to 390, which looks plausible and is wrong.
+Dark mode and reduced motion are emulated by the browser rather than by
+rewriting the page's own media queries.
 
 ## Data sources
 
