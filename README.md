@@ -30,9 +30,30 @@ that file's comments record what was true and how it was measured.
     python fetch_prices.py          fetch both chains and rebuild the page
     python fetch_prices.py --render rebuild the page from the last fetch
     run_weekly.cmd                  fetch, rebuild, commit and publish
+    run_weekly.cmd /ifstale         the same, but only when the page is stale
 
-A scheduled task runs `run_weekly.cmd` every Wednesday at 7am, and on the next
-wake if the machine was asleep.
+## How the schedule actually works
+
+The task fires **daily** at 7am and again five minutes after you log on, and
+passes `/ifstale`. The script then decides whether there is anything to do: it
+fetches only when the page predates the most recent Wednesday 7am, and exits in
+under a second otherwise.
+
+That indirection exists because the obvious approach did not work. The task was
+originally weekly with Windows' "run as soon as possible after a missed start"
+setting, which reads like it covers a machine asleep at 7am. It does not. On
+23 September the machine slept from 11:34pm Tuesday until 5:34pm Wednesday, and
+the scheduler silently dropped that run and moved the next one a week out,
+leaving the page a week stale.
+
+Firing daily and deciding in the script means no single missed occurrence
+matters: whichever day the machine is first awake after a Wednesday reset
+brings the page up to date, and every other run is free.
+
+If you want the page ready before you sit down, the task can be given
+permission to wake the machine at 7am, which works from sleep but not from a
+full shutdown. It is not set, because the machine here routinely sleeps
+overnight and waking it costs more than reading slightly later does.
 
 ## Adding a product
 

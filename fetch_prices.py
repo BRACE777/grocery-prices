@@ -37,6 +37,43 @@ MELBOURNE = zoneinfo.ZoneInfo("Australia/Melbourne")
 CHAINS = ("woolworths", "coles")
 
 
+# Specials reset on Wednesday, so "current" means fetched at or after the most
+# recent Wednesday 7am.
+RESET_WEEKDAY = 2  # Monday is 0
+RESET_HOUR = 7
+
+
+def last_reset(now: dt.datetime | None = None) -> dt.datetime:
+    """The most recent Wednesday 7am Melbourne time, at or before now."""
+    now = now or dt.datetime.now(MELBOURNE)
+    back = (now.weekday() - RESET_WEEKDAY) % 7
+    candidate = (now - dt.timedelta(days=back)).replace(
+        hour=RESET_HOUR, minute=0, second=0, microsecond=0
+    )
+    if candidate > now:
+        candidate -= dt.timedelta(days=7)
+    return candidate
+
+
+def is_current(now: dt.datetime | None = None) -> bool:
+    """Has the page already been built since the last specials reset?
+
+    The scheduled task runs daily and leans on this rather than on Windows
+    remembering a missed trigger, which it does not do reliably: a run missed
+    because the machine was asleep at 7am was silently dropped and the next run
+    moved a week out. Deciding here means any day the machine is awake after a
+    reset brings the page up to date, and every other run costs nothing.
+    """
+    if not DATA.exists():
+        return False
+    try:
+        payload = json.loads(DATA.read_text(encoding="utf-8"))
+        built = dt.datetime.fromisoformat(payload["generatedAt"])
+    except (OSError, json.JSONDecodeError, KeyError, ValueError):
+        return False
+    return built >= last_reset(now)
+
+
 def load_config() -> dict:
     with CONFIG.open(encoding="utf-8") as handle:
         return json.load(handle)
@@ -265,7 +302,15 @@ def main() -> int:
                         help="rebuild the page from the last saved fetch")
     parser.add_argument("--coles-build-id", default="", metavar="ID",
                         help="override the cached Coles build id (see README)")
+    parser.add_argument("--if-stale", action="store_true",
+                        help="do nothing if the page is newer than the last "
+                             "Wednesday reset; used by the scheduled task")
     args = parser.parse_args()
+
+    if args.if_stale and not args.render and is_current():
+        built = json.loads(DATA.read_text(encoding="utf-8"))["generatedLabel"]
+        print(f"Already current: read {built}. Nothing to do.")
+        return 0
 
     SITE.mkdir(exist_ok=True)
 
