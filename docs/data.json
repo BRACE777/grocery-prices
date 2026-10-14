@@ -1,14 +1,53 @@
 {
- "colesBuildId": "20261002.2-a0721ca944717e48c9d4d45d3db1411f8b6e1602",
+ "colesBuildId": "20261006.3-3bfa915f689e9684df4998d8526cb1a667bea56f",
  "historyProblem": "",
  "stockUp": [
   {
-   "title": "Coca-Cola Zero Sugar Bottle 1.25L",
-   "category": "drinks",
+   "title": "Harvest Snaps Pea Crisps Salt & Vinegar 120g",
+   "category": "snacks",
    "chain": "coles",
    "offer": {
     "chain": "coles",
-    "productId": "2993706",
+    "productId": "5994080",
+    "name": "Harvest Snaps Pea Salt & Vinegar",
+    "size": "120g",
+    "price": 2.5,
+    "wasPrice": 5.0,
+    "unitPrice": 2.08,
+    "unitMeasure": "100g",
+    "onSpecial": true,
+    "specialLabel": "1/2 Price",
+    "available": true,
+    "url": "https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-120g-5994080",
+    "slug": "harvest-snaps-pea-salt-and-vinegar-120g-5994080",
+    "error": "",
+    "saving": 2.5,
+    "savingPercent": 50,
+    "comparablePrice": 2.08,
+    "comparableLabel": "/100g",
+    "rarity": {
+     "days_at_or_below": 0,
+     "window_days": 4,
+     "share": 0.0,
+     "base": 5.0,
+     "depth": 0.5,
+     "is_low": true,
+     "spells": 1
+    },
+    "notable": true,
+    "rarityPhrase": "first time this cheap in a month",
+    "notability": 0.675
+   },
+   "notability": 0.675,
+   "phrase": "first time this cheap in a month"
+  },
+  {
+   "title": "Coca-Cola Zero Sugar Bottle 1.25L",
+   "category": "drinks",
+   "chain": "woolworths",
+   "offer": {
+    "chain": "woolworths",
+    "productId": "623034",
     "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
     "size": "1.25L",
     "price": 2.25,
@@ -16,69 +55,30 @@
     "unitPrice": 1.8,
     "unitMeasure": "1L",
     "onSpecial": true,
-    "specialLabel": "1/2 Price",
+    "specialLabel": "Half price",
     "available": true,
-    "url": "https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
-    "slug": "coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
+    "url": "https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle",
+    "slug": "",
     "error": "",
     "saving": 2.25,
     "savingPercent": 50,
     "comparablePrice": 0.18,
     "comparableLabel": "/100mL",
     "rarity": {
-     "days_at_or_below": 15,
+     "days_at_or_below": 21,
      "window_days": 90,
-     "share": 0.1667,
+     "share": 0.2333,
      "base": 4.5,
      "depth": 0.5,
-     "is_low": true,
-     "spells": 2
-    },
-    "notable": true,
-    "rarityPhrase": "back to its 3-month low",
-    "notability": 0.468713
-   },
-   "notability": 0.468713,
-   "phrase": "back to its 3-month low"
-  },
-  {
-   "title": "Red Rock Deli Sea Salt & Balsamic Vinegar Chips 165g",
-   "category": "snacks",
-   "chain": "woolworths",
-   "offer": {
-    "chain": "woolworths",
-    "productId": "781402",
-    "name": "Red Rock Deli Potato Chips Sea Salt & Balsamic Vinegar",
-    "size": "165g",
-    "price": 3.6,
-    "wasPrice": 6.0,
-    "unitPrice": 2.18,
-    "unitMeasure": "100G",
-    "onSpecial": true,
-    "specialLabel": "Special",
-    "available": true,
-    "url": "https://www.woolworths.com.au/shop/productdetails/781402/red-rock-deli-potato-chips-sea-salt-balsamic-vinegar",
-    "slug": "",
-    "error": "",
-    "saving": 2.4,
-    "savingPercent": 40,
-    "comparablePrice": 2.18,
-    "comparableLabel": "/100g",
-    "rarity": {
-     "days_at_or_below": 19,
-     "window_days": 90,
-     "share": 0.2111,
-     "base": 6.0,
-     "depth": 0.4,
      "is_low": false,
-     "spells": 3
+     "spells": 4
     },
     "notable": true,
-    "rarityPhrase": "19 days this cheap in 3 months",
-    "notability": 0.248945
+    "rarityPhrase": "21 days this cheap in 3 months",
+    "notability": 0.293914
    },
-   "notability": 0.248945,
-   "phrase": "19 days this cheap in 3 months"
+   "notability": 0.293914,
+   "phrase": "21 days this cheap in 3 months"
   },
   {
    "title": "Beef Mince Extra Lean 500g",
@@ -104,24 +104,24 @@
     "comparablePrice": 19.6,
     "comparableLabel": "/kg",
     "rarity": {
-     "days_at_or_below": 7,
+     "days_at_or_below": 14,
      "window_days": 90,
-     "share": 0.0778,
+     "share": 0.1556,
      "base": 12.0,
      "depth": 0.1833,
      "is_low": true,
      "spells": 1
     },
     "notable": true,
-    "rarityPhrase": "cheapest in 3 months",
-    "notability": 0.210449
+    "rarityPhrase": "back to its 3-month low",
+    "notability": 0.176438
    },
-   "notability": 0.210449,
-   "phrase": "cheapest in 3 months"
+   "notability": 0.176438,
+   "phrase": "back to its 3-month low"
   }
  ],
- "generatedAt": "2026-10-07T20:40+11:00",
- "generatedLabel": "7 October 2026, 08:40pm",
+ "generatedAt": "2026-10-14T14:49+11:00",
+ "generatedLabel": "14 October 2026, 02:49pm",
  "categories": [
   {
    "id": "snacks",
@@ -164,47 +164,15 @@
      "productId": "262796",
      "name": "Harvest Snaps Baked Pea Crisps Salt & Vinegar",
      "size": "120g",
-     "price": 4.0,
-     "wasPrice": 5.0,
-     "unitPrice": 3.33,
-     "unitMeasure": "100G",
-     "onSpecial": true,
-     "specialLabel": "Special",
-     "available": true,
-     "url": "https://www.woolworths.com.au/shop/productdetails/262796/harvest-snaps-baked-pea-crisps-salt-vinegar",
-     "slug": "",
-     "error": "",
-     "saving": 1.0,
-     "savingPercent": 20,
-     "comparablePrice": 3.33,
-     "comparableLabel": "/100g",
-     "rarity": {
-      "days_at_or_below": 45,
-      "window_days": 90,
-      "share": 0.5,
-      "base": 5.0,
-      "depth": 0.2,
-      "is_low": false,
-      "spells": 6
-     },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.05
-    },
-    "coles": {
-     "chain": "coles",
-     "productId": "5994080",
-     "name": "Harvest Snaps Pea Salt & Vinegar",
-     "size": "120g",
      "price": 5.0,
      "wasPrice": null,
      "unitPrice": 4.17,
-     "unitMeasure": "100g",
+     "unitMeasure": "100G",
      "onSpecial": false,
      "specialLabel": "",
      "available": true,
-     "url": "https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-120g-5994080",
-     "slug": "harvest-snaps-pea-salt-and-vinegar-120g-5994080",
+     "url": "https://www.woolworths.com.au/shop/productdetails/262796/harvest-snaps-baked-pea-crisps-salt-vinegar",
+     "slug": "",
      "error": "",
      "saving": null,
      "savingPercent": null,
@@ -222,9 +190,41 @@
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "5994080",
+     "name": "Harvest Snaps Pea Salt & Vinegar",
+     "size": "120g",
+     "price": 2.5,
+     "wasPrice": 5.0,
+     "unitPrice": 2.08,
+     "unitMeasure": "100g",
+     "onSpecial": true,
+     "specialLabel": "1/2 Price",
+     "available": true,
+     "url": "https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-120g-5994080",
+     "slug": "harvest-snaps-pea-salt-and-vinegar-120g-5994080",
+     "error": "",
+     "saving": 2.5,
+     "savingPercent": 50,
+     "comparablePrice": 2.08,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 0,
+      "window_days": 4,
+      "share": 0.0,
+      "base": 5.0,
+      "depth": 0.5,
+      "is_low": true,
+      "spells": 1
+     },
+     "notable": true,
+     "rarityPhrase": "first time this cheap in a month",
+     "notability": 0.675
     }
    },
-   "winner": "woolworths"
+   "winner": "coles"
   },
   {
    "title": "Harvest Snaps Pea Crisps Salt & Vinegar 230g",
@@ -251,18 +251,10 @@
      "savingPercent": null,
      "comparablePrice": 2.48,
      "comparableLabel": "/100g",
-     "rarity": {
-      "days_at_or_below": 21,
-      "window_days": 90,
-      "share": 0.2333,
-      "base": 7.0,
-      "depth": 0.1857,
-      "is_low": false,
-      "spells": 2
-     },
-     "notable": true,
-     "rarityPhrase": "21 days this cheap in 3 months",
-     "notability": 0.10916
+     "rarity": null,
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
     }
    },
    "winner": null
@@ -278,67 +270,67 @@
      "productId": "781402",
      "name": "Red Rock Deli Potato Chips Sea Salt & Balsamic Vinegar",
      "size": "165g",
-     "price": 3.6,
-     "wasPrice": 6.0,
-     "unitPrice": 2.18,
+     "price": 6.0,
+     "wasPrice": null,
+     "unitPrice": 3.64,
      "unitMeasure": "100G",
-     "onSpecial": true,
-     "specialLabel": "Special",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/781402/red-rock-deli-potato-chips-sea-salt-balsamic-vinegar",
      "slug": "",
      "error": "",
-     "saving": 2.4,
-     "savingPercent": 40,
-     "comparablePrice": 2.18,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 3.64,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 19,
+      "days_at_or_below": 90,
       "window_days": 90,
-      "share": 0.2111,
+      "share": 1.0,
       "base": 6.0,
-      "depth": 0.4,
+      "depth": 0.0,
       "is_low": false,
-      "spells": 3
+      "spells": 1
      },
-     "notable": true,
-     "rarityPhrase": "19 days this cheap in 3 months",
-     "notability": 0.248945
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
      "productId": "1786171",
      "name": "Red Rock Deli Sea Salt & Bal Vinegar Potato Chips",
      "size": "165g",
-     "price": 4.75,
-     "wasPrice": 6.0,
-     "unitPrice": 2.88,
+     "price": 6.0,
+     "wasPrice": null,
+     "unitPrice": 3.64,
      "unitMeasure": "100g",
      "onSpecial": true,
-     "specialLabel": "save $1.25",
+     "specialLabel": "Any 2 $8",
      "available": true,
      "url": "https://www.coles.com.au/product/red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171",
      "slug": "red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171",
      "error": "",
-     "saving": 1.25,
-     "savingPercent": 21,
-     "comparablePrice": 2.88,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 3.64,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 34,
+      "days_at_or_below": 90,
       "window_days": 90,
-      "share": 0.3778,
+      "share": 1.0,
       "base": 6.0,
-      "depth": 0.2083,
+      "depth": 0.0,
       "is_low": false,
-      "spells": 5
+      "spells": 1
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.08064
+     "notability": 0.0
     }
    },
-   "winner": "woolworths"
+   "winner": null
   },
   {
    "title": "Arnott's Cracker Chips Balsamic Vinegar & Sea Salt 150g",
@@ -351,19 +343,19 @@
      "productId": "3449401",
      "name": "Arnott's Cracker Chips Balsamic Vinegar & Sea Salt",
      "size": "150g",
-     "price": 4.5,
-     "wasPrice": null,
-     "unitPrice": 3.0,
+     "price": 3.5,
+     "wasPrice": 4.5,
+     "unitPrice": 2.33,
      "unitMeasure": "100g",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "save $1.00",
      "available": true,
      "url": "https://www.coles.com.au/product/arnott's-cracker-chips-balsamic-vinegar-and-sea-salt-150g-3449401",
      "slug": "arnott's-cracker-chips-balsamic-vinegar-and-sea-salt-150g-3449401",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 3.0,
+     "saving": 1.0,
+     "savingPercent": 22,
+     "comparablePrice": 2.33,
      "comparableLabel": "/100g",
      "rarity": null,
      "notable": false,
@@ -399,9 +391,9 @@
      "comparablePrice": 2.73,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 56,
+      "days_at_or_below": 63,
       "window_days": 90,
-      "share": 0.6222,
+      "share": 0.7,
       "base": 6.0,
       "depth": 0.25,
       "is_low": false,
@@ -409,42 +401,34 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.035683
+     "notability": 0.0225
     },
     "coles": {
      "chain": "coles",
      "productId": "1135050",
      "name": "Kettle Ridge Cut Potato Chips Salt & Vinegar",
      "size": "165g",
-     "price": 6.0,
-     "wasPrice": null,
-     "unitPrice": 3.64,
+     "price": 3.0,
+     "wasPrice": 6.0,
+     "unitPrice": 1.82,
      "unitMeasure": "100g",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "1/2 Price",
      "available": true,
      "url": "https://www.coles.com.au/product/kettle-ridge-cut-potato-chips-salt-and-vinegar-165g-1135050",
      "slug": "kettle-ridge-cut-potato-chips-salt-and-vinegar-165g-1135050",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 3.64,
+     "saving": 3.0,
+     "savingPercent": 50,
+     "comparablePrice": 1.82,
      "comparableLabel": "/100g",
-     "rarity": {
-      "days_at_or_below": 33,
-      "window_days": 33,
-      "share": 1.0,
-      "base": 6.0,
-      "depth": 0.0,
-      "is_low": false,
-      "spells": 1
-     },
+     "rarity": null,
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
     }
    },
-   "winner": "woolworths"
+   "winner": "coles"
   },
   {
    "title": "Coca-Cola Zero Sugar Bottle 1.25L",
@@ -457,15 +441,47 @@
      "productId": "623034",
      "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
      "size": "1.25L",
+     "price": 2.25,
+     "wasPrice": 4.5,
+     "unitPrice": 1.8,
+     "unitMeasure": "1L",
+     "onSpecial": true,
+     "specialLabel": "Half price",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle",
+     "slug": "",
+     "error": "",
+     "saving": 2.25,
+     "savingPercent": 50,
+     "comparablePrice": 0.18,
+     "comparableLabel": "/100mL",
+     "rarity": {
+      "days_at_or_below": 21,
+      "window_days": 90,
+      "share": 0.2333,
+      "base": 4.5,
+      "depth": 0.5,
+      "is_low": false,
+      "spells": 4
+     },
+     "notable": true,
+     "rarityPhrase": "21 days this cheap in 3 months",
+     "notability": 0.293914
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "2993706",
+     "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
+     "size": "1.25L",
      "price": 4.5,
      "wasPrice": null,
      "unitPrice": 3.6,
      "unitMeasure": "1L",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "Any 2 $6.40",
      "available": true,
-     "url": "https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle",
-     "slug": "",
+     "url": "https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
+     "slug": "coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
      "error": "",
      "saving": null,
      "savingPercent": null,
@@ -483,41 +499,9 @@
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
-    },
-    "coles": {
-     "chain": "coles",
-     "productId": "2993706",
-     "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
-     "size": "1.25L",
-     "price": 2.25,
-     "wasPrice": 4.5,
-     "unitPrice": 1.8,
-     "unitMeasure": "1L",
-     "onSpecial": true,
-     "specialLabel": "1/2 Price",
-     "available": true,
-     "url": "https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
-     "slug": "coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
-     "error": "",
-     "saving": 2.25,
-     "savingPercent": 50,
-     "comparablePrice": 0.18,
-     "comparableLabel": "/100mL",
-     "rarity": {
-      "days_at_or_below": 15,
-      "window_days": 90,
-      "share": 0.1667,
-      "base": 4.5,
-      "depth": 0.5,
-      "is_low": true,
-      "spells": 2
-     },
-     "notable": true,
-     "rarityPhrase": "back to its 3-month low",
-     "notability": 0.468713
     }
    },
-   "winner": "coles"
+   "winner": "woolworths"
   },
   {
    "title": "Coca-Cola Classic Cans 375ml, 24 pack",
@@ -530,38 +514,6 @@
      "productId": "42605",
      "name": "Coca-Cola Classic Soft Drink Cans",
      "size": "375mL x 24 pack",
-     "price": 27.0,
-     "wasPrice": 45.0,
-     "unitPrice": 3.0,
-     "unitMeasure": "1L",
-     "onSpecial": true,
-     "specialLabel": "Special",
-     "available": true,
-     "url": "https://www.woolworths.com.au/shop/productdetails/42605/coca-cola-classic-soft-drink-cans",
-     "slug": "",
-     "error": "",
-     "saving": 18.0,
-     "savingPercent": 40,
-     "comparablePrice": 1.12,
-     "comparableLabel": " a can",
-     "rarity": {
-      "days_at_or_below": 44,
-      "window_days": 90,
-      "share": 0.4889,
-      "base": 45.0,
-      "depth": 0.4,
-      "is_low": false,
-      "spells": 7
-     },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.104489
-    },
-    "coles": {
-     "chain": "coles",
-     "productId": "7365777",
-     "name": "Coca-Cola Classic Soft Drink Multipack Cans 375ml",
-     "size": "24 Pack",
      "price": 45.0,
      "wasPrice": null,
      "unitPrice": 5.0,
@@ -569,8 +521,8 @@
      "onSpecial": false,
      "specialLabel": "",
      "available": true,
-     "url": "https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
-     "slug": "coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
+     "url": "https://www.woolworths.com.au/shop/productdetails/42605/coca-cola-classic-soft-drink-cans",
+     "slug": "",
      "error": "",
      "saving": null,
      "savingPercent": null,
@@ -588,9 +540,41 @@
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "7365777",
+     "name": "Coca-Cola Classic Soft Drink Multipack Cans 375ml",
+     "size": "24 Pack",
+     "price": 27.0,
+     "wasPrice": 45.0,
+     "unitPrice": 3.0,
+     "unitMeasure": "1L",
+     "onSpecial": true,
+     "specialLabel": "40% Off",
+     "available": true,
+     "url": "https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
+     "slug": "coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
+     "error": "",
+     "saving": 18.0,
+     "savingPercent": 40,
+     "comparablePrice": 1.12,
+     "comparableLabel": " a can",
+     "rarity": {
+      "days_at_or_below": 35,
+      "window_days": 90,
+      "share": 0.3889,
+      "base": 45.0,
+      "depth": 0.4,
+      "is_low": false,
+      "spells": 6
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.149377
     }
    },
-   "winner": "woolworths"
+   "winner": "coles"
   },
   {
    "title": "Coca-Cola Classic Cans 375ml, 30 pack",
@@ -700,35 +684,35 @@
      "productId": "1824984",
      "name": "Leggos Bolognese Pasta Sauce Jar",
      "size": "550g",
-     "price": 3.65,
-     "wasPrice": 4.6,
-     "unitPrice": 0.66,
+     "price": 4.6,
+     "wasPrice": null,
+     "unitPrice": 0.84,
      "unitMeasure": "100g",
-     "onSpecial": true,
-     "specialLabel": "save $0.95",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
      "url": "https://www.coles.com.au/product/leggos-bolognese-pasta-sauce-jar-550g-1824984",
      "slug": "leggos-bolognese-pasta-sauce-jar-550g-1824984",
      "error": "",
-     "saving": 0.95,
-     "savingPercent": 21,
-     "comparablePrice": 0.66,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 0.84,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 27,
+      "days_at_or_below": 90,
       "window_days": 90,
-      "share": 0.3,
+      "share": 1.0,
       "base": 4.6,
-      "depth": 0.2065,
+      "depth": 0.0,
       "is_low": false,
-      "spells": 3
+      "spells": 1
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.101185
+     "notability": 0.0
     }
    },
-   "winner": null
+   "winner": "woolworths"
   },
   {
    "title": "Old El Paso Fiery Spice Mix 35g",
@@ -741,32 +725,32 @@
      "productId": "311381",
      "name": "Old El Paso Taco Spice Mix Fiery Hot",
      "size": "35g",
-     "price": 2.5,
-     "wasPrice": 3.0,
-     "unitPrice": 7.14,
+     "price": 3.0,
+     "wasPrice": null,
+     "unitPrice": 8.57,
      "unitMeasure": "100G",
-     "onSpecial": true,
-     "specialLabel": "Special",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/311381/old-el-paso-taco-spice-mix-fiery-hot",
      "slug": "",
      "error": "",
-     "saving": 0.5,
-     "savingPercent": 17,
-     "comparablePrice": 7.14,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 8.57,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 6,
+      "days_at_or_below": 90,
       "window_days": 90,
-      "share": 0.0667,
+      "share": 1.0,
       "base": 3.0,
-      "depth": 0.1667,
-      "is_low": true,
+      "depth": 0.0,
+      "is_low": false,
       "spells": 1
      },
-     "notable": true,
-     "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.196025
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
@@ -788,9 +772,9 @@
      "comparablePrice": 7.14,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 14,
+      "days_at_or_below": 21,
       "window_days": 90,
-      "share": 0.1556,
+      "share": 0.2333,
       "base": 3.0,
       "depth": 0.1667,
       "is_low": true,
@@ -798,10 +782,10 @@
      },
      "notable": true,
      "rarityPhrase": "back to its 3-month low",
-     "notability": 0.16046
+     "notability": 0.132288
     }
    },
-   "winner": null
+   "winner": "coles"
   },
   {
    "title": "Herdez Habanero Hot Sauce 142g",
@@ -862,9 +846,9 @@
      "comparablePrice": 12.5,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 42,
+      "days_at_or_below": 49,
       "window_days": 90,
-      "share": 0.4667,
+      "share": 0.5444,
       "base": 7.0,
       "depth": 0.1071,
       "is_low": true,
@@ -872,7 +856,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.041121
+     "notability": 0.030012
     },
     "coles": {
      "chain": "coles",
@@ -894,9 +878,9 @@
      "comparablePrice": 12.5,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 20,
+      "days_at_or_below": 27,
       "window_days": 90,
-      "share": 0.2222,
+      "share": 0.3,
       "base": 7.0,
       "depth": 0.1071,
       "is_low": true,
@@ -904,7 +888,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.08747
+     "notability": 0.070847
     }
    },
    "winner": null
@@ -935,9 +919,9 @@
      "comparablePrice": 15.4,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 14,
-      "window_days": 67,
-      "share": 0.209,
+      "days_at_or_below": 21,
+      "window_days": 74,
+      "share": 0.2838,
       "base": 9.0,
       "depth": 0.1444,
       "is_low": false,
@@ -945,7 +929,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.090348
+     "notability": 0.074069
     },
     "coles": {
      "chain": "coles",
@@ -967,9 +951,9 @@
      "comparablePrice": 15.4,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 14,
+      "days_at_or_below": 21,
       "window_days": 90,
-      "share": 0.1556,
+      "share": 0.2333,
       "base": 9.0,
       "depth": 0.1444,
       "is_low": false,
@@ -977,7 +961,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.102959
+     "notability": 0.084882
     }
    },
    "winner": null
@@ -999,7 +983,7 @@
      "unitMeasure": "1KG",
      "onSpecial": true,
      "specialLabel": "Special",
-     "available": false,
+     "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/577860/woolworths-heart-smart-extra-lean-beef-mince",
      "slug": "",
      "error": "",
@@ -1008,9 +992,9 @@
      "comparablePrice": 19.6,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 14,
+      "days_at_or_below": 21,
       "window_days": 90,
-      "share": 0.1556,
+      "share": 0.2333,
       "base": 12.0,
       "depth": 0.1833,
       "is_low": true,
@@ -1018,7 +1002,7 @@
      },
      "notable": true,
      "rarityPhrase": "back to its 3-month low",
-     "notability": 0.176438
+     "notability": 0.145461
     },
     "coles": {
      "chain": "coles",
@@ -1040,17 +1024,17 @@
      "comparablePrice": 19.6,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 7,
+      "days_at_or_below": 14,
       "window_days": 90,
-      "share": 0.0778,
+      "share": 0.1556,
       "base": 12.0,
       "depth": 0.1833,
       "is_low": true,
       "spells": 1
      },
      "notable": true,
-     "rarityPhrase": "cheapest in 3 months",
-     "notability": 0.210449
+     "rarityPhrase": "back to its 3-month low",
+     "notability": 0.176438
     }
    },
    "winner": null
@@ -1154,9 +1138,9 @@
      "comparablePrice": 9.33,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 28,
+      "days_at_or_below": 35,
       "window_days": 90,
-      "share": 0.3111,
+      "share": 0.3889,
       "base": 11.95,
       "depth": 0.0628,
       "is_low": true,
@@ -1164,7 +1148,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.040235
+     "notability": 0.031661
     }
    },
    "winner": null
@@ -1195,9 +1179,9 @@
      "comparablePrice": 9.33,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 42,
+      "days_at_or_below": 49,
       "window_days": 90,
-      "share": 0.4667,
+      "share": 0.5444,
       "base": 15.5,
       "depth": 0.0968,
       "is_low": true,
@@ -1205,7 +1189,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.037167
+     "notability": 0.027125
     }
    },
    "winner": null
@@ -1235,15 +1219,7 @@
      "savingPercent": null,
      "comparablePrice": 3.0,
      "comparableLabel": "/100g",
-     "rarity": {
-      "days_at_or_below": 90,
-      "window_days": 90,
-      "share": 1.0,
-      "base": 12.0,
-      "depth": 0.0,
-      "is_low": false,
-      "spells": 1
-     },
+     "rarity": null,
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
@@ -1253,35 +1229,35 @@
      "productId": "8954070",
      "name": "Tegel Takeouts Korean Style Frozen Chicken Chunks Ruffle With Sauce",
      "size": "400g",
-     "price": 12.0,
-     "wasPrice": null,
-     "unitPrice": 30.0,
+     "price": 10.0,
+     "wasPrice": 12.0,
+     "unitPrice": 25.0,
      "unitMeasure": "1kg",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "save $2.00",
      "available": true,
      "url": "https://www.coles.com.au/product/tegel-takeouts-korean-style-frozen-chicken-chunks-ruffle-with-sauce-400g-8954070",
      "slug": "tegel-takeouts-korean-style-frozen-chicken-chunks-ruffle-with-sauce-400g-8954070",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 3.0,
+     "saving": 2.0,
+     "savingPercent": 17,
+     "comparablePrice": 2.5,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 90,
+      "days_at_or_below": 28,
       "window_days": 90,
-      "share": 1.0,
+      "share": 0.3111,
       "base": 12.0,
-      "depth": 0.0,
+      "depth": 0.1667,
       "is_low": false,
-      "spells": 1
+      "spells": 5
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.0
+     "notability": 0.079113
     }
    },
-   "winner": null
+   "winner": "coles"
   },
   {
    "title": "Jin Ramen Spicy, 5 pack",
@@ -1294,32 +1270,32 @@
      "productId": "122658",
      "name": "Otoki Jin Ramen Spicy Instant Noodles",
      "size": "120g x 5 pack",
-     "price": 6.0,
-     "wasPrice": 7.0,
-     "unitPrice": 1.0,
+     "price": 7.0,
+     "wasPrice": null,
+     "unitPrice": 1.17,
      "unitMeasure": "100G",
-     "onSpecial": true,
-     "specialLabel": "Special",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/122658/otoki-jin-ramen-spicy-instant-noodles",
      "slug": "",
      "error": "",
-     "saving": 1.0,
-     "savingPercent": 14,
-     "comparablePrice": 1.2,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 1.4,
      "comparableLabel": " a pack",
      "rarity": {
-      "days_at_or_below": 19,
+      "days_at_or_below": 90,
       "window_days": 90,
-      "share": 0.2111,
+      "share": 1.0,
       "base": 7.0,
-      "depth": 0.1429,
-      "is_low": true,
-      "spells": 3
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.120063
+     "notability": 0.0
     },
     "coles": {
      "chain": "coles",
@@ -1340,21 +1316,13 @@
      "savingPercent": null,
      "comparablePrice": 1.4,
      "comparableLabel": " a pack",
-     "rarity": {
-      "days_at_or_below": 90,
-      "window_days": 90,
-      "share": 1.0,
-      "base": 7.0,
-      "depth": 0.0,
-      "is_low": false,
-      "spells": 1
-     },
+     "rarity": null,
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
     }
    },
-   "winner": "woolworths"
+   "winner": null
   },
   {
    "title": "Samyang Buldak Spicy Fried Rice Carbonara 440g",
@@ -1367,19 +1335,19 @@
      "productId": "1309831",
      "name": "Samyang Buldak Spicy Fried Rice Carbonara",
      "size": "440g",
-     "price": 12.5,
-     "wasPrice": null,
-     "unitPrice": 2.84,
+     "price": 8.5,
+     "wasPrice": 12.5,
+     "unitPrice": 1.93,
      "unitMeasure": "100g",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "save $4.00",
      "available": true,
      "url": "https://www.coles.com.au/product/samyang-buldak-spicy-fried-rice-carbonara-440g-1309831",
      "slug": "samyang-buldak-spicy-fried-rice-carbonara-440g-1309831",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 2.84,
+     "saving": 4.0,
+     "savingPercent": 32,
+     "comparablePrice": 1.93,
      "comparableLabel": "/100g",
      "rarity": null,
      "notable": false,
@@ -1414,15 +1382,7 @@
      "savingPercent": null,
      "comparablePrice": 9.8,
      "comparableLabel": "/kg",
-     "rarity": {
-      "days_at_or_below": 90,
-      "window_days": 90,
-      "share": 1.0,
-      "base": 9.8,
-      "depth": 0.0,
-      "is_low": true,
-      "spells": 1
-     },
+     "rarity": null,
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
@@ -1514,27 +1474,35 @@
      "productId": "8400487",
      "name": "Little Moons Golden Blond Chocolate Mochi Bites 6 Pack",
      "size": "192g",
-     "price": 7.7,
-     "wasPrice": 11.0,
-     "unitPrice": 4.01,
+     "price": 11.0,
+     "wasPrice": null,
+     "unitPrice": 5.73,
      "unitMeasure": "100g",
-     "onSpecial": true,
-     "specialLabel": "save $3.30",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
      "url": "https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
      "slug": "little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
      "error": "",
-     "saving": 3.3,
-     "savingPercent": 30,
-     "comparablePrice": 1.28,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 1.83,
      "comparableLabel": " each",
-     "rarity": null,
+     "rarity": {
+      "days_at_or_below": 6,
+      "window_days": 6,
+      "share": 1.0,
+      "base": 11.0,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
     }
    },
-   "winner": "coles"
+   "winner": null
   }
  ],
  "failures": []
