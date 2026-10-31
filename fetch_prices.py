@@ -1,7 +1,7 @@
 """Fetch current Woolworths and Coles prices for the pinned shopping list.
 
 Runs on this machine, not in the cloud: Woolworths refuses requests from data
-centre addresses. Writes docs/data.json and regenerates docs/index.html.
+centre addresses. Writes docs/data.json and one page per profile into docs/.
 
     python fetch_prices.py            # fetch and rebuild the page
     python fetch_prices.py --render   # rebuild the page from the last fetch
@@ -36,6 +36,9 @@ MELBOURNE = zoneinfo.ZoneInfo("Australia/Melbourne")
 
 CHAINS = ("woolworths", "coles")
 
+# Used when a config predates profiles, so an older products.json still runs.
+DEFAULT_PROFILE = {"id": "original", "label": "Original", "page": "index.html"}
+
 
 # Specials reset on Wednesday, so "current" means fetched at or after the most
 # recent Wednesday 7am.
@@ -67,7 +70,9 @@ def is_current(now: dt.datetime | None = None) -> bool:
     if not DATA.exists():
         return False
     try:
-        payload = json.loads(DATA.read_text(encoding="utf-8"))
+        payload = apply_config(
+            json.loads(DATA.read_text(encoding="utf-8")), load_config()
+        )
         built = dt.datetime.fromisoformat(payload["generatedAt"])
     except (OSError, json.JSONDecodeError, KeyError, ValueError):
         return False
@@ -175,6 +180,9 @@ def fetch_all(config: dict, build_id_hint: str = "") -> dict:
             "category": item["category"],
             "unitBasis": item["unitBasis"],
             "note": item.get("note", ""),
+            # Which lists show this row. An item on two profiles is still
+            # fetched once, which is what keeps the request count survivable.
+            "profiles": item.get("profiles") or ["original"],
             "offers": {},
         }
         for chain in CHAINS:
@@ -208,12 +216,12 @@ def fetch_all(config: dict, build_id_hint: str = "") -> dict:
     return {
         "colesBuildId": clients["coles"]._build_id or "",
         "historyProblem": history_problem,
-        "stockUp": stock_up(rows),
         "generatedAt": now.isoformat(timespec="minutes"),
         "generatedLabel": now.strftime("%-d %B %Y, %-I:%M%p").replace("AM", "am").replace("PM", "pm")
         if sys.platform != "win32"
         else now.strftime("%d %B %Y, %I:%M%p").lstrip("0").replace("AM", "am").replace("PM", "pm"),
         "categories": config["categories"],
+        "profiles": config.get("profiles") or [DEFAULT_PROFILE],
         "rows": rows,
         "failures": failures,
     }
@@ -254,34 +262,6 @@ def retry_failures(clients: dict, rows: list[dict], past: dict) -> int:
     return len(pending)
 
 
-def stock_up(rows: list[dict], limit: int = 3) -> list[dict]:
-    """This week's specials worth acting on, rarest-and-deepest first.
-
-    Ranked by how unusual the price is rather than by headline percentage, so a
-    product that discounts every fortnight does not crowd out one that seldom
-    does.
-    """
-    candidates = []
-    for row in rows:
-        for chain, offer in row["offers"].items():
-            if offer.get("error") or not offer.get("onSpecial"):
-                continue
-            if not offer.get("notable"):
-                continue
-            candidates.append(
-                {
-                    "title": row["title"],
-                    "category": row["category"],
-                    "chain": chain,
-                    "offer": offer,
-                    "notability": offer["notability"],
-                    "phrase": offer["rarityPhrase"],
-                }
-            )
-    candidates.sort(key=lambda c: c["notability"], reverse=True)
-    return candidates[:limit]
-
-
 def _progress_note(row: dict) -> str:
     parts = []
     for chain in CHAINS:
@@ -294,6 +274,24 @@ def _progress_note(row: dict) -> str:
             special = " *" if offer["onSpecial"] else ""
             parts.append(f"{chain[:4]}: ${offer['price']}{special}")
     return "  ".join(parts)
+
+
+def apply_config(payload: dict, config: dict) -> dict:
+    """Re-attach whose-list membership from products.json to a saved fetch.
+
+    Profiles change in the config, not in the prices, so a rebuild should pick
+    up a product moving between lists without spending a fetch on it.
+    """
+    payload["profiles"] = config.get("profiles") or [DEFAULT_PROFILE]
+    membership = {
+        item["title"]: item.get("profiles") or ["original"]
+        for item in config["items"]
+    }
+    for row in payload["rows"]:
+        row["profiles"] = membership.get(
+            row["title"], row.get("profiles") or ["original"]
+        )
+    return payload
 
 
 def main() -> int:
@@ -318,7 +316,9 @@ def main() -> int:
         if not DATA.exists():
             print("No previous fetch found. Run without --render first.")
             return 1
-        payload = json.loads(DATA.read_text(encoding="utf-8"))
+        payload = apply_config(
+            json.loads(DATA.read_text(encoding="utf-8")), load_config()
+        )
     else:
         config = load_config()
         state = load_state()
@@ -333,8 +333,15 @@ def main() -> int:
             state["lastRun"] = payload["generatedAt"]
             save_state(state)
 
-    html = render.page(payload)
-    (SITE / "index.html").write_text(html, encoding="utf-8", newline="\n")
+    for profile in payload.get("profiles") or [DEFAULT_PROFILE]:
+        html = render.page(payload, profile["id"])
+        (SITE / profile["page"]).write_text(
+            html, encoding="utf-8", newline="\n"
+        )
+        shown = sum(
+            1 for r in payload["rows"] if profile["id"] in r.get("profiles", [])
+        )
+        print(f"  {profile['page']:<14} {profile['label']:<12} {shown} products")
 
     specials = sum(
         1 for row in payload["rows"]
@@ -344,7 +351,7 @@ def main() -> int:
           f"{len(payload['failures'])} failed.")
     for failure in payload["failures"]:
         print(f"  ! {failure}")
-    print(f"\nWrote {SITE / 'index.html'}")
+    print(f"\nWrote {len(payload.get('profiles') or [1])} page(s) into {SITE}")
     return 0
 
 

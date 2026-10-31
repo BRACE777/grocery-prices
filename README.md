@@ -55,13 +55,29 @@ permission to wake the machine at 7am, which works from sleep but not from a
 full shutdown. It is not set, because the machine here routinely sleeps
 overnight and waking it costs more than reading slightly later does.
 
+## Profiles
+
+Three lists: **Original**, **New Toby** and **Eunice**. Each is its own page,
+linked by a switcher across the top, so a list can be bookmarked on its own and
+the switch needs no JavaScript.
+
+An item can sit on more than one list and is still fetched once. That matters:
+Coles starts serving bot challenges somewhere above twenty reads in a run, so
+the request count is the first thing that breaks as the lists grow. Adding a
+product that is already tracked widens the existing row rather than copying it.
+
+    docs/index.html    Original
+    docs/toby.html     New Toby
+    docs/eunice.html   Eunice
+
 ## Adding a product
 
-Copy the product's web address from either shop and paste it in:
+Send Claude the product's web address from either shop and say whose list it
+belongs on. Behind that:
 
-    python add_item.py <woolworths url> <coles url>
-    python add_item.py <url>                       one chain only
-    python add_item.py <url> --into "Beef Mince Regular 500g"
+    python add_item.py <woolworths url> <coles url> --profile eunice
+    python add_item.py <url> --profile toby --profile eunice
+    python add_item.py <url> --profile eunice --into "Beef Mince Regular 500g"
 
 The product is fetched once to confirm the identifier resolves, so a row is
 never pinned to something that does not exist. `products.json` is plain text
@@ -103,7 +119,9 @@ tickets, including on prices the shop has not badged at all.
 | `sizes.py` | Pack sizes reduced to comparable quantities |
 | `render.py` | The page |
 | `add_item.py` | Add a product by pasting its address |
-| `docs/index.html` | The published page |
+| `docs/index.html` | The published page, Original |
+| `docs/toby.html` | New Toby's page |
+| `docs/eunice.html` | Eunice's page |
 | `docs/data.json` | The last fetch, as data |
 | `capture.mjs` | Screenshots the page at a real phone viewport |
 | `make_review_captures.py` | Builds the capture set, fixtures included |

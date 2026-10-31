@@ -1,9 +1,11 @@
 """Add a tracked product by pasting its web address.
 
-    python add_item.py <woolworths url> <coles url>   both chains, one row
-    python add_item.py <url>                          one chain only
-    python add_item.py <url> --into "Beef Mince Regular 500g"
-                                                      add a chain to a row
+    python add_item.py <woolworths url> <coles url> --profile eunice
+    python add_item.py <url> --profile toby          one chain only
+    python add_item.py <url> --profile eunice --into "Beef Mince Regular 500g"
+
+Every product belongs to at least one profile. Pass --profile more than once
+to put the same product on several lists; it is still fetched once.
 
 Copy the address from either shop, on the phone or the desktop, and paste it
 in. The product is fetched once to confirm it exists and to read its real name
@@ -95,6 +97,21 @@ def fetch(chain: str, product_id: str, build_id: str = "") -> retailers.Offer:
     return offer
 
 
+def already_tracked(config: dict, found: dict) -> dict | None:
+    """An existing row pinned to the same product, if there is one.
+
+    Two lists wanting the same product should share one row rather than hold a
+    copy each. A copy would be fetched twice, and the weekly request count is
+    the thing that breaks first: Coles starts refusing somewhere above twenty
+    reads in a run.
+    """
+    pins = {chain: offer.product_id for chain, offer in found.items()}
+    for row in config["items"]:
+        if any(row.get(chain) == pin for chain, pin in pins.items()):
+            return row
+    return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -107,10 +124,21 @@ def main() -> int:
     parser.add_argument("--note", default="", help="note shown under the row")
     parser.add_argument("--into", default="", metavar="TITLE",
                         help="add these chains to an existing row")
+    parser.add_argument("--profile", action="append", default=[], metavar="ID",
+                        help="whose list, repeatable (see products.json)")
     args = parser.parse_args()
 
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
     categories = [c["id"] for c in config["categories"]]
+    known = [p["id"] for p in config.get("profiles") or []]
+
+    wanted = args.profile or ([known[0]] if known else ["original"])
+    unknown = [p for p in wanted if known and p not in known]
+    if unknown:
+        raise SystemExit(
+            f"Unknown profile{'s' if len(unknown) > 1 else ''}: "
+            f"{', '.join(unknown)}. Known: {', '.join(known)}"
+        )
     build_id = ""
     if STATE.exists():
         build_id = json.loads(STATE.read_text(encoding="utf-8")).get("colesBuildId", "")
@@ -134,7 +162,39 @@ def main() -> int:
             raise SystemExit(f"No row titled {args.into!r}.")
         for chain, offer in found.items():
             row[chain] = offer.product_id
+        if args.profile:
+            on = row.setdefault("profiles", ["original"])
+            added = [p for p in wanted if p not in on]
+            on.extend(added)
+            if added:
+                print(f"  also now on: {', '.join(added)}")
         print(f"\nAdded to existing row: {row['title']}")
+        CONFIG.write_text(
+            json.dumps(config, indent=2) + "\n", encoding="utf-8", newline="\n"
+        )
+        print(f"{CONFIG.name} now tracks {len(config['items'])} products.")
+        print("Run 'python fetch_prices.py' to rebuild the page.")
+        return 0
+
+    existing = already_tracked(config, found)
+    if existing:
+        # Same product, different list: widen the row rather than copy it.
+        on = existing.setdefault("profiles", ["original"])
+        added = [p for p in wanted if p not in on]
+        on.extend(added)
+        for chain, offer in found.items():
+            existing.setdefault(chain, offer.product_id)
+        if added:
+            print(
+                f"\nAlready tracked as {existing['title']!r}. "
+                f"Added to: {', '.join(added)}."
+            )
+        else:
+            print(
+                f"\nAlready tracked as {existing['title']!r} "
+                f"on {', '.join(on)}. Nothing to do."
+            )
+        print("It is fetched once and shown on every list that wants it.")
     else:
         sample = next(iter(found.values()))
         title = args.title or f"{sample.name} {sample.size}".strip()
@@ -151,6 +211,7 @@ def main() -> int:
             )
         row = {
             "title": title,
+            "profiles": wanted,
             "category": category,
             "unitBasis": basis,
             "woolworths": found["woolworths"].product_id if "woolworths" in found else None,
@@ -159,9 +220,14 @@ def main() -> int:
         if args.note:
             row["note"] = args.note
         config["items"].append(row)
-        print(f"\nAdded row: {title}  [{category}, per {basis}]")
+        print(
+            f"\nAdded row: {title}  "
+            f"[{', '.join(wanted)} | {category} | per {basis}]"
+        )
 
-    CONFIG.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
+    CONFIG.write_text(
+        json.dumps(config, indent=2) + "\n", encoding="utf-8", newline="\n"
+    )
     print(f"{CONFIG.name} now tracks {len(config['items'])} products.")
     print("Run 'python fetch_prices.py' to rebuild the page.")
     return 0

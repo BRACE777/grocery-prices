@@ -88,8 +88,34 @@ body{
 ::-webkit-scrollbar-thumb{background:var(--rail); border:2px solid var(--aisle-deep)}
 main{max-width:46rem; margin:0 auto; padding:0 .7rem 3.5rem}
 
+/* ---------- whose list ---------- */
+/* Links, not script: each profile is its own page, so a list can be
+   bookmarked on its own and the switch survives a reload. */
+.switch{display:flex; gap:.3rem; margin:.9rem 0 0}
+.switch a{
+  flex:1; text-align:center; padding:.4rem .2rem .35rem;
+  font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:.84rem;
+  letter-spacing:.08em; text-transform:uppercase; text-decoration:none;
+  background:var(--card); color:var(--card-soft);
+  border-top:4px solid var(--rail);
+}
+.switch a[aria-current=page]{color:var(--card-ink); border-top-color:var(--ink)}
+.whose{
+  margin:.3rem 0 0; font-family:"Barlow Condensed",sans-serif; font-weight:600;
+  font-size:1rem; text-transform:uppercase; letter-spacing:.14em;
+  color:var(--ink-soft);
+}
+
+/* ---------- an empty list ---------- */
+.nothing{
+  background:var(--card); color:var(--card-ink); padding:1rem;
+  border-top:5px solid var(--rail); margin:.4rem 0 0;
+}
+.nothing p{margin:.35rem 0; max-width:50ch}
+.nothing p:first-child{margin-top:0}
+
 /* ---------- masthead ---------- */
-.masthead{padding:1.7rem .2rem .9rem}
+.masthead{padding:1.2rem .2rem .9rem}
 .masthead h1{
   font-family:"Barlow Condensed",sans-serif; font-weight:800; font-size:2.1rem;
   line-height:1; letter-spacing:-.005em; text-transform:uppercase; margin:0;
@@ -426,6 +452,34 @@ footer code{
 """
 
 
+def stock_up(rows: list[dict], limit: int = 3) -> list[dict]:
+    """This week's specials worth acting on, rarest-and-deepest first.
+
+    Ranked by how unusual the price is rather than by headline percentage, so a
+    product that discounts every fortnight does not crowd out one that seldom
+    does.
+    """
+    candidates = []
+    for row in rows:
+        for chain, offer in row["offers"].items():
+            if offer.get("error") or not offer.get("onSpecial"):
+                continue
+            if not offer.get("notable"):
+                continue
+            candidates.append(
+                {
+                    "title": row["title"],
+                    "category": row["category"],
+                    "chain": chain,
+                    "offer": offer,
+                    "notability": offer["notability"],
+                    "phrase": offer["rarityPhrase"],
+                }
+            )
+    candidates.sort(key=lambda c: c["notability"], reverse=True)
+    return candidates[:limit]
+
+
 def _ticket(row: dict, chain: str, index: int) -> str:
     offer = row["offers"].get(chain)
     label = CHAIN_LABEL[chain]
@@ -522,8 +576,19 @@ def _flash(entry: dict, lead: bool, position: int) -> str:
     )
 
 
-def page(payload: dict) -> str:
-    rows = payload["rows"]
+def page(payload: dict, profile_id: str = "original") -> str:
+    profiles = payload.get("profiles") or [
+        {"id": "original", "label": "Original", "page": "index.html"}
+    ]
+    here = next(
+        (p for p in profiles if p["id"] == profile_id), profiles[0]
+    )
+    # One page per profile, so the row set is filtered before anything is
+    # counted. Every figure below describes this list only.
+    rows = [
+        r for r in payload["rows"]
+        if profile_id in (r.get("profiles") or ["original"])
+    ]
     offers = [o for r in rows for o in r["offers"].values()]
     specials = sum(1 for o in offers if o.get("onSpecial"))
     # Red is reserved for work the reader has to do, so only a dead pin
@@ -537,19 +602,33 @@ def page(payload: dict) -> str:
     flaky = sum(1 for o in offers if o.get("error") and not _dead(o))
     wins = {c: sum(1 for r in rows if r.get("winner") == c) for c in CHAINS}
     comparable = sum(1 for r in rows if len(r["offers"]) == 2)
-    board = payload.get("stockUp") or []
+    board = stock_up(rows)
 
     categories = {c["id"]: c["label"] for c in payload["categories"]}
     order = [c["id"] for c in payload["categories"]]
 
     parts: list[str] = ['<main>']
 
+    if len(profiles) > 1:
+        parts.append('<nav class="switch" aria-label="Whose list">')
+        for profile in profiles:
+            current = ' aria-current="page"' if profile["id"] == here["id"] else ""
+            parts.append(
+                f'<a href="{e(profile["page"])}"{current}>'
+                f'{e(profile["label"])}</a>'
+            )
+        parts.append("</nav>")
+
     parts.append('<div class="masthead"><h1>Woolworths<br>against Coles</h1>')
+    if len(profiles) > 1:
+        parts.append(f'<p class="whose">{e(here["label"])}</p>')
 
     # The page has to answer its own question where the reader lands, not ask
     # them to subtract two counts at the foot of sixteen screens.
     lead, trail = sorted(CHAINS, key=lambda c: wins[c], reverse=True)
-    if not comparable:
+    if not rows:
+        verdict = ""
+    elif not comparable:
         verdict = (
             "Nothing on the list is stocked by both shops, so there is no "
             "comparison to make this week."
@@ -559,17 +638,27 @@ def page(payload: dict) -> str:
             f"Honours are even this week, {wins[lead]} lines each. "
             f"Go by what is on special."
         )
+    elif comparable == 1:
+        winner = lead if wins[lead] else trail
+        verdict = (
+            f"<b>{CHAIN_LABEL[winner]}</b> is cheaper on the one line "
+            f"both shops stock."
+        )
     else:
         verdict = (
             f"<b>{CHAIN_LABEL[lead]}</b> is cheaper on "
             f"<b>{wins[lead]}</b> of the {comparable} lines you can compare, "
             f"{CHAIN_LABEL[trail]} on {wins[trail]}."
         )
-    parts.append(f'<p class="verdict" data-chain="{lead}">{verdict}</p>')
+    if verdict:
+        parts.append(f'<p class="verdict" data-chain="{lead}">{verdict}</p>')
 
     parts.append('<p class="when">')
     parts.append(f'<span>Read <b>{e(payload["generatedLabel"])}</b></span>')
-    parts.append(f'<span><b>{specials}</b> of {len(offers)} prices on special</span>')
+    if rows:
+        parts.append(
+            f'<span><b>{specials}</b> of {len(offers)} prices on special</span>'
+        )
     if dead:
         word = "pin" if dead == 1 else "pins"
         parts.append(f'<span class="stale">{dead} dead {word}, repin</span>')
@@ -594,6 +683,13 @@ def page(payload: dict) -> str:
                 parts.append(_flash(entry, lead=False, position=position))
             parts.append("</div>")
         parts.append("</section>")
+
+    if not rows:
+        parts.append(
+            '<div class="nothing"><p><b>Nothing tracked on this list yet.</b></p>'
+            "<p>Ask Claude to add a product and paste the link from either "
+            "shop. It will appear here after the next run.</p></div>"
+        )
 
     index = 0
     for category in order:
@@ -633,8 +729,9 @@ def page(payload: dict) -> str:
             "are shown.</p>"
         )
     parts.append(
-        "<p>Add a product with <code>python add_item.py</code> and the web "
-        "address of that product at either shop.</p>"
+        "<p>To track something new, send Claude the product's web address "
+        "from either shop and say whose list it belongs on. It appears here "
+        "after the next run.</p>"
     )
     parts.append("</footer></main>")
 
