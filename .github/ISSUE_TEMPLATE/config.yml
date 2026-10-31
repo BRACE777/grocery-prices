@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: The price page
+    url: https://brace777.github.io/grocery-prices/
+    about: This week's prices for every list.
