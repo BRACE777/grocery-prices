@@ -45,6 +45,10 @@
     {
       "id": "frozen",
       "label": "Frozen & dessert"
+    },
+    {
+      "id": "health",
+      "label": "Health & personal care"
     }
   ],
   "items": [
@@ -240,7 +244,8 @@
     {
       "title": "Jin Ramen Spicy, 5 pack",
       "profiles": [
-        "original"
+        "original",
+        "eunice"
       ],
       "category": "noodles",
       "unitBasis": "pack",
@@ -250,7 +255,8 @@
     {
       "title": "Samyang Buldak Spicy Fried Rice Carbonara 440g",
       "profiles": [
-        "original"
+        "original",
+        "eunice"
       ],
       "category": "noodles",
       "unitBasis": "100g",
@@ -299,6 +305,87 @@
       "unitBasis": "100g",
       "woolworths": null,
       "coles": "5588963"
+    },
+    {
+      "title": "Spam Ham Classic 340g",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "pantry",
+      "unitBasis": "100g",
+      "woolworths": "33964",
+      "coles": "118521"
+    },
+    {
+      "title": "CORE Powerfoods Loaded Mac & Cheese 350g",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "frozen",
+      "unitBasis": "100g",
+      "woolworths": "6018661",
+      "coles": "8425218"
+    },
+    {
+      "title": "Harvest Snaps Protein Puffs Lightly Salted 75g",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "snacks",
+      "unitBasis": "100g",
+      "woolworths": null,
+      "coles": "1967981",
+      "note": "Not stocked by Woolworths"
+    },
+    {
+      "title": "M&M's Milk Chocolate Share Bag 180g",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "snacks",
+      "unitBasis": "100g",
+      "woolworths": "460247",
+      "coles": "5258936"
+    },
+    {
+      "title": "Potato Utopia Four Cheese Potato Gratin 400g",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "frozen",
+      "unitBasis": "100g",
+      "woolworths": "203424",
+      "coles": "1531545"
+    },
+    {
+      "title": "SKYN Intense Feel Condoms 10 pack",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "health",
+      "unitBasis": "piece",
+      "woolworths": "779561",
+      "coles": "6174321"
+    },
+    {
+      "title": "Primo Stackers Mild Salami Cheese & Crackers 50g",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "snacks",
+      "unitBasis": "100g",
+      "woolworths": "63584",
+      "coles": "3755430"
+    },
+    {
+      "title": "Parker's Baked Pretzels Original 200g",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "snacks",
+      "unitBasis": "100g",
+      "woolworths": "24378",
+      "coles": "6133970"
     }
   ]
 }
