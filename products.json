@@ -255,8 +255,7 @@
     {
       "title": "Samyang Buldak Spicy Fried Rice Carbonara 440g",
       "profiles": [
-        "original",
-        "eunice"
+        "original"
       ],
       "category": "noodles",
       "unitBasis": "100g",
@@ -278,7 +277,8 @@
     {
       "title": "Oreo Cookie Top Ice Cream Cones 400mL",
       "profiles": [
-        "original"
+        "original",
+        "eunice"
       ],
       "category": "frozen",
       "unitBasis": "100ml",
@@ -386,6 +386,16 @@
       "unitBasis": "100g",
       "woolworths": "24378",
       "coles": "6133970"
+    },
+    {
+      "title": "Samyang Buldak Carbonara Spicy Ramen 650g, 5 pack",
+      "profiles": [
+        "eunice"
+      ],
+      "category": "noodles",
+      "unitBasis": "pack",
+      "woolworths": "805129",
+      "coles": "5049834"
     }
   ]
 }
