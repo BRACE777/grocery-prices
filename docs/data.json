@@ -1,88 +1,8 @@
 {
  "colesBuildId": "20261029.4-012bb8a3b45e7b939b4fee4a367646ae1dc20aa7",
  "historyProblem": "",
- "stockUp": [
-  {
-   "title": "Coca-Cola Zero Sugar Bottle 1.25L",
-   "category": "drinks",
-   "chain": "woolworths",
-   "offer": {
-    "chain": "woolworths",
-    "productId": "623034",
-    "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
-    "size": "1.25L",
-    "price": 2.25,
-    "wasPrice": 4.5,
-    "unitPrice": 1.8,
-    "unitMeasure": "1L",
-    "onSpecial": true,
-    "specialLabel": "Half price",
-    "available": true,
-    "url": "https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle",
-    "slug": "",
-    "error": "",
-    "saving": 2.25,
-    "savingPercent": 50,
-    "comparablePrice": 0.18,
-    "comparableLabel": "/100mL",
-    "rarity": {
-     "days_at_or_below": 22,
-     "window_days": 90,
-     "share": 0.2444,
-     "base": 4.5,
-     "depth": 0.5,
-     "is_low": true,
-     "spells": 4
-    },
-    "notable": true,
-    "rarityPhrase": "back to its 3-month low",
-    "notability": 0.385379
-   },
-   "notability": 0.385379,
-   "phrase": "back to its 3-month low"
-  },
-  {
-   "title": "Jin Ramen Spicy, 5 pack",
-   "category": "noodles",
-   "chain": "coles",
-   "offer": {
-    "chain": "coles",
-    "productId": "4677412",
-    "name": "Otoki Jin Ramen Spicy Instant Noodles 5x120g",
-    "size": "600g",
-    "price": 5.95,
-    "wasPrice": 7.0,
-    "unitPrice": 0.99,
-    "unitMeasure": "100g",
-    "onSpecial": true,
-    "specialLabel": "save $1.05",
-    "available": true,
-    "url": "https://www.coles.com.au/product/otoki-jin-ramen-spicy-instant-noodles-5x120g-600g-4677412",
-    "slug": "otoki-jin-ramen-spicy-instant-noodles-5x120g-600g-4677412",
-    "error": "",
-    "saving": 1.05,
-    "savingPercent": 15,
-    "comparablePrice": 1.19,
-    "comparableLabel": " a pack",
-    "rarity": {
-     "days_at_or_below": 1,
-     "window_days": 5,
-     "share": 0.2,
-     "base": 7.0,
-     "depth": 0.15,
-     "is_low": true,
-     "spells": 1
-    },
-    "notable": true,
-    "rarityPhrase": "cheapest in a month",
-    "notability": 0.1296
-   },
-   "notability": 0.1296,
-   "phrase": "cheapest in a month"
-  }
- ],
- "generatedAt": "2026-10-29T19:50+11:00",
- "generatedLabel": "29 October 2026, 07:50pm",
+ "generatedAt": "2026-11-04T17:20+11:00",
+ "generatedLabel": "4 November 2026, 05:20pm",
  "categories": [
   {
    "id": "snacks",
@@ -111,6 +31,27 @@
   {
    "id": "frozen",
    "label": "Frozen & dessert"
+  },
+  {
+   "id": "health",
+   "label": "Health & personal care"
+  }
+ ],
+ "profiles": [
+  {
+   "id": "original",
+   "label": "Original",
+   "page": "index.html"
+  },
+  {
+   "id": "toby",
+   "label": "New Toby",
+   "page": "toby.html"
+  },
+  {
+   "id": "eunice",
+   "label": "Eunice",
+   "page": "eunice.html"
   }
  ],
  "rows": [
@@ -119,29 +60,64 @@
    "category": "snacks",
    "unitBasis": "100g",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "262796",
      "name": "Harvest Snaps Baked Pea Crisps Salt & Vinegar",
      "size": "120g",
-     "price": 5.0,
-     "wasPrice": null,
-     "unitPrice": 4.17,
+     "price": 2.5,
+     "wasPrice": 5.0,
+     "unitPrice": 2.08,
      "unitMeasure": "100G",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "Half price",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/262796/harvest-snaps-baked-pea-crisps-salt-vinegar",
      "slug": "",
+     "error": "",
+     "saving": 2.5,
+     "savingPercent": 50,
+     "comparablePrice": 2.08,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 1,
+      "window_days": 90,
+      "share": 0.0111,
+      "base": 5.0,
+      "depth": 0.5,
+      "is_low": true,
+      "spells": 2
+     },
+     "notable": true,
+     "rarityPhrase": "cheapest in 3 months",
+     "notability": 0.660098
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "5994080",
+     "name": "Harvest Snaps Pea Salt & Vinegar",
+     "size": "120g",
+     "price": 5.0,
+     "wasPrice": null,
+     "unitPrice": 4.17,
+     "unitMeasure": "100g",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-120g-5994080",
+     "slug": "harvest-snaps-pea-salt-and-vinegar-120g-5994080",
      "error": "",
      "saving": null,
      "savingPercent": null,
      "comparablePrice": 4.17,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 90,
-      "window_days": 90,
+      "days_at_or_below": 25,
+      "window_days": 25,
       "share": 1.0,
       "base": 5.0,
       "depth": 0.0,
@@ -151,47 +127,18 @@
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
-    },
-    "coles": {
-     "chain": "coles",
-     "productId": "5994080",
-     "name": "Harvest Snaps Pea Salt & Vinegar",
-     "size": "120g",
-     "price": 4.0,
-     "wasPrice": 5.0,
-     "unitPrice": 3.33,
-     "unitMeasure": "100g",
-     "onSpecial": true,
-     "specialLabel": "save $1.00",
-     "available": true,
-     "url": "https://www.coles.com.au/product/harvest-snaps-pea-salt-and-vinegar-120g-5994080",
-     "slug": "harvest-snaps-pea-salt-and-vinegar-120g-5994080",
-     "error": "",
-     "saving": 1.0,
-     "savingPercent": 20,
-     "comparablePrice": 3.33,
-     "comparableLabel": "/100g",
-     "rarity": {
-      "days_at_or_below": 8,
-      "window_days": 19,
-      "share": 0.4211,
-      "base": 5.0,
-      "depth": 0.2,
-      "is_low": false,
-      "spells": 2
-     },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.067025
     }
    },
-   "winner": "coles"
+   "winner": "woolworths"
   },
   {
    "title": "Harvest Snaps Pea Crisps Salt & Vinegar 230g",
    "category": "snacks",
    "unitBasis": "100g",
    "note": "Woolworths stocks the 230g bag in Original Salted only",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "coles": {
      "chain": "coles",
@@ -225,53 +172,24 @@
    "category": "snacks",
    "unitBasis": "100g",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "781402",
      "name": "Red Rock Deli Potato Chips Sea Salt & Balsamic Vinegar",
      "size": "165g",
-     "price": 3.6,
-     "wasPrice": 6.0,
-     "unitPrice": 2.18,
-     "unitMeasure": "100G",
-     "onSpecial": true,
-     "specialLabel": "Special",
-     "available": true,
-     "url": "https://www.woolworths.com.au/shop/productdetails/781402/red-rock-deli-potato-chips-sea-salt-balsamic-vinegar",
-     "slug": "",
-     "error": "",
-     "saving": 2.4,
-     "savingPercent": 40,
-     "comparablePrice": 2.18,
-     "comparableLabel": "/100g",
-     "rarity": {
-      "days_at_or_below": 27,
-      "window_days": 90,
-      "share": 0.3,
-      "base": 6.0,
-      "depth": 0.4,
-      "is_low": false,
-      "spells": 4
-     },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.196
-    },
-    "coles": {
-     "chain": "coles",
-     "productId": "1786171",
-     "name": "Red Rock Deli Sea Salt & Bal Vinegar Potato Chips",
-     "size": "165g",
      "price": 6.0,
      "wasPrice": null,
      "unitPrice": 3.64,
-     "unitMeasure": "100g",
-     "onSpecial": true,
-     "specialLabel": "Any 2 $8",
+     "unitMeasure": "100G",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
-     "url": "https://www.coles.com.au/product/red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171",
-     "slug": "red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171",
+     "url": "https://www.woolworths.com.au/shop/productdetails/781402/red-rock-deli-potato-chips-sea-salt-balsamic-vinegar",
+     "slug": "",
      "error": "",
      "saving": null,
      "savingPercent": null,
@@ -289,47 +207,82 @@
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "1786171",
+     "name": "Red Rock Deli Sea Salt & Bal Vinegar Potato Chips",
+     "size": "165g",
+     "price": 4.75,
+     "wasPrice": 6.0,
+     "unitPrice": 2.88,
+     "unitMeasure": "100g",
+     "onSpecial": true,
+     "specialLabel": "save $1.25",
+     "available": true,
+     "url": "https://www.coles.com.au/product/red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171",
+     "slug": "red-rock-deli-sea-salt-and-bal-vinegar-potato-chips-165g-1786171",
+     "error": "",
+     "saving": 1.25,
+     "savingPercent": 21,
+     "comparablePrice": 2.88,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 40,
+      "window_days": 90,
+      "share": 0.4444,
+      "base": 6.0,
+      "depth": 0.2083,
+      "is_low": false,
+      "spells": 7
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0643
     }
    },
-   "winner": "woolworths"
+   "winner": "coles"
   },
   {
    "title": "Arnott's Cracker Chips Balsamic Vinegar & Sea Salt 150g",
    "category": "snacks",
    "unitBasis": "100g",
    "note": "Woolworths carries Cracker Chips in Honey Soy only",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "coles": {
      "chain": "coles",
      "productId": "3449401",
      "name": "Arnott's Cracker Chips Balsamic Vinegar & Sea Salt",
      "size": "150g",
-     "price": 4.5,
-     "wasPrice": null,
-     "unitPrice": 3.0,
+     "price": 2.25,
+     "wasPrice": 4.5,
+     "unitPrice": 1.5,
      "unitMeasure": "100g",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "1/2 Price",
      "available": true,
      "url": "https://www.coles.com.au/product/arnott's-cracker-chips-balsamic-vinegar-and-sea-salt-150g-3449401",
      "slug": "arnott's-cracker-chips-balsamic-vinegar-and-sea-salt-150g-3449401",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 3.0,
+     "saving": 2.25,
+     "savingPercent": 50,
+     "comparablePrice": 1.5,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 15,
-      "window_days": 15,
-      "share": 1.0,
+      "days_at_or_below": 0,
+      "window_days": 21,
+      "share": 0.0,
       "base": 4.5,
-      "depth": 0.0,
-      "is_low": false,
+      "depth": 0.5,
+      "is_low": true,
       "spells": 1
      },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.0
+     "notable": true,
+     "rarityPhrase": "first time this cheap in a month",
+     "notability": 0.675
     }
    },
    "winner": null
@@ -339,126 +292,102 @@
    "category": "snacks",
    "unitBasis": "100g",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "6032521",
      "name": "Kettle Ridge Cut Potato Chips Salt & Vinegar",
      "size": "165g",
-     "price": 4.5,
-     "wasPrice": null,
-     "unitPrice": 2.73,
+     "price": 3.0,
+     "wasPrice": 4.5,
+     "unitPrice": 1.82,
      "unitMeasure": "100G",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "Special",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/6032521/kettle-ridge-cut-potato-chips-salt-vinegar",
      "slug": "",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 2.73,
+     "saving": 1.5,
+     "savingPercent": 33,
+     "comparablePrice": 1.82,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 71,
+      "days_at_or_below": 14,
       "window_days": 90,
-      "share": 0.7889,
+      "share": 0.1556,
       "base": 6.0,
-      "depth": 0.25,
-      "is_low": false,
-      "spells": 1
+      "depth": 0.5,
+      "is_low": true,
+      "spells": 3
      },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.011141
+     "notable": true,
+     "rarityPhrase": "back to its 3-month low",
+     "notability": 0.481283
     },
     "coles": {
      "chain": "coles",
      "productId": "1135050",
      "name": "Kettle Ridge Cut Potato Chips Salt & Vinegar",
      "size": "165g",
-     "price": 3.6,
-     "wasPrice": 6.0,
-     "unitPrice": 2.18,
+     "price": 6.0,
+     "wasPrice": null,
+     "unitPrice": 3.64,
      "unitMeasure": "100g",
      "onSpecial": true,
-     "specialLabel": "save $2.40",
+     "specialLabel": "Any 2 $7",
      "available": true,
      "url": "https://www.coles.com.au/product/kettle-ridge-cut-potato-chips-salt-and-vinegar-165g-1135050",
      "slug": "kettle-ridge-cut-potato-chips-salt-and-vinegar-165g-1135050",
      "error": "",
-     "saving": 2.4,
-     "savingPercent": 40,
-     "comparablePrice": 2.18,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 3.64,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 8,
-      "window_days": 15,
-      "share": 0.5333,
+      "days_at_or_below": 21,
+      "window_days": 21,
+      "share": 1.0,
       "base": 6.0,
-      "depth": 0.4,
+      "depth": 0.0,
       "is_low": false,
-      "spells": 2
+      "spells": 1
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.087124
+     "notability": 0.0
     }
    },
-   "winner": "coles"
+   "winner": "woolworths"
   },
   {
    "title": "Coca-Cola Zero Sugar Bottle 1.25L",
    "category": "drinks",
    "unitBasis": "100ml",
    "note": "",
+   "profiles": [
+    "original",
+    "toby",
+    "eunice"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "623034",
      "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
      "size": "1.25L",
-     "price": 2.25,
-     "wasPrice": 4.5,
-     "unitPrice": 1.8,
-     "unitMeasure": "1L",
-     "onSpecial": true,
-     "specialLabel": "Half price",
-     "available": true,
-     "url": "https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle",
-     "slug": "",
-     "error": "",
-     "saving": 2.25,
-     "savingPercent": 50,
-     "comparablePrice": 0.18,
-     "comparableLabel": "/100mL",
-     "rarity": {
-      "days_at_or_below": 22,
-      "window_days": 90,
-      "share": 0.2444,
-      "base": 4.5,
-      "depth": 0.5,
-      "is_low": true,
-      "spells": 4
-     },
-     "notable": true,
-     "rarityPhrase": "back to its 3-month low",
-     "notability": 0.385379
-    },
-    "coles": {
-     "chain": "coles",
-     "productId": "2993706",
-     "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
-     "size": "1.25L",
      "price": 4.5,
      "wasPrice": null,
      "unitPrice": 3.6,
      "unitMeasure": "1L",
-     "onSpecial": true,
-     "specialLabel": "Any 2 $5.80",
+     "onSpecial": false,
+     "specialLabel": "",
      "available": true,
-     "url": "https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
-     "slug": "coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
+     "url": "https://www.woolworths.com.au/shop/productdetails/623034/coca-cola-zero-sugar-soft-drink-bottle",
+     "slug": "",
      "error": "",
      "saving": null,
      "savingPercent": null,
@@ -476,30 +405,97 @@
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "2993706",
+     "name": "Coca-Cola Zero Sugar Soft Drink Bottle",
+     "size": "1.25L",
+     "price": 2.0,
+     "wasPrice": 4.5,
+     "unitPrice": 1.6,
+     "unitMeasure": "1L",
+     "onSpecial": true,
+     "specialLabel": "1/2 Price",
+     "available": true,
+     "url": "https://www.coles.com.au/product/coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
+     "slug": "coca-cola-zero-sugar-soft-drink-bottle-1.25l-2993706",
+     "error": "",
+     "saving": 2.5,
+     "savingPercent": 56,
+     "comparablePrice": 0.16,
+     "comparableLabel": "/100mL",
+     "rarity": {
+      "days_at_or_below": 0,
+      "window_days": 90,
+      "share": 0.0,
+      "base": 4.5,
+      "depth": 0.5556,
+      "is_low": true,
+      "spells": 1
+     },
+     "notable": true,
+     "rarityPhrase": "first time this cheap in 3 months",
+     "notability": 0.75006
     }
    },
-   "winner": "woolworths"
+   "winner": "coles"
   },
   {
    "title": "Coca-Cola Classic Cans 375ml, 24 pack",
    "category": "drinks",
    "unitBasis": "can",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "42605",
      "name": "Coca-Cola Classic Soft Drink Cans",
      "size": "375mL x 24 pack",
+     "price": 27.0,
+     "wasPrice": 45.0,
+     "unitPrice": 3.0,
+     "unitMeasure": "1L",
+     "onSpecial": true,
+     "specialLabel": "Special",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/42605/coca-cola-classic-soft-drink-cans",
+     "slug": "",
+     "error": "",
+     "saving": 18.0,
+     "savingPercent": 40,
+     "comparablePrice": 1.12,
+     "comparableLabel": " a can",
+     "rarity": {
+      "days_at_or_below": 43,
+      "window_days": 90,
+      "share": 0.4778,
+      "base": 45.0,
+      "depth": 0.4,
+      "is_low": false,
+      "spells": 8
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.109077
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "7365777",
+     "name": "Coca-Cola Classic Soft Drink Multipack Cans 375ml",
+     "size": "24 Pack",
      "price": 45.0,
      "wasPrice": null,
      "unitPrice": 5.0,
      "unitMeasure": "1L",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "Any 2 $54",
      "available": true,
-     "url": "https://www.woolworths.com.au/shop/productdetails/42605/coca-cola-classic-soft-drink-cans",
-     "slug": "",
+     "url": "https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
+     "slug": "coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
      "error": "",
      "saving": null,
      "savingPercent": null,
@@ -517,47 +513,18 @@
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
-    },
-    "coles": {
-     "chain": "coles",
-     "productId": "7365777",
-     "name": "Coca-Cola Classic Soft Drink Multipack Cans 375ml",
-     "size": "24 Pack",
-     "price": 27.0,
-     "wasPrice": 45.0,
-     "unitPrice": 3.0,
-     "unitMeasure": "1L",
-     "onSpecial": true,
-     "specialLabel": "40% Off",
-     "available": true,
-     "url": "https://www.coles.com.au/product/coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
-     "slug": "coca-cola-classic-soft-drink-multipack-cans-375ml-24-pack-7365777",
-     "error": "",
-     "saving": 18.0,
-     "savingPercent": 40,
-     "comparablePrice": 1.12,
-     "comparableLabel": " a can",
-     "rarity": {
-      "days_at_or_below": 36,
-      "window_days": 90,
-      "share": 0.4,
-      "base": 45.0,
-      "depth": 0.4,
-      "is_low": true,
-      "spells": 6
-     },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.1944
     }
    },
-   "winner": "coles"
+   "winner": "woolworths"
   },
   {
    "title": "Coca-Cola Classic Cans 375ml, 30 pack",
    "category": "drinks",
    "unitBasis": "can",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -623,6 +590,9 @@
    "category": "pantry",
    "unitBasis": "100g",
    "note": "Woolworths pack is 500g, Coles jar is 550g. Compare on price per 100g.",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -676,8 +646,8 @@
      "comparablePrice": 0.84,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 6,
-      "window_days": 6,
+      "days_at_or_below": 12,
+      "window_days": 12,
       "share": 1.0,
       "base": 4.6,
       "depth": 0.0,
@@ -696,67 +666,62 @@
    "category": "pantry",
    "unitBasis": "100g",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "311381",
      "name": "Old El Paso Taco Spice Mix Fiery Hot",
      "size": "35g",
-     "price": 3.0,
-     "wasPrice": null,
-     "unitPrice": 8.57,
+     "price": 2.5,
+     "wasPrice": 3.0,
+     "unitPrice": 7.14,
      "unitMeasure": "100G",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "Special",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/311381/old-el-paso-taco-spice-mix-fiery-hot",
      "slug": "",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 8.57,
+     "saving": 0.5,
+     "savingPercent": 17,
+     "comparablePrice": 7.14,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 90,
+      "days_at_or_below": 19,
       "window_days": 90,
-      "share": 1.0,
+      "share": 0.2111,
       "base": 3.0,
-      "depth": 0.0,
-      "is_low": false,
-      "spells": 1
+      "depth": 0.1667,
+      "is_low": true,
+      "spells": 4
      },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.0
+     "notable": true,
+     "rarityPhrase": "back to its 3-month low",
+     "notability": 0.14006
     },
     "coles": {
      "chain": "coles",
      "productId": "6341660",
      "name": "Old El Paso Fiery Spice Mix",
      "size": "35g",
-     "price": 3.0,
-     "wasPrice": null,
-     "unitPrice": 8.57,
+     "price": 2.5,
+     "wasPrice": 3.0,
+     "unitPrice": 7.14,
      "unitMeasure": "100g",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "save $0.50",
      "available": true,
      "url": "https://www.coles.com.au/product/old-el-paso-fiery-spice-mix-35g-6341660",
      "slug": "old-el-paso-fiery-spice-mix-35g-6341660",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 8.57,
+     "saving": 0.5,
+     "savingPercent": 17,
+     "comparablePrice": 7.14,
      "comparableLabel": "/100g",
-     "rarity": {
-      "days_at_or_below": 90,
-      "window_days": 90,
-      "share": 1.0,
-      "base": 3.0,
-      "depth": 0.0,
-      "is_low": false,
-      "spells": 1
-     },
+     "rarity": null,
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
@@ -769,6 +734,9 @@
    "category": "pantry",
    "unitBasis": "100g",
    "note": "Not stocked by Woolworths",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "coles": {
      "chain": "coles",
@@ -802,6 +770,9 @@
    "category": "mince",
    "unitBasis": "kg",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -823,9 +794,9 @@
      "comparablePrice": 12.5,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 64,
+      "days_at_or_below": 70,
       "window_days": 90,
-      "share": 0.7111,
+      "share": 0.7778,
       "base": 7.0,
       "depth": 0.1071,
       "is_low": true,
@@ -833,7 +804,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.012068
+     "notability": 0.007139
     },
     "coles": {
      "chain": "coles",
@@ -855,9 +826,9 @@
      "comparablePrice": 12.5,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 42,
+      "days_at_or_below": 48,
       "window_days": 90,
-      "share": 0.4667,
+      "share": 0.5333,
       "base": 7.0,
       "depth": 0.1071,
       "is_low": true,
@@ -865,7 +836,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.041121
+     "notability": 0.031492
     }
    },
    "winner": null
@@ -875,6 +846,9 @@
    "category": "mince",
    "unitBasis": "kg",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -896,9 +870,9 @@
      "comparablePrice": 15.4,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 36,
-      "window_days": 89,
-      "share": 0.4045,
+      "days_at_or_below": 42,
+      "window_days": 90,
+      "share": 0.4667,
       "base": 9.0,
       "depth": 0.1444,
       "is_low": false,
@@ -906,7 +880,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.051207
+     "notability": 0.041069
     },
     "coles": {
      "chain": "coles",
@@ -928,9 +902,9 @@
      "comparablePrice": 15.4,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 36,
+      "days_at_or_below": 42,
       "window_days": 90,
-      "share": 0.4,
+      "share": 0.4667,
       "base": 9.0,
       "depth": 0.1444,
       "is_low": false,
@@ -938,7 +912,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.051984
+     "notability": 0.041069
     }
    },
    "winner": null
@@ -948,6 +922,9 @@
    "category": "mince",
    "unitBasis": "kg",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -969,9 +946,9 @@
      "comparablePrice": 19.6,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 35,
+      "days_at_or_below": 41,
       "window_days": 90,
-      "share": 0.3889,
+      "share": 0.4556,
       "base": 12.0,
       "depth": 0.1833,
       "is_low": true,
@@ -979,7 +956,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.09241
+     "notability": 0.073339
     },
     "coles": {
      "chain": "coles",
@@ -1001,9 +978,9 @@
      "comparablePrice": 19.6,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 29,
+      "days_at_or_below": 35,
       "window_days": 90,
-      "share": 0.3222,
+      "share": 0.3889,
       "base": 12.0,
       "depth": 0.1833,
       "is_low": true,
@@ -1011,7 +988,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.113684
+     "notability": 0.09241
     }
    },
    "winner": null
@@ -1021,6 +998,9 @@
    "category": "mince",
    "unitBasis": "kg",
    "note": "Coles equivalent is their 5 Star Extra Lean",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -1073,15 +1053,7 @@
      "savingPercent": null,
      "comparablePrice": 16.0,
      "comparableLabel": "/kg",
-     "rarity": {
-      "days_at_or_below": 90,
-      "window_days": 90,
-      "share": 1.0,
-      "base": 8.0,
-      "depth": 0.0,
-      "is_low": false,
-      "spells": 1
-     },
+     "rarity": null,
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
@@ -1094,6 +1066,9 @@
    "category": "chicken",
    "unitBasis": "kg",
    "note": "Woolworths sells the bulk pack at 1.5kg only",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "coles": {
      "chain": "coles",
@@ -1115,9 +1090,9 @@
      "comparablePrice": 9.33,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 50,
+      "days_at_or_below": 56,
       "window_days": 90,
-      "share": 0.5556,
+      "share": 0.6222,
       "base": 11.95,
       "depth": 0.0628,
       "is_low": true,
@@ -1125,7 +1100,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.016743
+     "notability": 0.012101
     }
    },
    "winner": null
@@ -1135,6 +1110,9 @@
    "category": "chicken",
    "unitBasis": "kg",
    "note": "Coles sells the bulk pack at 1.2kg only",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -1156,9 +1134,9 @@
      "comparablePrice": 9.33,
      "comparableLabel": "/kg",
      "rarity": {
-      "days_at_or_below": 64,
+      "days_at_or_below": 70,
       "window_days": 90,
-      "share": 0.7111,
+      "share": 0.7778,
       "base": 15.5,
       "depth": 0.0968,
       "is_low": true,
@@ -1166,7 +1144,7 @@
      },
      "notable": false,
      "rarityPhrase": "",
-     "notability": 0.010907
+     "notability": 0.006452
     }
    },
    "winner": null
@@ -1176,6 +1154,9 @@
    "category": "chicken",
    "unitBasis": "100g",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -1197,8 +1178,8 @@
      "comparablePrice": 3.0,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 14,
-      "window_days": 14,
+      "days_at_or_below": 20,
+      "window_days": 20,
       "share": 1.0,
       "base": 12.0,
       "depth": 0.0,
@@ -1214,73 +1195,77 @@
      "productId": "8954070",
      "name": "Tegel Takeouts Korean Style Frozen Chicken Chunks Ruffle With Sauce",
      "size": "400g",
-     "price": 12.0,
-     "wasPrice": null,
-     "unitPrice": 30.0,
+     "price": 8.4,
+     "wasPrice": 12.0,
+     "unitPrice": 21.0,
      "unitMeasure": "1kg",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "save $3.60",
      "available": true,
      "url": "https://www.coles.com.au/product/tegel-takeouts-korean-style-frozen-chicken-chunks-ruffle-with-sauce-400g-8954070",
      "slug": "tegel-takeouts-korean-style-frozen-chicken-chunks-ruffle-with-sauce-400g-8954070",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 3.0,
+     "saving": 3.6,
+     "savingPercent": 30,
+     "comparablePrice": 2.1,
      "comparableLabel": "/100g",
      "rarity": {
-      "days_at_or_below": 90,
+      "days_at_or_below": 14,
       "window_days": 90,
-      "share": 1.0,
+      "share": 0.1556,
       "base": 12.0,
-      "depth": 0.0,
-      "is_low": false,
-      "spells": 1
+      "depth": 0.3,
+      "is_low": true,
+      "spells": 3
      },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.0
+     "notable": true,
+     "rarityPhrase": "back to its 3-month low",
+     "notability": 0.28877
     }
    },
-   "winner": null
+   "winner": "coles"
   },
   {
    "title": "Jin Ramen Spicy, 5 pack",
    "category": "noodles",
    "unitBasis": "pack",
    "note": "",
+   "profiles": [
+    "original",
+    "eunice"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "122658",
      "name": "Otoki Jin Ramen Spicy Instant Noodles",
      "size": "120g x 5 pack",
-     "price": 7.0,
-     "wasPrice": null,
-     "unitPrice": 1.17,
+     "price": 4.5,
+     "wasPrice": 7.0,
+     "unitPrice": 0.75,
      "unitMeasure": "100G",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "Special",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/122658/otoki-jin-ramen-spicy-instant-noodles",
      "slug": "",
      "error": "",
-     "saving": null,
-     "savingPercent": null,
-     "comparablePrice": 1.4,
+     "saving": 2.5,
+     "savingPercent": 36,
+     "comparablePrice": 0.9,
      "comparableLabel": " a pack",
      "rarity": {
-      "days_at_or_below": 90,
+      "days_at_or_below": 0,
       "window_days": 90,
-      "share": 1.0,
+      "share": 0.0,
       "base": 7.0,
-      "depth": 0.0,
-      "is_low": false,
+      "depth": 0.3571,
+      "is_low": true,
       "spells": 1
      },
-     "notable": false,
-     "rarityPhrase": "",
-     "notability": 0.0
+     "notable": true,
+     "rarityPhrase": "first time this cheap in 3 months",
+     "notability": 0.482085
     },
     "coles": {
      "chain": "coles",
@@ -1302,26 +1287,29 @@
      "comparablePrice": 1.19,
      "comparableLabel": " a pack",
      "rarity": {
-      "days_at_or_below": 1,
-      "window_days": 5,
-      "share": 0.2,
+      "days_at_or_below": 7,
+      "window_days": 11,
+      "share": 0.6364,
       "base": 7.0,
       "depth": 0.15,
       "is_low": true,
       "spells": 1
      },
-     "notable": true,
-     "rarityPhrase": "cheapest in a month",
-     "notability": 0.1296
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.026772
     }
    },
-   "winner": "coles"
+   "winner": "woolworths"
   },
   {
    "title": "Samyang Buldak Spicy Fried Rice Carbonara 440g",
    "category": "noodles",
    "unitBasis": "100g",
    "note": "Not stocked by Woolworths",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "coles": {
      "chain": "coles",
@@ -1355,6 +1343,9 @@
    "category": "frozen",
    "unitBasis": "kg",
    "note": "Coles own brand tops out at 500g",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -1388,6 +1379,10 @@
    "category": "frozen",
    "unitBasis": "100ml",
    "note": "Coles carries Oreo Ice Cream Cones 475mL, a different product",
+   "profiles": [
+    "original",
+    "eunice"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
@@ -1429,31 +1424,146 @@
    "category": "frozen",
    "unitBasis": "piece",
    "note": "",
+   "profiles": [
+    "original"
+   ],
    "offers": {
     "woolworths": {
      "chain": "woolworths",
      "productId": "257574",
      "name": "Little Moons Mochi Bites Golden Blond Chocolate",
      "size": "6 pack",
-     "price": 11.0,
-     "wasPrice": null,
-     "unitPrice": 5.73,
+     "price": 7.7,
+     "wasPrice": 11.0,
+     "unitPrice": 4.01,
      "unitMeasure": "100G",
-     "onSpecial": false,
-     "specialLabel": "",
+     "onSpecial": true,
+     "specialLabel": "Special",
      "available": true,
      "url": "https://www.woolworths.com.au/shop/productdetails/257574/little-moons-mochi-bites-golden-blond-chocolate",
      "slug": "",
+     "error": "",
+     "saving": 3.3,
+     "savingPercent": 30,
+     "comparablePrice": 1.28,
+     "comparableLabel": " each",
+     "rarity": {
+      "days_at_or_below": 35,
+      "window_days": 90,
+      "share": 0.3889,
+      "base": 11.0,
+      "depth": 0.3,
+      "is_low": false,
+      "spells": 6
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.112033
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "8400487",
+     "name": "Little Moons Golden Blond Chocolate Mochi Bites 6 Pack",
+     "size": "192g",
+     "price": 11.0,
+     "wasPrice": null,
+     "unitPrice": 5.73,
+     "unitMeasure": "100g",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
+     "slug": "little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
      "error": "",
      "saving": null,
      "savingPercent": null,
      "comparablePrice": 1.83,
      "comparableLabel": " each",
+     "rarity": null,
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": "woolworths"
+  },
+  {
+   "title": "Farmers Union Greek Style Yoghurt Natural 500g",
+   "category": "frozen",
+   "unitBasis": "100g",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "coles": {
+     "chain": "coles",
+     "productId": "5588963",
+     "name": "Farmers Union Greek Style Yoghurt Natural",
+     "size": "500g",
+     "price": 5.3,
+     "wasPrice": null,
+     "unitPrice": 1.06,
+     "unitMeasure": "100g",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.coles.com.au/product/farmers-union-greek-style-yoghurt-natural-500g-5588963",
+     "slug": "farmers-union-greek-style-yoghurt-natural-500g-5588963",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 1.06,
+     "comparableLabel": "/100g",
      "rarity": {
       "days_at_or_below": 90,
       "window_days": 90,
       "share": 1.0,
-      "base": 11.0,
+      "base": 5.3,
+      "depth": 0.0,
+      "is_low": true,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": null
+  },
+  {
+   "title": "Spam Ham Classic 340g",
+   "category": "pantry",
+   "unitBasis": "100g",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "33964",
+     "name": "Spam Ham Classic",
+     "size": "340g",
+     "price": 6.8,
+     "wasPrice": null,
+     "unitPrice": 20.0,
+     "unitMeasure": "1KG",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/33964/spam-ham-classic",
+     "slug": "",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 2.0,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 90,
+      "window_days": 90,
+      "share": 1.0,
+      "base": 6.8,
       "depth": 0.0,
       "is_low": false,
       "spells": 1
@@ -1464,27 +1574,587 @@
     },
     "coles": {
      "chain": "coles",
-     "productId": "8400487",
-     "name": "Little Moons Golden Blond Chocolate Mochi Bites 6 Pack",
-     "size": "192g",
-     "price": 7.7,
-     "wasPrice": 11.0,
-     "unitPrice": 4.01,
+     "productId": "118521",
+     "name": "Spam Classic Ham",
+     "size": "340g",
+     "price": 5.4,
+     "wasPrice": 6.8,
+     "unitPrice": 15.88,
+     "unitMeasure": "1kg",
+     "onSpecial": true,
+     "specialLabel": "save $1.40",
+     "available": true,
+     "url": "https://www.coles.com.au/product/spam-classic-ham-340g-118521",
+     "slug": "spam-classic-ham-340g-118521",
+     "error": "",
+     "saving": 1.4,
+     "savingPercent": 21,
+     "comparablePrice": 1.59,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 7,
+      "window_days": 21,
+      "share": 0.3333,
+      "base": 6.8,
+      "depth": 0.2059,
+      "is_low": false,
+      "spells": 2
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.09152
+    }
+   },
+   "winner": "coles"
+  },
+  {
+   "title": "CORE Powerfoods Loaded Mac & Cheese 350g",
+   "category": "frozen",
+   "unitBasis": "100g",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "6018661",
+     "name": "CORE Powerfoods Frozen Loaded Mac & Cheese",
+     "size": "350g",
+     "price": 6.5,
+     "wasPrice": 9.5,
+     "unitPrice": 1.86,
+     "unitMeasure": "100G",
+     "onSpecial": true,
+     "specialLabel": "Special",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/6018661/core-powerfoods-frozen-loaded-mac-cheese",
+     "slug": "",
+     "error": "",
+     "saving": 3.0,
+     "savingPercent": 32,
+     "comparablePrice": 1.86,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 8,
+      "window_days": 90,
+      "share": 0.0889,
+      "base": 9.5,
+      "depth": 0.3158,
+      "is_low": true,
+      "spells": 2
+     },
+     "notable": true,
+     "rarityPhrase": "cheapest in 3 months",
+     "notability": 0.353898
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "8425218",
+     "name": "Core PowerFoods Loaded Mac N Cheese",
+     "size": "350g",
+     "price": 9.5,
+     "wasPrice": null,
+     "unitPrice": 2.71,
      "unitMeasure": "100g",
      "onSpecial": true,
-     "specialLabel": "save $3.30",
+     "specialLabel": "Any 2 $15",
      "available": true,
-     "url": "https://www.coles.com.au/product/little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
-     "slug": "little-moons-golden-blond-chocolate-mochi-bites-6-pack-192g-8400487",
+     "url": "https://www.coles.com.au/product/core-powerfoods-loaded-mac-n-cheese-350g-8425218",
+     "slug": "core-powerfoods-loaded-mac-n-cheese-350g-8425218",
      "error": "",
-     "saving": 3.3,
-     "savingPercent": 30,
-     "comparablePrice": 1.28,
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 2.71,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 90,
+      "window_days": 90,
+      "share": 1.0,
+      "base": 9.5,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": "woolworths"
+  },
+  {
+   "title": "Harvest Snaps Protein Puffs Lightly Salted 75g",
+   "category": "snacks",
+   "unitBasis": "100g",
+   "note": "Not stocked by Woolworths",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "coles": {
+     "chain": "coles",
+     "productId": "1967981",
+     "name": "Harvest Snaps Protein Puffs Lightly Salted",
+     "size": "75g",
+     "price": 5.0,
+     "wasPrice": null,
+     "unitPrice": 6.67,
+     "unitMeasure": "100g",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.coles.com.au/product/harvest-snaps-protein-puffs-lightly-salted-75g-1967981",
+     "slug": "harvest-snaps-protein-puffs-lightly-salted-75g-1967981",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 6.67,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 15,
+      "window_days": 15,
+      "share": 1.0,
+      "base": 5.0,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": null
+  },
+  {
+   "title": "M&M's Milk Chocolate Share Bag 180g",
+   "category": "snacks",
+   "unitBasis": "100g",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "460247",
+     "name": "M&M's Milk Chocolate Share Size",
+     "size": "180g",
+     "price": 3.5,
+     "wasPrice": 7.0,
+     "unitPrice": 1.94,
+     "unitMeasure": "100G",
+     "onSpecial": true,
+     "specialLabel": "Half price",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/460247/m-m-s-milk-chocolate-share-size",
+     "slug": "",
+     "error": "",
+     "saving": 3.5,
+     "savingPercent": 50,
+     "comparablePrice": 1.94,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 22,
+      "window_days": 90,
+      "share": 0.2444,
+      "base": 7.0,
+      "depth": 0.5,
+      "is_low": true,
+      "spells": 4
+     },
+     "notable": true,
+     "rarityPhrase": "back to its 3-month low",
+     "notability": 0.385379
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "5258936",
+     "name": "M&M'S Milk Chocolate Snack & Share Bag",
+     "size": "180g",
+     "price": 7.0,
+     "wasPrice": null,
+     "unitPrice": 3.89,
+     "unitMeasure": "100g",
+     "onSpecial": true,
+     "specialLabel": "Any 2 $10",
+     "available": true,
+     "url": "https://www.coles.com.au/product/mandm's-milk-chocolate-snack-and-share-bag-180g-5258936",
+     "slug": "mandm's-milk-chocolate-snack-and-share-bag-180g-5258936",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 3.89,
+     "comparableLabel": "/100g",
+     "rarity": null,
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": "woolworths"
+  },
+  {
+   "title": "Potato Utopia Four Cheese Potato Gratin 400g",
+   "category": "frozen",
+   "unitBasis": "100g",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "203424",
+     "name": "Potato Utopia Four Cheese Potato Gratin",
+     "size": "400g",
+     "price": 6.0,
+     "wasPrice": 7.5,
+     "unitPrice": 15.0,
+     "unitMeasure": "1KG",
+     "onSpecial": true,
+     "specialLabel": "Special",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/203424/potato-utopia-four-cheese-potato-gratin",
+     "slug": "",
+     "error": "",
+     "saving": 1.5,
+     "savingPercent": 20,
+     "comparablePrice": 1.5,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 8,
+      "window_days": 90,
+      "share": 0.0889,
+      "base": 7.5,
+      "depth": 0.2,
+      "is_low": false,
+      "spells": 2
+     },
+     "notable": true,
+     "rarityPhrase": "8 days this cheap in 3 months",
+     "notability": 0.166021
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "1531545",
+     "name": "Potato Utopia Four Cheese Potato Gratin 4 Pack",
+     "size": "400g",
+     "price": 6.0,
+     "wasPrice": 7.5,
+     "unitPrice": 1.5,
+     "unitMeasure": "100g",
+     "onSpecial": true,
+     "specialLabel": "save $1.50",
+     "available": true,
+     "url": "https://www.coles.com.au/product/potato-utopia-four-cheese-potato-gratin-4-pack-400g-1531545",
+     "slug": "potato-utopia-four-cheese-potato-gratin-4-pack-400g-1531545",
+     "error": "",
+     "saving": 1.5,
+     "savingPercent": 20,
+     "comparablePrice": 1.5,
+     "comparableLabel": "/100g",
+     "rarity": null,
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": null
+  },
+  {
+   "title": "SKYN Intense Feel Condoms 10 pack",
+   "category": "health",
+   "unitBasis": "piece",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "779561",
+     "name": "SKYN Intense Feel Dotted Non- Latex Condoms",
+     "size": "10 pack",
+     "price": 14.0,
+     "wasPrice": null,
+     "unitPrice": 1.4,
+     "unitMeasure": "1EA",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/779561/skyn-intense-feel-dotted-non-latex-condoms",
+     "slug": "",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 1.4,
+     "comparableLabel": " each",
+     "rarity": {
+      "days_at_or_below": 90,
+      "window_days": 90,
+      "share": 1.0,
+      "base": 14.0,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "6174321",
+     "name": "SKYN Intense Feel Condoms",
+     "size": "10 Pack",
+     "price": 10.5,
+     "wasPrice": 13.0,
+     "unitPrice": 1.05,
+     "unitMeasure": "1ea",
+     "onSpecial": true,
+     "specialLabel": "save $2.50",
+     "available": true,
+     "url": "https://www.coles.com.au/product/skyn-intense-feel-condoms-10-pack-6174321",
+     "slug": "skyn-intense-feel-condoms-10-pack-6174321",
+     "error": "",
+     "saving": 2.5,
+     "savingPercent": 19,
+     "comparablePrice": 1.05,
      "comparableLabel": " each",
      "rarity": null,
      "notable": false,
      "rarityPhrase": "",
      "notability": 0.0
+    }
+   },
+   "winner": "coles"
+  },
+  {
+   "title": "Primo Stackers Mild Salami Cheese & Crackers 50g",
+   "category": "snacks",
+   "unitBasis": "100g",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "63584",
+     "name": "Primo Stackers Mild Salami Cheddar Cheese & Crackers",
+     "size": "50g",
+     "price": 4.5,
+     "wasPrice": null,
+     "unitPrice": 90.0,
+     "unitMeasure": "1KG",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/63584/primo-stackers-mild-salami-cheddar-cheese-crackers",
+     "slug": "",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 9.0,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 90,
+      "window_days": 90,
+      "share": 1.0,
+      "base": 4.5,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "3755430",
+     "name": "Primo Stacker Mild Salami Cheese & Crackers",
+     "size": "50g",
+     "price": 4.5,
+     "wasPrice": null,
+     "unitPrice": 9.0,
+     "unitMeasure": "100g",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.coles.com.au/product/primo-stacker-mild-salami-cheese-and-crackers-50g-3755430",
+     "slug": "primo-stacker-mild-salami-cheese-and-crackers-50g-3755430",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 9.0,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 90,
+      "window_days": 90,
+      "share": 1.0,
+      "base": 4.5,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": null
+  },
+  {
+   "title": "Parker's Baked Pretzels Original 200g",
+   "category": "snacks",
+   "unitBasis": "100g",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "24378",
+     "name": "Parker's Baked Pretzels Original",
+     "size": "200g",
+     "price": 4.8,
+     "wasPrice": null,
+     "unitPrice": 2.4,
+     "unitMeasure": "100G",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/24378/parker-s-baked-pretzels-original",
+     "slug": "",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 2.4,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 90,
+      "window_days": 90,
+      "share": 1.0,
+      "base": 4.8,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "6133970",
+     "name": "Parker's Baked Pretzels Wheat Original",
+     "size": "200g",
+     "price": 4.8,
+     "wasPrice": null,
+     "unitPrice": 2.4,
+     "unitMeasure": "100g",
+     "onSpecial": true,
+     "specialLabel": "Any 2 $7.50",
+     "available": true,
+     "url": "https://www.coles.com.au/product/parker's-baked-pretzels-wheat-original-200g-6133970",
+     "slug": "parker's-baked-pretzels-wheat-original-200g-6133970",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 2.4,
+     "comparableLabel": "/100g",
+     "rarity": {
+      "days_at_or_below": 27,
+      "window_days": 27,
+      "share": 1.0,
+      "base": 4.8,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    }
+   },
+   "winner": null
+  },
+  {
+   "title": "Samyang Buldak Carbonara Spicy Ramen 650g, 5 pack",
+   "category": "noodles",
+   "unitBasis": "pack",
+   "note": "",
+   "profiles": [
+    "eunice"
+   ],
+   "offers": {
+    "woolworths": {
+     "chain": "woolworths",
+     "productId": "805129",
+     "name": "Samyang Buldak Carbonara Spicy Ramen",
+     "size": "5 pack",
+     "price": 12.5,
+     "wasPrice": null,
+     "unitPrice": 1.92,
+     "unitMeasure": "100G",
+     "onSpecial": false,
+     "specialLabel": "",
+     "available": true,
+     "url": "https://www.woolworths.com.au/shop/productdetails/805129/samyang-buldak-carbonara-spicy-ramen",
+     "slug": "",
+     "error": "",
+     "saving": null,
+     "savingPercent": null,
+     "comparablePrice": 2.5,
+     "comparableLabel": " a pack",
+     "rarity": {
+      "days_at_or_below": 90,
+      "window_days": 90,
+      "share": 1.0,
+      "base": 12.5,
+      "depth": 0.0,
+      "is_low": false,
+      "spells": 1
+     },
+     "notable": false,
+     "rarityPhrase": "",
+     "notability": 0.0
+    },
+    "coles": {
+     "chain": "coles",
+     "productId": "5049834",
+     "name": "Samyang Buldak Spicy Ramen Carbonara 5 Pack",
+     "size": "650g",
+     "price": 9.95,
+     "wasPrice": 12.5,
+     "unitPrice": 1.53,
+     "unitMeasure": "100g",
+     "onSpecial": true,
+     "specialLabel": "save $2.55",
+     "available": true,
+     "url": "https://www.coles.com.au/product/samyang-buldak-spicy-ramen-carbonara-5-pack-650g-5049834",
+     "slug": "samyang-buldak-spicy-ramen-carbonara-5-pack-650g-5049834",
+     "error": "",
+     "saving": 2.55,
+     "savingPercent": 20,
+     "comparablePrice": 1.99,
+     "comparableLabel": " a pack",
+     "rarity": {
+      "days_at_or_below": 0,
+      "window_days": 1,
+      "share": 0.0,
+      "base": 12.5,
+      "depth": 0.204,
+      "is_low": true,
+      "spells": 1
+     },
+     "notable": true,
+     "rarityPhrase": "first time this cheap in a month",
+     "notability": 0.2754
     }
    },
    "winner": "coles"
